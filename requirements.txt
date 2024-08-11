@@ -1,0 +1,5 @@
+streamlit
+langchain-google-genai
+pillow
+dash
+pandas
