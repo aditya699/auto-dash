@@ -4,3 +4,4 @@ pillow
 dash
 pandas
 python-dotenv
+dash-bootstrap-components

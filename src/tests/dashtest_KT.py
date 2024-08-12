@@ -5,9 +5,11 @@ import plotly.express as px
 import pandas as pd
 from datetime import timedelta
 from dotenv import load_dotenv
+import dash_bootstrap_components as dbc
 
 # Load environment variables from .env file
 load_dotenv()
+
 def load_data():
     while True:
         try:
@@ -23,23 +25,55 @@ def load_data():
 
 def create_app(df):
     # Initialize the Dash app
-    app = Dash(__name__)
+    app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
     # Define color scheme for consistent styling
     colors = {
-        'background': '#d9d9d9',
-        'text': '#000000',
-        'primary': '#3498DB',
-        'secondary': '#E74C3C',
-        'positive': '#27AE60'
+        'background': '#F7F7F7',  # Light gray background
+        'text': '#333333',        # Dark gray text
+        'primary': '#3498DB',     # Bright blue for primary elements
+        'secondary': '#2ECC71',   # Green for secondary elements (positive changes)
+        'accent': '#F39C12',      # Orange for accents
+        'negative': '#E74C3C'     # Red for negative changes (used sparingly)
+    }
+
+    # Define styles
+    kpi_style = {
+        'textAlign': 'center',
+        'padding': '20px',
+        'backgroundColor': 'white',
+        'borderRadius': '10px',
+        'boxShadow': '0 4px 15px rgba(0, 0, 0, 0.1)',
+        'margin': '10px',
+        'width': '200px',
+        'transition': 'all 0.3s ease'
+    }
+
+    filter_style = {
+        'display': 'flex', 
+        'justifyContent': 'space-between', 
+        'alignItems': 'flex-end', 
+        'margin': '20px auto', 
+        'width': '90%',
+        'backgroundColor': 'white',
+        'padding': '20px',
+        'borderRadius': '10px',
+        'boxShadow': '0 4px 15px rgba(0, 0, 0, 0.1)'
     }
 
     # Layout of the dashboard
-    app.layout = html.Div([
+    app.layout = dbc.Container([
         html.Div([
-            html.H1('Sales Dashboard', style={'textAlign': 'center', 'color': colors['text'], 'marginBottom': '30px', 'fontSize': '50px'}),
+            html.H1('Sales Dashboard', style={
+                'textAlign': 'center', 
+                'color': colors['text'], 
+                'marginBottom': '30px', 
+                'fontSize': '36px',
+                'fontWeight': '300',
+                'letterSpacing': '2px'
+            }),
             
-            # Filter section with headers and reset button
+            # Filter section
             html.Div([
                 html.Div([
                     html.Label('Country', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
@@ -61,26 +95,30 @@ def create_app(df):
                 ], style={'display': 'flex', 'flexDirection': 'column'}),
                 html.Div([
                     html.Button('Reset Filters', id='reset-button', n_clicks=0, 
-                                style={'padding': '10px 20px', 'backgroundColor': colors['primary'], 'color': 'white', 'border': 'none', 'borderRadius': '5px', 'cursor': 'pointer', 'marginTop': '20px'})
+                                style={'padding': '10px 20px', 'backgroundColor': colors['accent'], 'color': 'white', 'border': 'none', 'borderRadius': '5px', 'cursor': 'pointer', 'transition': 'all 0.3s ease'})
                 ])
-            ], style={'display': 'flex', 'justifyContent': 'space-between', 'alignItems': 'flex-end', 'margin': '10px auto', 'width': '80%'}),
+            ], style=filter_style),
             
             # KPI indicators section
             html.Div(id='kpi-indicators', style={'margin': '30px 0'}),
             
             # Charts section
-            html.Div([
-                html.Div([dcc.Graph(id='customer-purchase')], style={'width': '48%'}),
-                html.Div([dcc.Graph(id='product-sales')], style={'width': '48%'}),
-            ], style={'display': 'flex', 'justifyContent': 'space-between', 'margin': '30px 0'}),
+            dbc.Row([
+                dbc.Col([dcc.Graph(id='customer-purchase')], width=6),
+                dbc.Col([dcc.Graph(id='product-sales')], width=6),
+            ], className='mb-4'),
             
-            html.Div([
-                html.Div([dcc.Graph(id='sales-rep-performance')], style={'width': '48%'}),
-                html.Div([dcc.Graph(id='age-distribution')], style={'width': '48%'}),
-            ], style={'display': 'flex', 'justifyContent': 'space-between', 'margin': '30px 0'}),
+            dbc.Row([
+                dbc.Col([dcc.Graph(id='sales-rep-performance')], width=6),
+                dbc.Col([dcc.Graph(id='age-distribution')], width=6),
+            ], className='mb-4'),
             
-        ], style={'padding': '20px', 'backgroundColor': colors['background']})
-    ])
+        ], style={
+            'fontFamily': '"Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif',
+            'padding': '20px', 
+            'backgroundColor': colors['background']
+        })
+    ], fluid=True)
 
     # Callback function for updating the dashboard
     @callback(
@@ -154,26 +192,17 @@ def create_app(df):
         aov_change = average_order_value - past_average_order_value
         orders_change = total_orders - past_total_orders
         
-        # Create KPI card style
-        kpi_style = {
-            'textAlign': 'left',
-            'padding': '20px',
-            'backgroundColor': 'white',
-            'borderRadius': '10px',
-            'boxShadow': '0 4px 6px rgba(0, 0, 0, 0.1)',
-            'margin': '10px',
-            'width': '150px'
-        }
-        
         # Function to create a KPI card
         def create_kpi_card(title, value, change):
             return html.Div([
-                html.H3(title, style={'color': colors['text'], 'marginBottom': '5px'}),
+                html.H3(title, style={'color': colors['text'], 'marginBottom': '10px', 'fontSize': '16px', 'fontWeight': '400'}),
                 html.Div([
-                    html.Span(f'{value:,.0f}', style={'fontSize': '36px', 'fontWeight': 'bold', 'color': colors['text']}),
+                    html.Span(f'{value:,.0f}', style={'fontSize': '28px', 'fontWeight': 'bold', 'color': colors['primary']}),
                     html.Div([
-                        html.Span('▲' if change > 0 else '▼', style={'color': colors['positive'] if change > 0 else colors['secondary'], 'fontSize': '24px'}),
-                        html.Span(f'{abs(change):,.0f}', style={'color': colors['positive'] if change > 0 else colors['secondary'], 'fontSize': '24px', 'marginLeft': '5px'})
+                        html.Span('▲' if change > 0 else '▼', 
+                                  style={'color': colors['secondary'] if change > 0 else colors['negative'], 'fontSize': '18px'}),
+                        html.Span(f'{abs(change):,.0f}', 
+                                  style={'color': colors['secondary'] if change > 0 else colors['negative'], 'fontSize': '18px', 'marginLeft': '5px'})
                     ], style={'marginTop': '5px'})
                 ])
             ], style=kpi_style)
@@ -186,22 +215,40 @@ def create_app(df):
             create_kpi_card('Total Orders', total_orders, orders_change)
         ], style={'display': 'flex', 'justifyContent': 'space-between'})
         
+        # Function to update chart layout
+        def update_chart_layout(fig):
+            fig.update_layout(
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
+                font_family='"Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif',
+                font_color=colors['text'],
+                title_font_size=20,
+                title_font_color=colors['primary'],
+                legend_title_font_color=colors['primary'],
+                legend_title_font_size=14,
+                legend_font_size=12,
+                clickmode='event+select'
+            )
+            fig.update_xaxes(showgrid=False, showline=True, linewidth=2, linecolor='lightgray')
+            fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+            return fig
+        
         # Create graphs with interactivity
         customer_purchase = px.bar(dff, x='customer_name', y='purchase_amount', title="Customer Purchase Analysis",
                                    color_discrete_sequence=[colors['primary']], labels={'customer_name': 'Customer Name', 'purchase_amount': 'Purchase Amount'})
-        customer_purchase.update_layout(plot_bgcolor='white', paper_bgcolor='white', clickmode='event+select')
+        customer_purchase = update_chart_layout(customer_purchase)
         
         product_sales = px.bar(dff, x='product_name', y='purchase_amount', title="Product Sales Analysis",
-                               color_discrete_sequence=[colors['primary']],labels={'product_name':'Product Name','purchase_amount':'Purchase amount'})
-        product_sales.update_layout(plot_bgcolor='white', paper_bgcolor='white', clickmode='event+select')
+                               color_discrete_sequence=[colors['primary']], labels={'product_name':'Product Name','purchase_amount':'Purchase amount'})
+        product_sales = update_chart_layout(product_sales)
         
         sales_rep_performance = px.bar(dff, x='sales_representative', y='purchase_amount', title="Sales Representative Performance",
-                                       color_discrete_sequence=[colors['primary']],labels={'sales_representative':'Sales Representative','purchase_amount':'Purchase Amount'})
-        sales_rep_performance.update_layout(plot_bgcolor='white', paper_bgcolor='white', clickmode='event+select')
+                                       color_discrete_sequence=[colors['primary']], labels={'sales_representative':'Sales Representative','purchase_amount':'Purchase Amount'})
+        sales_rep_performance = update_chart_layout(sales_rep_performance)
         
         age_distribution = px.histogram(dff, x='age', nbins=10, title="Customer Age Distribution",
-                                        color_discrete_sequence=[colors['primary']],labels={'age':'Age'})
-        age_distribution.update_layout(plot_bgcolor='white', paper_bgcolor='white', selectdirection='h')
+                                        color_discrete_sequence=[colors['primary']], labels={'age':'Age'})
+        age_distribution = update_chart_layout(age_distribution)
         
         return kpi_indicators, customer_purchase, product_sales, sales_rep_performance, age_distribution    
 
