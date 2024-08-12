@@ -48,7 +48,7 @@ app.layout = html.Div([
             ])
         ], style={'display': 'flex', 'justifyContent': 'space-between', 'alignItems': 'flex-start', 'margin': '20px auto', 'width': '80%'}),
         
-        html.Div(id='kpi-indicators', style={'margin': '30px 0'}),
+        html.Div(id='kpi-indicators', style={'margin': '50px 0'}),
         
         html.Div([
             html.Div([dcc.Graph(id='customer-purchase')], style={'width': '48%'}),
@@ -114,7 +114,7 @@ def update_dashboard(country, start_date, end_date):
         'borderRadius': '10px',
         'boxShadow': '0 4px 6px rgba(0, 0, 0, 0.1)',
         'margin': '10px',
-        'width': '200px'
+        'width': '100px'
     }
     
     # Function to create a KPI card
@@ -153,7 +153,7 @@ def update_dashboard(country, start_date, end_date):
     
     age_distribution = px.histogram(dff, x='age', nbins=10, title="Customer Age Distribution",
                                     color_discrete_sequence=[colors['primary']])
-    age_distribution.update_layout(plot_bgcolor='white', paper_bgcolor='white')
+    age_distribution.update_layout(plot_bgcolor='white', paper_bgcolor='grey')
     
     return kpi_indicators, customer_purchase, product_sales, sales_rep_performance, age_distribution    
 

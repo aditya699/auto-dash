@@ -3,3 +3,4 @@ langchain-google-genai
 pillow
 dash
 pandas
+python-dotenv
