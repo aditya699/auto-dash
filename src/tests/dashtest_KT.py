@@ -11,7 +11,15 @@ df['purchase_date'] = pd.to_datetime(df['purchase_date'])
 
 # Initialize the Dash app
 app = Dash(__name__)
+'''
+This section defines a dictionary named colors that stores color codes for various elements in the dashboard. This ensures a consistent and visually appealing design.
+background: The background color of the dashboard.
+text: The color of text elements.
+primary: The primary color used for charts and highlights.
+secondary: A secondary color used for less prominent elements.
+positive: A color used for positive changes or indicators.
 
+'''
 # Define color scheme for consistent styling
 colors = {
     'background': '#F0F2F6',
@@ -20,6 +28,12 @@ colors = {
     'secondary': '#E74C3C',
     'positive': '#27AE60'
 }
+
+'''
+1.This section defines the overall layout of the dashboard using HTML elements. It's wrapped in a html.Div to group the components.
+
+2.
+'''
 
 # Layout of the dashboard
 app.layout = html.Div([
@@ -33,8 +47,8 @@ app.layout = html.Div([
                 dcc.Dropdown(
                     id='dropdown-country',
                     options=[{'label': i, 'value': i} for i in df.country.unique()],
-                    value='France',
-                    style={'width': '300px'}
+                    value='China',
+                    style={'width': '200px'}
                 )
             ]),
             html.Div([
