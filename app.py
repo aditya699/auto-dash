@@ -17,9 +17,22 @@ import logging
 from datetime import timedelta
 from dotenv import load_dotenv
 import dash_bootstrap_components as dbc
+from langchain_google_genai import ChatGoogleGenerativeAI
+from prompt_template import generate_prompt
+from datetime import datetime
+import json
 load_dotenv()
 file_path=os.environ.get('FILE_PATH')
+os.environ["GOOGLE_API_KEY"]=os.environ.get('GEMINI_API_KEY')
 
+llm = ChatGoogleGenerativeAI(
+    model="gemini-1.5-pro",
+    temperature=0,
+    max_tokens=None,
+    timeout=None,
+    max_retries=2,
+    # other params...
+)
 # Set up logging
 logging.basicConfig(filename='dashboard_generator.log', level=logging.INFO,
                     format='%(asctime)s:%(levelname)s:%(message)s')
@@ -108,17 +121,23 @@ except Exception as e:
     logging.error(f"Failed to process data: {str(e)}")
     raise
 
+def json_serial(obj):
+    """JSON serializer for objects not serializable by default json code"""
+    if isinstance(obj, (datetime, pd.Timestamp)):
+        return obj.isoformat()
+    raise TypeError(f"Type {type(obj)} not serializable")
+
 def get_data_insights(df):
     logging.info("Starting data insights extraction")
     
     insights = {
         "columns": df.columns.tolist(),
-        "dtypes": df.dtypes.to_dict(),
+        "dtypes": {col: str(dtype) for col, dtype in df.dtypes.items()},
         "numerical_columns": df.select_dtypes(include=['int64', 'float64']).columns.tolist(),
         "categorical_columns": df.select_dtypes(include=['object']).columns.tolist(),
         "date_columns": df.select_dtypes(include=['datetime64']).columns.tolist(),
-        "unique_values": {col: df[col].nunique() for col in df.columns},
-        "sample_data": df.head().to_dict()
+        "unique_values": {col: int(df[col].nunique()) for col in df.columns},
+        "sample_data": json.loads(df.head().to_json(orient='records', date_format='iso'))
     }
     
     logging.info(f"Found {len(insights['columns'])} total columns")
@@ -126,12 +145,16 @@ def get_data_insights(df):
     logging.info(f"Categorical columns: {', '.join(insights['categorical_columns'])}")
     logging.info(f"Date columns: {', '.join(insights['date_columns'])}")
     
-    # Log summary statistics for numerical columns
-    summary_stats = df.describe().to_dict()
+    # Simplified summary statistics
+    summary_stats = {}
     for col in insights['numerical_columns']:
-        logging.info(f"Summary stats for {col}:")
-        for stat, value in summary_stats[col].items():
-            logging.info(f"  {stat}: {value}")
+        summary_stats[col] = {
+            "mean": float(df[col].mean()),
+            "median": float(df[col].median()),
+            "min": float(df[col].min()),
+            "max": float(df[col].max())
+        }
+        logging.info(f"Summary stats for {col}: {summary_stats[col]}")
     
     insights["summary_stats"] = summary_stats
     
@@ -140,15 +163,64 @@ def get_data_insights(df):
         unique_count = insights['unique_values'][col]
         logging.info(f"Column '{col}' has {unique_count} unique values")
     
+    # Handle date columns
+    for col in insights['date_columns']:
+        insights[f"{col}_min"] = df[col].min().isoformat()
+        insights[f"{col}_max"] = df[col].max().isoformat()
+        logging.info(f"Date range for {col}: {insights[f'{col}_min']} to {insights[f'{col}_max']}")
+    
     logging.info("Data insights extraction completed")
     return insights
 
-# Get data insights
+try:
+    df, data_analysis = get_data(file_path)
+    logging.info("Data loading, processing, and analysis completed successfully")
+except Exception as e:
+    logging.error(f"Failed to process data: {str(e)}")
+    raise
+
 try:
     logging.info("Attempting to extract data insights")
     data_insights = get_data_insights(df)
     logging.info("Data insights extracted successfully")
 except Exception as e:
     logging.error(f"Error occurred while extracting data insights: {str(e)}")
-    data_insights = None  # or you could set it to a default value
+    data_insights = None
 
+def generate_dashboard_code(data_insights):
+    prompt = generate_prompt(data_insights)
+    try:
+        response = llm.invoke(prompt)
+        generated_code = response.content
+        
+        # Extract only the Python code from the response
+        code_start = generated_code.find("### BEGIN DASH CODE ###")
+        code_end = generated_code.rfind("### END DASH CODE ###")
+        if code_start != -1 and code_end != -1:
+            generated_code = generated_code[code_start + len("### BEGIN DASH CODE ###"):code_end].strip()
+        
+        logging.info("Dashboard code generated successfully")
+        return generated_code
+    except Exception as e:
+        logging.error(f"Error generating dashboard code: {str(e)}")
+        return None
+
+def update_dashboard_file(generated_code):
+    try:
+        with open('generated_dashboard.py', 'w',encoding='utf-8') as f:
+            f.write(generated_code)
+        logging.info("Dashboard code written to generated_dashboard.py")
+    except Exception as e:
+        logging.error(f"Error writing dashboard code to file: {str(e)}")
+
+def main():
+    generated_code = generate_dashboard_code(data_insights)
+    if generated_code:
+        update_dashboard_file(generated_code)
+        print("Dashboard code generated and saved to generated_dashboard.py")
+        print("You can now run this file to launch your Dash application.")
+    else:
+        print("Failed to generate dashboard code. Check the logs for more information.")
+
+if __name__ == '__main__':
+    main()

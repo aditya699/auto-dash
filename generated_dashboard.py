@@ -1,7 +1,3 @@
-import json
-
-def generate_prompt(data_insights):
-    reference_code = """
 # Import necessary libraries
 import os
 from dash import Dash, html, dcc, callback, Output, Input, ctx
@@ -19,7 +15,8 @@ def load_data():
         try:
             n = os.environ.get('FILE_PATH')
             df = pd.read_csv(n)
-            df['purchase_date'] = pd.to_datetime(df['purchase_date'])
+            df['date_of_birth'] = pd.to_datetime(df['date_of_birth'])
+            df['hire_date'] = pd.to_datetime(df['hire_date'])
             return df
         except FileNotFoundError:
             print("File not found. Please enter a valid file path.")
@@ -68,7 +65,7 @@ def create_app(df):
     # Layout of the dashboard
     app.layout = dbc.Container([
         html.Div([
-            html.H1('Sales Dashboard', style={
+            html.H1('Employee Dashboard', style={
                 'textAlign': 'center', 
                 'color': colors['text'], 
                 'marginBottom': '30px', 
@@ -80,20 +77,20 @@ def create_app(df):
             # Filter section
             html.Div([
                 html.Div([
-                    html.Label('Country', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
+                    html.Label('Department', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
                     dcc.Dropdown(
-                        id='dropdown-country',
-                        options=[{'label': i, 'value': i} for i in df.country.unique()],
-                        value='France',
+                        id='dropdown-department',
+                        options=[{'label': i, 'value': i} for i in df.department.unique()],
+                        value='IT',
                         style={'width': '180px'}
                     )
                 ], style={'display': 'flex', 'flexDirection': 'column'}),
                 html.Div([
-                    html.Label('Date Range', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
+                    html.Label('Hire Date Range', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
                     dcc.DatePickerRange(
                         id='date-picker-range',
-                        start_date=df['purchase_date'].min(),
-                        end_date=df['purchase_date'].max(),
+                        start_date=df['hire_date'].min(),
+                        end_date=df['hire_date'].max(),
                         style={'width': '300px'}
                     )
                 ], style={'display': 'flex', 'flexDirection': 'column'}),
@@ -108,12 +105,12 @@ def create_app(df):
             
             # Charts section
             dbc.Row([
-                dbc.Col([dcc.Graph(id='customer-purchase')], width=6),
-                dbc.Col([dcc.Graph(id='product-sales')], width=6),
+                dbc.Col([dcc.Graph(id='employee-salary')], width=6),
+                dbc.Col([dcc.Graph(id='job-title-salary')], width=6),
             ], className='mb-4'),
             
             dbc.Row([
-                dbc.Col([dcc.Graph(id='sales-rep-performance')], width=6),
+                dbc.Col([dcc.Graph(id='gender-distribution')], width=6),
                 dbc.Col([dcc.Graph(id='age-distribution')], width=6),
             ], className='mb-4'),
             
@@ -127,74 +124,71 @@ def create_app(df):
     # Callback function for updating the dashboard
     @callback(
         [Output('kpi-indicators', 'children'),
-         Output('customer-purchase', 'figure'),
-         Output('product-sales', 'figure'),
-         Output('sales-rep-performance', 'figure'),
+         Output('employee-salary', 'figure'),
+         Output('job-title-salary', 'figure'),
+         Output('gender-distribution', 'figure'),
          Output('age-distribution', 'figure')],
-        [Input('dropdown-country', 'value'),
+        [Input('dropdown-department', 'value'),
          Input('date-picker-range', 'start_date'),
          Input('date-picker-range', 'end_date'),
-         Input('customer-purchase', 'clickData'),
-         Input('product-sales', 'clickData'),
-         Input('sales-rep-performance', 'clickData'),
+         Input('employee-salary', 'clickData'),
+         Input('job-title-salary', 'clickData'),
+         Input('gender-distribution', 'clickData'),
          Input('age-distribution', 'selectedData'),
          Input('reset-button', 'n_clicks')]
     )
-    def update_dashboard(country, start_date, end_date, customer_click, product_click, sales_rep_click, age_selection, reset_clicks):
+    def update_dashboard(department, start_date, end_date, employee_click, job_title_click, gender_click, age_selection, reset_clicks):
         # Convert string dates to datetime
         start_date = pd.to_datetime(start_date)
         end_date = pd.to_datetime(end_date)
         
-        # Filter the dataframe based on selected country and date range
-        dff = df[(df.country == country) & 
-                 (df.purchase_date >= start_date) & 
-                 (df.purchase_date <= end_date)]
+        # Filter the dataframe based on selected department and hire date range
+        dff = df[(df.department == department) & 
+                 (df.hire_date >= start_date) & 
+                 (df.hire_date <= end_date)]
         
         # Apply cross-filtering based on chart interactions
         if ctx.triggered:
             input_id = ctx.triggered[0]['prop_id'].split('.')[0]
             if input_id == 'reset-button':
                 # Reset all filters
-                dff = df[(df.country == country) & 
-                         (df.purchase_date >= start_date) & 
-                         (df.purchase_date <= end_date)]
-            elif input_id == 'customer-purchase' and customer_click:
-                customer = customer_click['points'][0]['x']
-                dff = dff[dff['customer_name'] == customer]
-            elif input_id == 'product-sales' and product_click:
-                product = product_click['points'][0]['x']
-                dff = dff[dff['product_name'] == product]
-            elif input_id == 'sales-rep-performance' and sales_rep_click:
-                sales_rep = sales_rep_click['points'][0]['x']
-                dff = dff[dff['sales_representative'] == sales_rep]
+                dff = df[(df.department == department) & 
+                         (df.hire_date >= start_date) & 
+                         (df.hire_date <= end_date)]
+            elif input_id == 'employee-salary' and employee_click:
+                employee = employee_click['points'][0]['x']
+                dff = dff[dff['employee_id'] == employee]
+            elif input_id == 'job-title-salary' and job_title_click:
+                job_title = job_title_click['points'][0]['x']
+                dff = dff[dff['job_title'] == job_title]
+            elif input_id == 'gender-distribution' and gender_click:
+                gender = gender_click['points'][0]['x']
+                dff = dff[dff['gender'] == gender]
             elif input_id == 'age-distribution' and age_selection:
                 age_range = [age_selection['range']['x'][0], age_selection['range']['x'][1]]
                 dff = dff[(dff['age'] >= age_range[0]) & (dff['age'] <= age_range[1])]
 
         
         # Calculate KPI values for the selected period
-        total_revenue = dff['purchase_amount'].sum()
-        total_customers = dff['customer_id'].nunique()
-        average_order_value = dff['purchase_amount'].mean()
-        total_orders = dff['purchase_date'].count()
+        total_salary = dff['salary'].sum()
+        total_employees = dff['employee_id'].nunique()
+        average_salary = dff['salary'].mean()
         
         # Calculate KPI values for 6 months ago
         past_start_date = start_date - timedelta(days=180)
         past_end_date = end_date - timedelta(days=180)
-        past_dff = df[(df.country == country) & 
-                      (df.purchase_date >= past_start_date) & 
-                      (df.purchase_date <= past_end_date)]
+        past_dff = df[(df.department == department) & 
+                      (df.hire_date >= past_start_date) & 
+                      (df.hire_date <= past_end_date)]
         
-        past_total_revenue = past_dff['purchase_amount'].sum()
-        past_total_customers = past_dff['customer_id'].nunique()
-        past_average_order_value = past_dff['purchase_amount'].mean()
-        past_total_orders = past_dff['purchase_date'].count()
+        past_total_salary = past_dff['salary'].sum()
+        past_total_employees = past_dff['employee_id'].nunique()
+        past_average_salary = past_dff['salary'].mean()
         
         # Calculate changes
-        revenue_change = total_revenue - past_total_revenue
-        customers_change = total_customers - past_total_customers
-        aov_change = average_order_value - past_average_order_value
-        orders_change = total_orders - past_total_orders
+        salary_change = total_salary - past_total_salary
+        employees_change = total_employees - past_total_employees
+        average_salary_change = average_salary - past_average_salary
         
         # Function to create a KPI card
         def create_kpi_card(title, value, change):
@@ -214,10 +208,9 @@ def create_app(df):
         
         # Create KPI indicators
         kpi_indicators = html.Div([
-            create_kpi_card('Total Revenue', total_revenue, revenue_change),
-            create_kpi_card('Total Customers', total_customers, customers_change),
-            create_kpi_card('Avg Order Value', average_order_value, aov_change),
-            create_kpi_card('Total Orders', total_orders, orders_change)
+            create_kpi_card('Total Salary', total_salary, salary_change),
+            create_kpi_card('Total Employees', total_employees, employees_change),
+            create_kpi_card('Avg Salary', average_salary, average_salary_change)
         ], style={'display': 'flex', 'justifyContent': 'space-between'})
         
         # Function to update chart layout
@@ -239,23 +232,23 @@ def create_app(df):
             return fig
         
         # Create graphs with interactivity
-        customer_purchase = px.bar(dff, x='customer_name', y='purchase_amount', title="Customer Purchase Analysis",
-                                   color_discrete_sequence=[colors['primary']], labels={'customer_name': 'Customer Name', 'purchase_amount': 'Purchase Amount'})
-        customer_purchase = update_chart_layout(customer_purchase)
+        employee_salary = px.bar(dff, x='employee_id', y='salary', title="Employee Salary Analysis",
+                                   color_discrete_sequence=[colors['primary']], labels={'employee_id': 'Employee ID', 'salary': 'Salary'})
+        employee_salary = update_chart_layout(employee_salary)
         
-        product_sales = px.bar(dff, x='product_name', y='purchase_amount', title="Product Sales Analysis",
-                               color_discrete_sequence=[colors['primary']], labels={'product_name':'Product Name','purchase_amount':'Purchase amount'})
-        product_sales = update_chart_layout(product_sales)
+        job_title_salary = px.bar(dff, x='job_title', y='salary', title="Job Title Salary Analysis",
+                               color_discrete_sequence=[colors['primary']], labels={'job_title':'Job Title','salary':'Salary'})
+        job_title_salary = update_chart_layout(job_title_salary)
         
-        sales_rep_performance = px.bar(dff, x='sales_representative', y='purchase_amount', title="Sales Representative Performance",
-                                       color_discrete_sequence=[colors['primary']], labels={'sales_representative':'Sales Representative','purchase_amount':'Purchase Amount'})
-        sales_rep_performance = update_chart_layout(sales_rep_performance)
+        gender_distribution = px.histogram(dff, x='gender', title="Gender Distribution",
+                                       color_discrete_sequence=[colors['primary']], labels={'gender':'Gender'})
+        gender_distribution = update_chart_layout(gender_distribution)
         
-        age_distribution = px.histogram(dff, x='age', nbins=10, title="Customer Age Distribution",
-                                        color_discrete_sequence=[colors['primary']], labels={'age':'Age'})
+        age_distribution = px.histogram(dff, x='date_of_birth', nbins=10, title="Employee Age Distribution",
+                                        color_discrete_sequence=[colors['primary']], labels={'date_of_birth':'Date of Birth'})
         age_distribution = update_chart_layout(age_distribution)
         
-        return kpi_indicators, customer_purchase, product_sales, sales_rep_performance, age_distribution    
+        return kpi_indicators, employee_salary, job_title_salary, gender_distribution, age_distribution    
 
     return app
 
@@ -266,48 +259,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-"""
-
-    prompt = f"""
-    You are an expert Python developer specializing in creating Dash dashboards. Your task is to modify the provided reference code to create a Dash application tailored to the following data insights:
-
-    Data Insights:
-    {json.dumps(data_insights, indent=2)}
-
-    Follow these steps to modify the code:
-
-    1. Start by copying the entire reference code.
-    2. Modify the `load_data()` function to handle the new dataset structure.
-    3. Update the filters in the layout to use appropriate columns from the new dataset.
-    4. Adjust the KPI calculations in the `update_dashboard()` function based on the available columns.
-    5. Modify the chart creation code to visualize the new dataset appropriately.
-    6. Ensure that 'NA' values are properly handled and filtered out where appropriate.
-    7. Update variable names and comments only where absolutely necessary to reflect the new dataset.
-    8. Maintain the existing color scheme and styling.
-
-    IMPORTANT: Your response must contain ONLY the raw Python code for the modified Dash application. Do not include any explanations or analysis outside of code comments.
-
-    Begin your response with "### BEGIN DASH CODE ###" and end it with "### END DASH CODE ###".
-
-    Here's the reference code to modify:
-
-    {reference_code}
-
-    Now, provide the modified Dash application code based on the given data insights and requirements.
-    """
-    return prompt
-    
-
-# Example usage:
-if __name__ == "__main__":
-    # This is just a placeholder. In your actual code, you'd use the real data_insights.
-    sample_data_insights = {
-        "columns": ["date", "sales", "product", "region"],
-        "numerical_columns": ["sales"],
-        "categorical_columns": ["product", "region"],
-        "date_columns": ["date"],
-        "unique_values": {"product": 5, "region": 3},
-        "summary_stats": {"sales": {"mean": 1000, "min": 100, "max": 5000}}
-    }
-    
-    print(generate_prompt(sample_data_insights))
