@@ -102,10 +102,53 @@ def get_data(filepath):
 
 
 try:
-    data, data_analysis = get_data(file_path)
+    df, data_analysis = get_data(file_path)
     logging.info("Data loading, processing, and analysis completed successfully")
 except Exception as e:
     logging.error(f"Failed to process data: {str(e)}")
     raise
 
+def get_data_insights(df):
+    logging.info("Starting data insights extraction")
+    
+    insights = {
+        "columns": df.columns.tolist(),
+        "dtypes": df.dtypes.to_dict(),
+        "numerical_columns": df.select_dtypes(include=['int64', 'float64']).columns.tolist(),
+        "categorical_columns": df.select_dtypes(include=['object']).columns.tolist(),
+        "date_columns": df.select_dtypes(include=['datetime64']).columns.tolist(),
+        "unique_values": {col: df[col].nunique() for col in df.columns},
+        "sample_data": df.head().to_dict()
+    }
+    
+    logging.info(f"Found {len(insights['columns'])} total columns")
+    logging.info(f"Numerical columns: {', '.join(insights['numerical_columns'])}")
+    logging.info(f"Categorical columns: {', '.join(insights['categorical_columns'])}")
+    logging.info(f"Date columns: {', '.join(insights['date_columns'])}")
+    
+    # Log summary statistics for numerical columns
+    summary_stats = df.describe().to_dict()
+    for col in insights['numerical_columns']:
+        logging.info(f"Summary stats for {col}:")
+        for stat, value in summary_stats[col].items():
+            logging.info(f"  {stat}: {value}")
+    
+    insights["summary_stats"] = summary_stats
+    
+    # Log unique value counts for categorical columns
+    for col in insights['categorical_columns']:
+        unique_count = insights['unique_values'][col]
+        logging.info(f"Column '{col}' has {unique_count} unique values")
+    
+    logging.info("Data insights extraction completed")
+    return insights
+
+# Get data insights
+try:
+    logging.info("Attempting to extract data insights")
+    data_insights = get_data_insights(df)
+    logging.info("Data insights extracted successfully")
+except Exception as e:
+    logging.error(f"Error occurred while extracting data insights: {str(e)}")
+    data_insights = None  # or you could set it to a default value
 
