@@ -15,8 +15,7 @@ def load_data():
         try:
             n = os.environ.get('FILE_PATH')
             df = pd.read_csv(n)
-            df['date_of_birth'] = pd.to_datetime(df['date_of_birth'])
-            df['hire_date'] = pd.to_datetime(df['hire_date'])
+            df['birthdate'] = pd.to_datetime(df['birthdate'])
             return df
         except FileNotFoundError:
             print("File not found. Please enter a valid file path.")
@@ -65,7 +64,7 @@ def create_app(df):
     # Layout of the dashboard
     app.layout = dbc.Container([
         html.Div([
-            html.H1('Employee Dashboard', style={
+            html.H1('User Data Dashboard', style={
                 'textAlign': 'center', 
                 'color': colors['text'], 
                 'marginBottom': '30px', 
@@ -77,20 +76,20 @@ def create_app(df):
             # Filter section
             html.Div([
                 html.Div([
-                    html.Label('Department', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
+                    html.Label('Location', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
                     dcc.Dropdown(
-                        id='dropdown-department',
-                        options=[{'label': i, 'value': i} for i in df.department.unique()],
-                        value='IT',
+                        id='dropdown-location',
+                        options=[{'label': i, 'value': i} for i in df.location.unique()],
+                        value=df.location.unique()[0],
                         style={'width': '180px'}
                     )
                 ], style={'display': 'flex', 'flexDirection': 'column'}),
                 html.Div([
-                    html.Label('Hire Date Range', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
+                    html.Label('Birthdate Range', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
                     dcc.DatePickerRange(
                         id='date-picker-range',
-                        start_date=df['hire_date'].min(),
-                        end_date=df['hire_date'].max(),
+                        start_date=df['birthdate'].min(),
+                        end_date=df['birthdate'].max(),
                         style={'width': '300px'}
                     )
                 ], style={'display': 'flex', 'flexDirection': 'column'}),
@@ -105,13 +104,13 @@ def create_app(df):
             
             # Charts section
             dbc.Row([
-                dbc.Col([dcc.Graph(id='employee-salary')], width=6),
-                dbc.Col([dcc.Graph(id='job-title-salary')], width=6),
+                dbc.Col([dcc.Graph(id='followers-distribution')], width=6),
+                dbc.Col([dcc.Graph(id='following-distribution')], width=6),
             ], className='mb-4'),
             
             dbc.Row([
-                dbc.Col([dcc.Graph(id='gender-distribution')], width=6),
-                dbc.Col([dcc.Graph(id='age-distribution')], width=6),
+                dbc.Col([dcc.Graph(id='status-distribution')], width=6),
+                dbc.Col([dcc.Graph(id='interests-distribution')], width=6),
             ], className='mb-4'),
             
         ], style={
@@ -124,71 +123,74 @@ def create_app(df):
     # Callback function for updating the dashboard
     @callback(
         [Output('kpi-indicators', 'children'),
-         Output('employee-salary', 'figure'),
-         Output('job-title-salary', 'figure'),
-         Output('gender-distribution', 'figure'),
-         Output('age-distribution', 'figure')],
-        [Input('dropdown-department', 'value'),
+         Output('followers-distribution', 'figure'),
+         Output('following-distribution', 'figure'),
+         Output('status-distribution', 'figure'),
+         Output('interests-distribution', 'figure')],
+        [Input('dropdown-location', 'value'),
          Input('date-picker-range', 'start_date'),
          Input('date-picker-range', 'end_date'),
-         Input('employee-salary', 'clickData'),
-         Input('job-title-salary', 'clickData'),
-         Input('gender-distribution', 'clickData'),
-         Input('age-distribution', 'selectedData'),
+         Input('followers-distribution', 'clickData'),
+         Input('following-distribution', 'clickData'),
+         Input('status-distribution', 'clickData'),
+         Input('interests-distribution', 'selectedData'),
          Input('reset-button', 'n_clicks')]
     )
-    def update_dashboard(department, start_date, end_date, employee_click, job_title_click, gender_click, age_selection, reset_clicks):
+    def update_dashboard(location, start_date, end_date, followers_click, following_click, status_click, interests_selection, reset_clicks):
         # Convert string dates to datetime
         start_date = pd.to_datetime(start_date)
         end_date = pd.to_datetime(end_date)
         
-        # Filter the dataframe based on selected department and hire date range
-        dff = df[(df.department == department) & 
-                 (df.hire_date >= start_date) & 
-                 (df.hire_date <= end_date)]
+        # Filter the dataframe based on selected location and birthdate range
+        dff = df[(df.location == location) & 
+                 (df.birthdate >= start_date) & 
+                 (df.birthdate <= end_date)]
         
         # Apply cross-filtering based on chart interactions
         if ctx.triggered:
             input_id = ctx.triggered[0]['prop_id'].split('.')[0]
             if input_id == 'reset-button':
                 # Reset all filters
-                dff = df[(df.department == department) & 
-                         (df.hire_date >= start_date) & 
-                         (df.hire_date <= end_date)]
-            elif input_id == 'employee-salary' and employee_click:
-                employee = employee_click['points'][0]['x']
-                dff = dff[dff['employee_id'] == employee]
-            elif input_id == 'job-title-salary' and job_title_click:
-                job_title = job_title_click['points'][0]['x']
-                dff = dff[dff['job_title'] == job_title]
-            elif input_id == 'gender-distribution' and gender_click:
-                gender = gender_click['points'][0]['x']
-                dff = dff[dff['gender'] == gender]
-            elif input_id == 'age-distribution' and age_selection:
-                age_range = [age_selection['range']['x'][0], age_selection['range']['x'][1]]
-                dff = dff[(dff['age'] >= age_range[0]) & (dff['age'] <= age_range[1])]
+                dff = df[(df.location == location) & 
+                         (df.birthdate >= start_date) & 
+                         (df.birthdate <= end_date)]
+            elif input_id == 'followers-distribution' and followers_click:
+                followers_count = followers_click['points'][0]['x']
+                dff = dff[dff['followers_count'] == followers_count]
+            elif input_id == 'following-distribution' and following_click:
+                following_count = following_click['points'][0]['x']
+                dff = dff[dff['following_count'] == following_count]
+            elif input_id == 'status-distribution' and status_click:
+                status = status_click['points'][0]['x']
+                dff = dff[dff['status'] == status]
+            elif input_id == 'interests-distribution' and interests_selection:
+                interests = [interests_selection['range']['x'][0], interests_selection['range']['x'][1]]
+                dff = dff[(dff['interests'] >= interests[0]) & (dff['interests'] <= interests[1])]
 
         
         # Calculate KPI values for the selected period
-        total_salary = dff['salary'].sum()
-        total_employees = dff['employee_id'].nunique()
-        average_salary = dff['salary'].mean()
+        total_users = dff['username'].nunique()
+        total_followers = dff['followers_count'].sum()
+        average_followers = dff['followers_count'].mean()
+        total_following = dff['following_count'].sum()
         
         # Calculate KPI values for 6 months ago
         past_start_date = start_date - timedelta(days=180)
         past_end_date = end_date - timedelta(days=180)
-        past_dff = df[(df.department == department) & 
-                      (df.hire_date >= past_start_date) & 
-                      (df.hire_date <= past_end_date)]
+        past_dff = df[(df.location == location) & 
+                      (df.birthdate >= past_start_date) & 
+                      (df.birthdate <= past_end_date)]
         
-        past_total_salary = past_dff['salary'].sum()
-        past_total_employees = past_dff['employee_id'].nunique()
-        past_average_salary = past_dff['salary'].mean()
+        past_total_users = past_dff['username'].nunique()
+        past_total_followers = past_dff['followers_count'].sum()
+        past_average_followers = past_dff['followers_count'].mean()
+        past_total_following = past_dff['following_count'].sum()
         
         # Calculate changes
-        salary_change = total_salary - past_total_salary
-        employees_change = total_employees - past_total_employees
-        average_salary_change = average_salary - past_average_salary
+        users_change = total_users - past_total_users
+        followers_change = total_followers - past_total_followers
+        average_followers_change = average_followers - past_average_followers
+        following_change = total_following - past_total_following
         
         # Function to create a KPI card
         def create_kpi_card(title, value, change):
@@ -208,9 +210,10 @@ def create_app(df):
         
         # Create KPI indicators
         kpi_indicators = html.Div([
-            create_kpi_card('Total Salary', total_salary, salary_change),
-            create_kpi_card('Total Employees', total_employees, employees_change),
-            create_kpi_card('Avg Salary', average_salary, average_salary_change)
+            create_kpi_card('Total Users', total_users, users_change),
+            create_kpi_card('Total Followers', total_followers, followers_change),
+            create_kpi_card('Avg Followers', average_followers, average_followers_change),
+            create_kpi_card('Total Following', total_following, following_change)
         ], style={'display': 'flex', 'justifyContent': 'space-between'})
         
         # Function to update chart layout
@@ -232,23 +235,23 @@ def create_app(df):
             return fig
         
         # Create graphs with interactivity
-        employee_salary = px.bar(dff, x='employee_id', y='salary', title="Employee Salary Analysis",
-                                   color_discrete_sequence=[colors['primary']], labels={'employee_id': 'Employee ID', 'salary': 'Salary'})
-        employee_salary = update_chart_layout(employee_salary)
+        followers_distribution = px.histogram(dff, x='followers_count', nbins=10, title="Followers Distribution",
+                                        color_discrete_sequence=[colors['primary']], labels={'followers_count':'Followers'})
+        followers_distribution = update_chart_layout(followers_distribution)
         
-        job_title_salary = px.bar(dff, x='job_title', y='salary', title="Job Title Salary Analysis",
-                               color_discrete_sequence=[colors['primary']], labels={'job_title':'Job Title','salary':'Salary'})
-        job_title_salary = update_chart_layout(job_title_salary)
+        following_distribution = px.histogram(dff, x='following_count', nbins=10, title="Following Distribution",
+                                        color_discrete_sequence=[colors['primary']], labels={'following_count':'Following'})
+        following_distribution = update_chart_layout(following_distribution)
         
-        gender_distribution = px.histogram(dff, x='gender', title="Gender Distribution",
-                                       color_discrete_sequence=[colors['primary']], labels={'gender':'Gender'})
-        gender_distribution = update_chart_layout(gender_distribution)
+        status_distribution = px.bar(dff, x='status', title="User Status Distribution",
+                                       color_discrete_sequence=[colors['primary']], labels={'status':'Status'})
+        status_distribution = update_chart_layout(status_distribution)
         
-        age_distribution = px.histogram(dff, x='date_of_birth', nbins=10, title="Employee Age Distribution",
-                                        color_discrete_sequence=[colors['primary']], labels={'date_of_birth':'Date of Birth'})
-        age_distribution = update_chart_layout(age_distribution)
+        interests_distribution = px.bar(dff, x='interests', title="User Interests Distribution",
+                                        color_discrete_sequence=[colors['primary']], labels={'interests':'Interests'})
+        interests_distribution = update_chart_layout(interests_distribution)
         
-        return kpi_indicators, employee_salary, job_title_salary, gender_distribution, age_distribution    
+        return kpi_indicators, followers_distribution, following_distribution, status_distribution, interests_distribution    
 
     return app
 
