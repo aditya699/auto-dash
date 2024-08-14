@@ -65,8 +65,7 @@ if uploaded_file is not None:
                     engineered_data, generated_code = feature_engineering(cleaned_data)
                     
                     if generated_code:
-                        st.write("Feature engineering code generated:")
-                        st.code(generated_code, language='python')
+                        #st.write("Feature engineering code generated:")
                         
                         st.write("Engineered data preview:")
                         st.dataframe(engineered_data.head())
