@@ -3,6 +3,7 @@ import os
 import logging
 from datetime import datetime
 from src.data_loader import get_data, clean_data, validate_data_for_dashboard
+from src.feature_eng import feature_engineering
 
 # Set up logging
 log_directory = "logs"
@@ -31,7 +32,7 @@ if uploaded_file is not None:
     st.success("File successfully uploaded!")
     
     # Save the uploaded file temporarily
-    temp_file_path = "temp_data.csv"
+    temp_file_path = "Staging_Data/temp_data.csv"
     with open(temp_file_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
     
@@ -53,7 +54,23 @@ if uploaded_file is not None:
                 st.write("Cleaned data preview:")
                 st.dataframe(cleaned_data.head())
                 
-                # You can add more data processing or visualization here
+                # Perform feature engineering
+                st.write("Performing feature engineering...")
+                engineered_data, generated_code = feature_engineering(cleaned_data)
+                
+                if generated_code:
+                    st.write("Feature engineering code generated:")
+                    st.code(generated_code, language='python')
+                    
+                    st.write("Engineered data preview:")
+                    st.dataframe(engineered_data.head())
+                    
+                    # Save the engineered data
+                    output_path = "Staging_Data/engineered_data.csv"
+                    engineered_data.to_csv(output_path, index=False)
+                    st.success(f"Engineered data saved to {output_path}")
+                else:
+                    st.warning("No new features were added during feature engineering.")
             else:
                 st.error("Data cleaning failed. Please check the logs for more information.")
         else:

@@ -1,7 +1,23 @@
 import pandas as pd
 import logging
 from datetime import datetime
+import os
+# Set up logging
+log_directory = "logs"
+if not os.path.exists(log_directory):
+    os.makedirs(log_directory)
 
+log_filename = f"data_loader_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+log_filepath = os.path.join(log_directory, log_filename)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_filepath),
+        logging.StreamHandler()
+    ]
+)
 def get_data(file_path):
     """This function will be used to load data (CSV)
 
