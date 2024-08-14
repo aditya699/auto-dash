@@ -17,12 +17,11 @@ def generate_llm_prompt(data):
     prompt = f"""
     Given a pandas DataFrame 'df' with the following columns: {columns}
 
-    Generate Python code to perform these basic feature engineering tasks:
+    Generate Python code to perform basic feature engineering tasks like this.:
     1. For any date columns, extract year and month.
 
     2. If 'first_name' and 'last_name' columns exist, combine them into a 'full_name' column.
 
-    Only perform these tasks if applicable. Do not add any other transformations.
 
     Here are two examples of the kind of code we're looking for:
 
@@ -41,7 +40,7 @@ def generate_llm_prompt(data):
         df['full_name'] = df['first_name'] + ' ' + df['last_name']
     ```
 
-    Please generate similar code for the given DataFrame, applying these transformations where appropriate.
+    Please generate similar code for the given DataFrame, applying  transformations which you feel are appropriate.
     """
     return prompt
 

@@ -54,23 +54,36 @@ if uploaded_file is not None:
                 st.write("Cleaned data preview:")
                 st.dataframe(cleaned_data.head())
                 
-                # Perform feature engineering
-                st.write("Performing feature engineering...")
-                engineered_data, generated_code = feature_engineering(cleaned_data)
+                # Ask user if they want to perform feature engineering
+                st.write("Would you like to perform automated feature engineering?")
+                st.write("Note: This process may yield creative results but could also produce some incorrect or unexpected outcomes.")
+                perform_fe = st.radio("Choose an option:", ("Yes", "No"), index=1)
                 
-                if generated_code:
-                    st.write("Feature engineering code generated:")
-                    st.code(generated_code, language='python')
+                if perform_fe == "Yes":
+                    # Perform feature engineering
+                    st.write("Performing feature engineering...")
+                    engineered_data, generated_code = feature_engineering(cleaned_data)
                     
-                    st.write("Engineered data preview:")
-                    st.dataframe(engineered_data.head())
-                    
-                    # Save the engineered data
-                    output_path = "Staging_Data/engineered_data.csv"
-                    engineered_data.to_csv(output_path, index=False)
-                    st.success(f"Engineered data saved to {output_path}")
+                    if generated_code:
+                        st.write("Feature engineering code generated:")
+                        st.code(generated_code, language='python')
+                        
+                        st.write("Engineered data preview:")
+                        st.dataframe(engineered_data.head())
+                        
+                        # Save the engineered data
+                        output_path = "Staging_Data/engineered_data.csv"
+                        engineered_data.to_csv(output_path, index=False)
+                        st.success(f"Engineered data saved to {output_path}")
+                    else:
+                        st.warning("No new features were added during feature engineering.")
                 else:
-                    st.warning("No new features were added during feature engineering.")
+                    st.write("Skipping feature engineering.")
+                    engineered_data = cleaned_data
+                
+                # Continue with the rest of your dashboard generation process here
+                # using either engineered_data or cleaned_data based on user choice
+                
             else:
                 st.error("Data cleaning failed. Please check the logs for more information.")
         else:
