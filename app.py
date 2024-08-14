@@ -1,7 +1,25 @@
 import streamlit as st
 import os
-import pandas as pd
-from src.data_loader import get_data
+import logging
+from datetime import datetime
+from src.data_loader import get_data, clean_data, validate_data_for_dashboard
+
+# Set up logging
+log_directory = "logs"
+if not os.path.exists(log_directory):
+    os.makedirs(log_directory)
+
+log_filename = f"auto_dash_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+log_filepath = os.path.join(log_directory, log_filename)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_filepath),
+        logging.StreamHandler()
+    ]
+)
 
 st.set_page_config(page_title="AUTO-DASH Generator", layout="wide")
 
@@ -26,8 +44,20 @@ if uploaded_file is not None:
         st.write("First few rows of the data:")
         st.dataframe(data.head())
         
-        # You can add more data processing or visualization here
-        
+        if validate_data_for_dashboard(data):
+            st.success("Basic data validation passed. Proceeding with data cleaning.")
+            
+            cleaned_data = clean_data(data)
+            if cleaned_data is not None:
+                st.write("Data Cleaning Done.")
+                st.write("Cleaned data preview:")
+                st.dataframe(cleaned_data.head())
+                
+                # You can add more data processing or visualization here
+            else:
+                st.error("Data cleaning failed. Please check the logs for more information.")
+        else:
+            st.error("Data failed basic validation. Please ensure your CSV file has proper column names and contains data.")
     else:
         st.error("Failed to load the data. Please check the logs for more information.")
 
