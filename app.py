@@ -4,7 +4,7 @@ import logging
 from datetime import datetime
 from src.data_loader import get_data, clean_data, validate_data_for_dashboard
 from src.feature_eng import feature_engineering
-from src.prompt_builder import generate_dash_prompt
+from src.prompt_builder import prompt_generator
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 
@@ -85,39 +85,62 @@ if uploaded_file is not None:
                     st.write("Skipping feature engineering.")
                     engineered_data = cleaned_data
                 
-                # Generate Dash code
-                st.write("Generating Dash code...")
-                prompt = generate_dash_prompt(engineered_data)
+                # Generate dashboard prompt
+                st.write("Generating dashboard prompt...")
+                dashboard_prompt = prompt_generator(engineered_data)
+                
+                # Initialize ChatGoogleGenerativeAI
                 llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
                 
+                # Generate dashboard code
+                st.write("Generating dashboard code...")
+                response = llm.invoke(dashboard_prompt)
+                
+                # Extract the string content from the AIMessage
+                if hasattr(response, 'content'):
+                    dashboard_code = response.content
+                else:
+                    dashboard_code = str(response)
+                
+                # Save the generated code to a file
+                output_directory = "Generated_Dashboards"
+                if not os.path.exists(output_directory):
+                    os.makedirs(output_directory)
+                
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                output_filename = f"generated_dashboard_{timestamp}.py"
+                output_path = os.path.join(output_directory, output_filename)
+                
                 try:
-                    response = llm.invoke(prompt)
-                    dash_code = response.content
-                    
-                    # Save the generated Dash code
-                    dash_code_path = "Generated_Dashboard/dashboard.py"
-                    os.makedirs(os.path.dirname(dash_code_path), exist_ok=True)
-                    with open(dash_code_path, "w", encoding='utf-8') as f:
-                        f.write(dash_code)
-                    
-                    st.success(f"Dash code generated and saved to {dash_code_path}")
-                    st.code(dash_code, language="python")
-                    
-                    # Provide instructions to run the dashboard
-                    st.write("To run the generated dashboard:")
-                    st.code("python Generated_Dashboard/dashboard.py", language="bash")
-                    
-                    # Option to download the generated code
-                    st.download_button(
-                        label="Download Dash Code",
-                        data=dash_code.encode('utf-8'),
-                        file_name="dashboard.py",
-                        mime="text/plain"
-                    )
-                    
+                    with open(output_path, "w", encoding='utf-8') as f:
+                        f.write(dashboard_code)
+                    st.success(f"Dashboard code has been generated and saved to: {output_path}")
                 except Exception as e:
-                    st.error(f"Error generating Dash code: {str(e)}")
-                    logging.error(f"Error generating Dash code: {str(e)}")
+                    st.error(f"An error occurred while saving the dashboard code: {str(e)}")
+                    logging.error(f"Error saving dashboard code: {str(e)}")
+                
+                # Display a preview of the generated code
+                st.subheader("Preview of Generated Dashboard Code")
+                with st.expander("Click to view code"):
+                    st.code(dashboard_code, language="python")
+                
+                # Instructions for running the dashboard
+                st.subheader("Instructions to Run the Dashboard")
+                st.write(f"""
+                1. The generated dashboard code has been saved to: {output_path}
+                2. To run the dashboard, follow these steps:
+                   a. Open a terminal or command prompt.
+                   b. Navigate to the directory containing the generated file.
+                   c. Install the required libraries if not already installed:
+                      ```
+                      pip install dash pandas plotly
+                      ```
+                   d. Run the Python file:
+                      ```
+                      python {output_filename}
+                      ```
+                   e. Open a web browser and go to the URL displayed in the console (usually http://127.0.0.1:8050/).
+                """)
                 
             else:
                 st.error("Data cleaning failed. Please check the logs for more information.")
