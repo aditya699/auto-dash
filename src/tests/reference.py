@@ -13,7 +13,7 @@ load_dotenv()
 def load_data():
     while True:
         try:
-            n = os.environ.get('FILE_PATH')
+            n = "sales_data_1.csv"
             df = pd.read_csv(n)
             df['purchase_date'] = pd.to_datetime(df['purchase_date'])
             return df
@@ -80,8 +80,9 @@ def create_app(df):
                     dcc.Dropdown(
                         id='dropdown-country',
                         options=[{'label': i, 'value': i} for i in df.country.unique()],
-                        value='France',
-                        style={'width': '180px'}
+                        value=['France'],  # Default value as a list
+                        multi=True,  # Enable multi-select
+                        style={'width': '300px'}  # Increased width to accommodate multiple selections
                     )
                 ], style={'display': 'flex', 'flexDirection': 'column'}),
                 html.Div([
@@ -136,13 +137,13 @@ def create_app(df):
          Input('age-distribution', 'selectedData'),
          Input('reset-button', 'n_clicks')]
     )
-    def update_dashboard(country, start_date, end_date, customer_click, product_click, sales_rep_click, age_selection, reset_clicks):
+    def update_dashboard(countries, start_date, end_date, customer_click, product_click, sales_rep_click, age_selection, reset_clicks):
         # Convert string dates to datetime
         start_date = pd.to_datetime(start_date)
         end_date = pd.to_datetime(end_date)
         
-        # Filter the dataframe based on selected country and date range
-        dff = df[(df.country == country) & 
+        # Filter the dataframe based on selected countries and date range
+        dff = df[df.country.isin(countries) & 
                  (df.purchase_date >= start_date) & 
                  (df.purchase_date <= end_date)]
         
@@ -151,7 +152,7 @@ def create_app(df):
             input_id = ctx.triggered[0]['prop_id'].split('.')[0]
             if input_id == 'reset-button':
                 # Reset all filters
-                dff = df[(df.country == country) & 
+                dff = df[df.country.isin(countries) & 
                          (df.purchase_date >= start_date) & 
                          (df.purchase_date <= end_date)]
             elif input_id == 'customer-purchase' and customer_click:
@@ -177,7 +178,7 @@ def create_app(df):
         # Calculate KPI values for 6 months ago
         past_start_date = start_date - timedelta(days=180)
         past_end_date = end_date - timedelta(days=180)
-        past_dff = df[(df.country == country) & 
+        past_dff = df[df.country.isin(countries) & 
                       (df.purchase_date >= past_start_date) & 
                       (df.purchase_date <= past_end_date)]
         

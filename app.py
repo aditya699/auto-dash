@@ -4,6 +4,13 @@ import logging
 from datetime import datetime
 from src.data_loader import get_data, clean_data, validate_data_for_dashboard
 from src.feature_eng import feature_engineering
+from src.prompt_builder import generate_dash_prompt
+from langchain_google_genai import ChatGoogleGenerativeAI
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+os.environ["GOOGLE_API_KEY"] = os.getenv('GEMINI_API_KEY')
 
 # Set up logging
 log_directory = "logs"
@@ -17,7 +24,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler(log_filepath),
+        logging.FileHandler(log_filepath, encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
@@ -65,8 +72,6 @@ if uploaded_file is not None:
                     engineered_data, generated_code = feature_engineering(cleaned_data)
                     
                     if generated_code:
-                        #st.write("Feature engineering code generated:")
-                        
                         st.write("Engineered data preview:")
                         st.dataframe(engineered_data.head())
                         
@@ -80,8 +85,39 @@ if uploaded_file is not None:
                     st.write("Skipping feature engineering.")
                     engineered_data = cleaned_data
                 
-                # Continue with the rest of your dashboard generation process here
-                # using either engineered_data or cleaned_data based on user choice
+                # Generate Dash code
+                st.write("Generating Dash code...")
+                prompt = generate_dash_prompt(engineered_data)
+                llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
+                
+                try:
+                    response = llm.invoke(prompt)
+                    dash_code = response.content
+                    
+                    # Save the generated Dash code
+                    dash_code_path = "Generated_Dashboard/dashboard.py"
+                    os.makedirs(os.path.dirname(dash_code_path), exist_ok=True)
+                    with open(dash_code_path, "w", encoding='utf-8') as f:
+                        f.write(dash_code)
+                    
+                    st.success(f"Dash code generated and saved to {dash_code_path}")
+                    st.code(dash_code, language="python")
+                    
+                    # Provide instructions to run the dashboard
+                    st.write("To run the generated dashboard:")
+                    st.code("python Generated_Dashboard/dashboard.py", language="bash")
+                    
+                    # Option to download the generated code
+                    st.download_button(
+                        label="Download Dash Code",
+                        data=dash_code.encode('utf-8'),
+                        file_name="dashboard.py",
+                        mime="text/plain"
+                    )
+                    
+                except Exception as e:
+                    st.error(f"Error generating Dash code: {str(e)}")
+                    logging.error(f"Error generating Dash code: {str(e)}")
                 
             else:
                 st.error("Data cleaning failed. Please check the logs for more information.")
@@ -103,7 +139,7 @@ if st.button("View Logs"):
         latest_log = max(log_files, key=lambda f: os.path.getmtime(os.path.join(log_directory, f)))
         log_path = os.path.join(log_directory, latest_log)
         
-        with open(log_path, 'r') as log_file:
+        with open(log_path, 'r', encoding='utf-8') as log_file:
             log_contents = log_file.read()
         
         st.text_area("Log Contents", log_contents, height=300)
