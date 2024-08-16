@@ -1,50 +1,40 @@
 import pandas as pd
 import numpy as np
 
-# Creating a dummy dataframe to test the logic of the code
-df = pd.DataFrame({
-    'county': ['Alameda', 'Contra Costa', 'San Francisco', 'San Mateo'],
-    'gdp': [141.1, 79.8, 203.5, 125.7],
-    'population': [1662330, 1161413, 815201, 737888]
-})
-
 def prompt_generator(DataFrame):
-    """This function will be used to generate Dash Code to create a dashboard
-
-    Args:
-        DataFrame (pd.DataFrame): DataFrame in the context of the application
-    """
+    """Generate a prompt for modifying the existing Dash code based on the new dataset."""
     data = DataFrame
     data_dtypes = data.dtypes
     column_descriptions = "\n".join([f"- {col}: {dtype}" for col, dtype in data_dtypes.items()])
     
     prompt = f"""
-    You are an expert programmer specializing in creating Dash (Plotly framework) applications for data visualization and analysis. Your task is to modify the provided sample code to create a tailored dashboard for the given dataset.
+    You are an expert data analyst specializing in creating insightful dashboards using Dash. Your task is to modify the provided Dash application code to create a tailored dashboard for a new dataset. The goal is to provide valuable insights to a business person trying to understand the data.
 
-    Dataset Information:
+    New Dataset Information:
     The DataFrame contains the following columns and their respective data types:
     {column_descriptions}
 
     Key Requirements:
-    1. Analyze the data columns and determine appropriate Key Performance Indicators (KPIs) that would provide valuable insights for a business owner.
-    2. Modify the existing KPI cards to reflect the most relevant metrics based on the dataset.
-    3. Adjust the charts to visualize the data effectively, ensuring they align with the KPIs and provide meaningful insights.
-    4. Update the filter section to use appropriate columns from the given dataset.
-    5. Ensure all variable names, column references, and data manipulations are consistent with the provided DataFrame structure.
+    1. Analyze the new data columns and determine appropriate Key Performance Indicators (KPIs) that would provide valuable insights to a business person.
+    2. Modify the existing KPI cards to reflect relevant metrics based on the new dataset.
+    3. Adjust/Add/Delete the charts to visualize the new data effectively, ensuring they align with the KPIs and provide meaningful insights.
+    4. Update the filter section to use appropriate columns from the new dataset.
+    5. Ensure all variable names, column references, and data manipulations are consistent with the new DataFrame structure.
 
     Guidelines:
-    - Focus on creating informative and visually appealing visualizations that best represent the data.
-    - Consider adding or modifying charts to better suit the dataset's characteristics.
-    - Ensure that the dashboard provides a comprehensive overview of the data while allowing for detailed exploration.
-    - Maintain the overall structure and callback logic of the provided code.
-    - Do not add any new external library imports or change the existing import statements.
+    - Preserve the overall structure and callback logic of the provided code.
+    - Focus on updating the content within the existing functions and callback.
+    - Ensure that the dashboard provides a comprehensive overview of the new data while allowing for detailed exploration.
+    - Based on the new dataset, update the code, including the layout, callbacks, and visualizations.
 
     Important Notes:
-    1. Provide only Python code without any markdown formatting. The code will be sent directly to a compiler.
-    2. Concentrate on modifying the KPI Cards and charts based on the data columns and business understanding.
-    3. Do not alter the core structure or callback logic of the provided code.
+    1. Provide ONLY the modified Python code without any additional explanations or markdown formatting.
+    2. Do not add any new external library imports or change the existing import statements.
+    3. Maintain the core structure of the create_app function and the update_dashboard callback.
+    4. The code should be complete and runnable as-is, without any placeholders or TODOs.
+    5. Do not include the load_data() function, as the DataFrame will be provided externally.
 
-    Below is the sample Dash application code. Please modify it according to the above requirements and guidelines:
+    Please modify the following Dash application code according to the above requirements and guidelines:
 
     ```python
     # Import necessary libraries
@@ -52,7 +42,7 @@ def prompt_generator(DataFrame):
     from dash import Dash, html, dcc, callback, Output, Input, ctx
     import plotly.express as px
     import pandas as pd
-    from datetime import timedelta
+    from datetime import datetime, timedelta
     from dotenv import load_dotenv
     import dash_bootstrap_components as dbc
 
@@ -292,15 +282,13 @@ def prompt_generator(DataFrame):
         return app
 
     def main():
-        df = load_data()
-        app = create_app(df)
         app.run(debug=True)
 
     if __name__ == '__main__':
         main()
+
     ```
 
-        Please modify the code above to create a dashboard that effectively visualizes the data from the provided DataFrame. Focus on adjusting the KPIs, charts, and filters to match the columns and data types in your DataFrame. Ensure that your modifications align with the key requirements and guidelines provided earlier.
+    Modify the code above to create a dashboard that effectively visualizes the data from the provided DataFrame.
     """
     return prompt
-

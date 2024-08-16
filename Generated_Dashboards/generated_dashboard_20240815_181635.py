@@ -1,4 +1,4 @@
-```python
+
 # Import necessary libraries
 import os
 from dash import Dash, html, dcc, callback, Output, Input, ctx

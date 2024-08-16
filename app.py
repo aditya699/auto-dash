@@ -5,12 +5,13 @@ from datetime import datetime
 from src.data_loader import get_data, clean_data, validate_data_for_dashboard
 from src.feature_eng import feature_engineering
 from src.prompt_builder import prompt_generator
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_anthropic import ChatAnthropic
+
 from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
-os.environ["GOOGLE_API_KEY"] = os.getenv('GEMINI_API_KEY')
+os.environ["ANTHROPIC_API_KEY"] = os.getenv('ANTHROPIC_API_KEY')
 
 # Set up logging
 log_directory = "logs"
@@ -89,8 +90,14 @@ if uploaded_file is not None:
                 st.write("Generating dashboard prompt...")
                 dashboard_prompt = prompt_generator(engineered_data)
                 
-                # Initialize ChatGoogleGenerativeAI
-                llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
+                # Initialize ChatAnthropic
+                llm = ChatAnthropic(
+                    model="claude-3-haiku-20240307",
+                    temperature=0,
+                    max_tokens=4096,
+                    timeout=None,
+                    max_retries=2,
+                )
                 
                 # Generate dashboard code
                 st.write("Generating dashboard code...")
@@ -124,16 +131,22 @@ if uploaded_file is not None:
                 with st.expander("Click to view code"):
                     st.code(dashboard_code, language="python")
                 
+                # Save the data for the dashboard
+                data_path = os.path.join(output_directory, "data.csv")
+                engineered_data.to_csv(data_path, index=False)
+                st.success(f"Data for the dashboard has been saved to: {data_path}")
+                
                 # Instructions for running the dashboard
                 st.subheader("Instructions to Run the Dashboard")
                 st.write(f"""
                 1. The generated dashboard code has been saved to: {output_path}
-                2. To run the dashboard, follow these steps:
+                2. The data for the dashboard has been saved to: {data_path}
+                3. To run the dashboard, follow these steps:
                    a. Open a terminal or command prompt.
                    b. Navigate to the directory containing the generated file.
                    c. Install the required libraries if not already installed:
                       ```
-                      pip install dash pandas plotly
+                      pip install dash pandas plotly dash-bootstrap-components
                       ```
                    d. Run the Python file:
                       ```
