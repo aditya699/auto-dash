@@ -5,16 +5,12 @@ from datetime import datetime
 from src.data_loader import get_data, clean_data, validate_data_for_dashboard
 from src.feature_eng import feature_engineering
 from src.prompt_builder import prompt_generator
-#from src.no_shot import prompt_generator
 from langchain_anthropic import ChatAnthropic
-
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 os.environ["ANTHROPIC_API_KEY"] = os.getenv('ANTHROPIC_API_KEY')
 
-# Set up logging
 log_directory = "logs"
 if not os.path.exists(log_directory):
     os.makedirs(log_directory)
@@ -40,12 +36,10 @@ uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 if uploaded_file is not None:
     st.success("File successfully uploaded!")
     
-    # Save the uploaded file temporarily
     temp_file_path = "Staging_Data/temp_data.csv"
     with open(temp_file_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
     
-    # Use the get_data function to load and log the data
     data = get_data(temp_file_path)
     
     if data is not None:
@@ -63,13 +57,9 @@ if uploaded_file is not None:
                 st.write("Cleaned data preview:")
                 st.dataframe(cleaned_data.head())
                 
-                # Ask user if they want to perform feature engineering
-                st.write("Would you like to perform automated feature engineering?")
-                st.write("Note: This process may yield creative results but could also produce some incorrect or unexpected outcomes.")
-                perform_fe = st.radio("Choose an option:", ("Yes", "No"), index=1)
+                perform_fe = st.radio("Would you like to perform automated feature engineering?", ("Yes", "No"), index=1)
                 
                 if perform_fe == "Yes":
-                    # Perform feature engineering
                     st.write("Performing feature engineering...")
                     engineered_data, generated_code = feature_engineering(cleaned_data)
                     
@@ -77,7 +67,6 @@ if uploaded_file is not None:
                         st.write("Engineered data preview:")
                         st.dataframe(engineered_data.head())
                         
-                        # Save the engineered data
                         output_path = "Staging_Data/engineered_data.csv"
                         engineered_data.to_csv(output_path, index=False)
                         st.success(f"Engineered data saved to {output_path}")
@@ -90,11 +79,9 @@ if uploaded_file is not None:
                     engineered_data.to_csv(output_path, index=False)
                     st.success(f"Engineered data saved to {output_path}")
                 
-                # Generate dashboard prompt
                 st.write("Generating dashboard prompt...")
                 dashboard_prompt = prompt_generator(engineered_data)
                 
-                # Initialize ChatAnthropic
                 llm = ChatAnthropic(
                     model="claude-3-5-sonnet-20240620",
                     temperature=0,
@@ -103,17 +90,47 @@ if uploaded_file is not None:
                     max_retries=2,
                 )
                 
-                # Generate dashboard code
                 st.write("Generating dashboard code...")
                 response = llm.invoke(dashboard_prompt)
                 
-                # Extract the string content from the AIMessage
                 if hasattr(response, 'content'):
                     dashboard_code = response.content
                 else:
                     dashboard_code = str(response)
                 
-                # Save the generated code to a file
+                st.write("Checking and correcting the generated code...")
+                correction_prompt = f"""
+                Review and correct the following Python code for a Dash dashboard. 
+                The code should work with a pandas DataFrame named 'df' that contains the following columns:
+                {', '.join(engineered_data.columns)}
+
+                Here's the code to review:
+
+                {dashboard_code}
+
+                If you find any errors or potential improvements, provide ONLY the corrected version of the entire code. 
+                Do not include any explanations, comments, or anything other than the Python code itself.
+                If the code looks correct and doesn't need changes, return the original code as is.
+
+                Output should be like-
+                import os
+                from dash import Dash, html, dcc, callback, Output, Input, ctx
+                import plotly.express as px
+                import pandas as pd
+                from datetime import datetime, timedelta
+                from dotenv import load_dotenv
+                import dash_bootstrap_components as dbc
+                and rest of code...
+
+                """
+
+                correction_response = llm.invoke(correction_prompt)
+
+                if hasattr(correction_response, 'content'):
+                    corrected_code = correction_response.content
+                else:
+                    corrected_code = str(correction_response)
+
                 output_directory = "Generated_Dashboards"
                 if not os.path.exists(output_directory):
                     os.makedirs(output_directory)
@@ -124,26 +141,23 @@ if uploaded_file is not None:
                 
                 try:
                     with open(output_path, "w", encoding='utf-8') as f:
-                        f.write(dashboard_code)
-                    st.success(f"Dashboard code has been generated and saved to: {output_path}")
+                        f.write(corrected_code)
+                    st.success(f"Corrected dashboard code has been generated and saved to: {output_path}")
                 except Exception as e:
-                    st.error(f"An error occurred while saving the dashboard code: {str(e)}")
-                    logging.error(f"Error saving dashboard code: {str(e)}")
+                    st.error(f"An error occurred while saving the corrected dashboard code: {str(e)}")
+                    logging.error(f"Error saving corrected dashboard code: {str(e)}")
                 
-                # Display a preview of the generated code
-                st.subheader("Preview of Generated Dashboard Code")
+                st.subheader("Preview of Corrected Dashboard Code")
                 with st.expander("Click to view code"):
-                    st.code(dashboard_code, language="python")
+                    st.code(corrected_code, language="python")
                 
-                # Save the data for the dashboard
                 data_path = os.path.join(output_directory, "data.csv")
                 engineered_data.to_csv(data_path, index=False)
                 st.success(f"Data for the dashboard has been saved to: {data_path}")
                 
-                # Instructions for running the dashboard
                 st.subheader("Instructions to Run the Dashboard")
                 st.write(f"""
-                1. The generated dashboard code has been saved to: {output_path}
+                1. The corrected dashboard code has been saved to: {output_path}
                 2. The data for the dashboard has been saved to: {data_path}
                 3. To run the dashboard, follow these steps:
                    a. Open a terminal or command prompt.
@@ -166,11 +180,9 @@ if uploaded_file is not None:
     else:
         st.error("Failed to load the data. Please check the logs for more information.")
 
-    # Clean up temporary file
     if os.path.exists(temp_file_path):
         os.remove(temp_file_path)
 
-# Add a button to view logs
 if st.button("View Logs"):
     log_directory = "logs"
     log_files = [f for f in os.listdir(log_directory) if f.endswith('.log')]

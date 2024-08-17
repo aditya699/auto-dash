@@ -4,6 +4,7 @@ import numpy as np
 def prompt_generator(DataFrame):
     """Generate a prompt for modifying the existing Dash code based on the new dataset."""
     data = DataFrame
+    column_names=data.columns
     data_dtypes = data.dtypes
     column_descriptions = "/n".join([f"- {col}: {dtype}" for col, dtype in data_dtypes.items()])
     
@@ -13,13 +14,14 @@ def prompt_generator(DataFrame):
     Task: Develop a Dash dashboard that provides business users with comprehensive insights from the data. The dashboard should include the following features:
 
     1.KPI Cards: Display key performance indicators (KPIs) to highlight essential metrics.
-    2.Interactive Filters: Implement filters with a "Select All" option, allowing users to customize the data view.
+    2.Interactive Filters: Implement filters with a "Select All" option, allowing users to customize the data view.(In filter selection select all should be deafult)
     3.Reset Filters Button: Provide a button to reset all filters to their default states.
     4.Interactive Charts: Ensure that charts are interactive and can respond to each other, enabling dynamic data exploration.
     5.Note: The code will always load the dataset from the following path: df_path = "C:/Users/aditya/Desktop/2024/auto-dash/Staging_Data/engineered_data.csv"
     
+    6.While creating a chart make sure to pass x,y properly(check column_names)  {column_names}
     New Dataset Information:
-    
+   
     The DataFrame contains the following columns and their respective data types:
     {column_descriptions}
 
