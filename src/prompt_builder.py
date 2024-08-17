@@ -8,20 +8,25 @@ def prompt_generator(DataFrame):
     column_descriptions = "/n".join([f"- {col}: {dtype}" for col, dtype in data_dtypes.items()])
     
     prompt = f"""
-    You are an expert  in creating insightful dashboards using Dash. Your task is to create a dash dashboard so that all insights from data can be seen by the business user make sure to add kpi cards , filters(with a select all option) , reset filters button and all charts.Make sure charts interact with each other.
+    You are an expert  in creating dashboards using Dash. 
+    
+    Task: Develop a Dash dashboard that provides business users with comprehensive insights from the data. The dashboard should include the following features:
 
-    Make sure while creating charts x and y and column names.
-
-    The code will always run this file df_path = "C:/Users/aditya/Desktop/2024/auto-dash/Staging_Data/engineered_data.csv"
+    1.KPI Cards: Display key performance indicators (KPIs) to highlight essential metrics.
+    2.Interactive Filters: Implement filters with a "Select All" option, allowing users to customize the data view.
+    3.Reset Filters Button: Provide a button to reset all filters to their default states.
+    4.Interactive Charts: Ensure that charts are interactive and can respond to each other, enabling dynamic data exploration.
+    5.Note: The code will always load the dataset from the following path: df_path = "C:/Users/aditya/Desktop/2024/auto-dash/Staging_Data/engineered_data.csv"
     
     New Dataset Information:
     
     The DataFrame contains the following columns and their respective data types:
     {column_descriptions}
 
-    Example-
+    Example1-
 
     Input -
+
     - customer_id: int64
     - customer_name: object
     - age: int64
@@ -34,6 +39,7 @@ def prompt_generator(DataFrame):
     - sales_representative: object
 
     Assistant Response
+   
     # Import necessary libraries
     import os
     from dash import Dash, html, dcc, callback, Output, Input, ctx
@@ -260,6 +266,7 @@ def prompt_generator(DataFrame):
                 return fig
             
             # Create graphs with interactivity
+            # Here x,y are column_names
             customer_purchase = px.bar(dff, x='customer_name', y='purchase_amount', title="Customer Purchase Analysis",
                                        color_discrete_sequence=[colors['primary']], labels={{'customer_name': 'Customer Name', 'purchase_amount': 'Purchase Amount'}})
             customer_purchase = update_chart_layout(customer_purchase)
