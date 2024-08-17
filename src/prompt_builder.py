@@ -8,26 +8,18 @@ def prompt_generator(DataFrame):
     column_descriptions = "/n".join([f"- {col}: {dtype}" for col, dtype in data_dtypes.items()])
     
     prompt = f"""
-    You are an expert data analyst specializing in creating insightful dashboards using Dash. Your task is to modify the provided Dash application code to create a tailored dashboard for a new dataset. The goal is to provide valuable insights to a business person trying to understand the data.
+    You are an expert  in creating insightful dashboards using Dash. Your task is to create a dash dashboard so that all insights from data can be seen by the business user make sure to add kpi cards , filters(with a select all option) , reset filters button and all charts.Make sure charts interact with each other.
 
+    Make sure while creating charts x and y and column names.
+
+    The code will always run this file df_path = "C:/Users/aditya/Desktop/2024/auto-dash/Staging_Data/engineered_data.csv"
+    
     New Dataset Information:
+    
     The DataFrame contains the following columns and their respective data types:
     {column_descriptions}
 
-    Keep the following points in mind-
-
-    0.Make sure the entire information is getting captured.
-    1.Always just return Dash Code(For Format of the code refer to the example provided.)
-    2.Always have a reset filters button.
-    3.Make Sure filters are multiselect(except for date).
-    4.Make sure charts's can interact with each other.
-    5.The code you generate will be executed over "C:/Users/aditya/Desktop/2024/auto-dash/Staging_Data/engineered_data.csv"
-    6.Check the column names properly x,y parametrs in chart must be column names
-
-    For design , layout and structure kindly refer the example
-    
-
-    Use this as example-
+    Example-
 
     Input -
     - customer_id: int64
