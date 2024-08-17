@@ -5,7 +5,7 @@ def prompt_generator(DataFrame):
     """Generate a prompt for modifying the existing Dash code based on the new dataset."""
     data = DataFrame
     data_dtypes = data.dtypes
-    column_descriptions = "\n".join([f"- {col}: {dtype}" for col, dtype in data_dtypes.items()])
+    column_descriptions = "/n".join([f"- {col}: {dtype}" for col, dtype in data_dtypes.items()])
     
     prompt = f"""
     You are an expert data analyst specializing in creating insightful dashboards using Dash. Your task is to modify the provided Dash application code to create a tailored dashboard for a new dataset. The goal is to provide valuable insights to a business person trying to understand the data.
@@ -14,29 +14,34 @@ def prompt_generator(DataFrame):
     The DataFrame contains the following columns and their respective data types:
     {column_descriptions}
 
-    Key Requirements:
-    1. Analyze the new data columns and determine appropriate Key Performance Indicators (KPIs) that would provide valuable insights to a business person.
-    2. Modify the existing KPI cards to reflect relevant metrics based on the new dataset.
-    3. Adjust/Add/Delete the charts to visualize the new data effectively, ensuring they align with the KPIs and provide meaningful insights.
-    4. Update the filter section to use appropriate columns from the new dataset.
-    5. Ensure all variable names, column references, and data manipulations are consistent with the new DataFrame structure.
+    Keep the following points in mind-
 
-    Guidelines:
-    - Preserve the overall structure and callback logic of the provided code.
-    - Focus on updating the content within the existing functions and callback.
-    - Ensure that the dashboard provides a comprehensive overview of the new data while allowing for detailed exploration.
-    - Based on the new dataset, update the code, including the layout, callbacks, and visualizations.
+    0.Make sure the entire information is getting captured.
+    1.Always just return Dash Code(For Format of the code refer to the example provided.)
+    2.Always have a reset filters button.
+    3.Make Sure filters are multiselect(except for date).
+    4.Make sure charts's can interact with each other.
+    5.The code you generate will be executed over "C:/Users/aditya/Desktop/2024/auto-dash/Staging_Data/engineered_data.csv"
+    6.Check the column names properly x,y parametrs in chart must be column names
 
-    Important Notes:
-    1. Provide ONLY the modified Python code without any additional explanations or markdown formatting.
-    2. Do not add any new external library imports or change the existing import statements.
-    3. Maintain the core structure of the create_app function and the update_dashboard callback.
-    4. The code should be complete and runnable as-is, without any placeholders or TODOs.
-    5. Do not include the load_data() function, as the DataFrame will be provided externally.
+    For design , layout and structure kindly refer the example
+    
 
-    Please modify the following Dash application code according to the above requirements and guidelines:
+    Use this as example-
 
-    ```python
+    Input -
+    - customer_id: int64
+    - customer_name: object
+    - age: int64
+    - email: object
+    - country: object
+    - postal_code: object
+    - purchase_amount: float64
+    - purchase_date: object
+    - product_name: object
+    - sales_representative: object
+
+    Assistant Response
     # Import necessary libraries
     import os
     from dash import Dash, html, dcc, callback, Output, Input, ctx
@@ -50,6 +55,7 @@ def prompt_generator(DataFrame):
     load_dotenv()
 
     def create_app(df):
+        df['purchase_date'] = pd.to_datetime(df['purchase_date'])
         # Initialize the Dash app
         app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -202,6 +208,7 @@ def prompt_generator(DataFrame):
             total_orders = dff['purchase_date'].count()
             
             # Calculate KPI values for 6 months ago
+            # This is important since they only the chart will be a KPI card
             past_start_date = start_date - timedelta(days=180)
             past_end_date = end_date - timedelta(days=180)
             past_dff = df[df.country.isin(countries) & 
@@ -282,13 +289,24 @@ def prompt_generator(DataFrame):
         return app
 
     def main():
+        df_path = "C:/Users/aditya/Desktop/2024/auto-dash/Staging_Data/engineered_data.csv"
+        df=pd.read_csv(df_path)
+        app = create_app(df)
         app.run(debug=True)
 
     if __name__ == '__main__':
         main()
 
-    ```
+    Output should be only python code nothing else(No comments, No markdown,just pure code).
 
-    Modify the code above to create a dashboard that effectively visualizes the data from the provided DataFrame.
+    Output format-
+    import os
+    from dash import Dash, html, dcc, callback, Output, Input, ctx
+    import plotly.express as px
+    import pandas as pd
+    from datetime import datetime, timedelta
+    from dotenv import load_dotenv
+    import dash_bootstrap_components as dbc
+    and rest of the code ...
     """
     return prompt

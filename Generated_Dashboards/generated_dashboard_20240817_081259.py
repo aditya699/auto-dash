@@ -1,43 +1,25 @@
-# Import necessary libraries
 import os
 from dash import Dash, html, dcc, callback, Output, Input, ctx
 import plotly.express as px
 import pandas as pd
-from datetime import timedelta
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import dash_bootstrap_components as dbc
 
-# Load environment variables from .env file
 load_dotenv()
 
-def load_data():
-    while True:
-        try:
-            n = "sales_data_1.csv"
-            df = pd.read_csv(n)
-            df['purchase_date'] = pd.to_datetime(df['purchase_date'])
-            return df
-        except FileNotFoundError:
-            print("File not found. Please enter a valid file path.")
-        except Exception as e:
-            print(f"An error occurred: {e}")
-            print("Please try again.")
-
 def create_app(df):
-    # Initialize the Dash app
     app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-    # Define color scheme for consistent styling
     colors = {
-        'background': '#F7F7F7',  # Light gray background
-        'text': '#333333',        # Dark gray text
-        'primary': '#3498DB',     # Bright blue for primary elements
-        'secondary': '#2ECC71',   # Green for secondary elements (positive changes)
-        'accent': '#F39C12',      # Orange for accents
-        'negative': '#E74C3C'     # Red for negative changes (used sparingly)
+        'background': '#F7F7F7',
+        'text': '#333333',
+        'primary': '#3498DB',
+        'secondary': '#2ECC71',
+        'accent': '#F39C12',
+        'negative': '#E74C3C'
     }
 
-    # Define styles
     kpi_style = {
         'textAlign': 'center',
         'padding': '20px',
@@ -61,10 +43,6 @@ def create_app(df):
         'boxShadow': '0 4px 15px rgba(0, 0, 0, 0.1)'
     }
 
-    # Update the dropdown options to include 'Select All'
-    country_options = [{'label': 'Select All', 'value': 'ALL'}] + [{'label': i, 'value': i} for i in df.country.unique()]
-
-    # Layout of the dashboard
     app.layout = dbc.Container([
         html.Div([
             html.H1('Sales Dashboard', style={
@@ -76,16 +54,25 @@ def create_app(df):
                 'letterSpacing': '2px'
             }),
             
-            # Filter section
             html.Div([
                 html.Div([
-                    html.Label('Country', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
+                    html.Label('Gender', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
                     dcc.Dropdown(
-                        id='dropdown-country',
-                        options=country_options,
-                        value=['ALL'],  # Default value as a list with 'ALL' selected
-                        multi=True,  # Enable multi-select
-                        style={'width': '300px'}  # Increased width to accommodate multiple selections
+                        id='dropdown-gender',
+                        options=[{'label': i, 'value': i} for i in df.gender.unique()],
+                        value=[],
+                        multi=True,
+                        style={'width': '200px'}
+                    )
+                ], style={'display': 'flex', 'flexDirection': 'column'}),
+                html.Div([
+                    html.Label('Product Name', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
+                    dcc.Dropdown(
+                        id='dropdown-product',
+                        options=[{'label': i, 'value': i} for i in df.product_name.unique()],
+                        value=[],
+                        multi=True,
+                        style={'width': '200px'}
                     )
                 ], style={'display': 'flex', 'flexDirection': 'column'}),
                 html.Div([
@@ -103,18 +90,16 @@ def create_app(df):
                 ])
             ], style=filter_style),
             
-            # KPI indicators section
             html.Div(id='kpi-indicators', style={'margin': '30px 0'}),
             
-            # Charts section
             dbc.Row([
                 dbc.Col([dcc.Graph(id='customer-purchase')], width=6),
                 dbc.Col([dcc.Graph(id='product-sales')], width=6),
             ], className='mb-4'),
             
             dbc.Row([
-                dbc.Col([dcc.Graph(id='sales-rep-performance')], width=6),
-                dbc.Col([dcc.Graph(id='age-distribution')], width=6),
+                dbc.Col([dcc.Graph(id='gender-distribution')], width=6),
+                dbc.Col([dcc.Graph(id='payment-method-distribution')], width=6),
             ], className='mb-4'),
             
         ], style={
@@ -124,79 +109,71 @@ def create_app(df):
         })
     ], fluid=True)
 
-    # Callback function for updating the dashboard
     @callback(
         [Output('kpi-indicators', 'children'),
          Output('customer-purchase', 'figure'),
          Output('product-sales', 'figure'),
-         Output('sales-rep-performance', 'figure'),
-         Output('age-distribution', 'figure')],
-        [Input('dropdown-country', 'value'),
+         Output('gender-distribution', 'figure'),
+         Output('payment-method-distribution', 'figure')],
+        [Input('dropdown-gender', 'value'),
+         Input('dropdown-product', 'value'),
          Input('date-picker-range', 'start_date'),
          Input('date-picker-range', 'end_date'),
          Input('customer-purchase', 'clickData'),
          Input('product-sales', 'clickData'),
-         Input('sales-rep-performance', 'clickData'),
-         Input('age-distribution', 'selectedData'),
+         Input('gender-distribution', 'clickData'),
+         Input('payment-method-distribution', 'clickData'),
          Input('reset-button', 'n_clicks')]
     )
-    def update_dashboard(countries, start_date, end_date, customer_click, product_click, sales_rep_click, age_selection, reset_clicks):
-        # Convert string dates to datetime
+    def update_dashboard(genders, products, start_date, end_date, customer_click, product_click, gender_click, payment_click, reset_clicks):
         start_date = pd.to_datetime(start_date)
         end_date = pd.to_datetime(end_date)
         
-        # Handle 'Select All' option
-        if 'ALL' in countries:
-            dff = df
-        else:
-            dff = df[df.country.isin(countries)]
+        dff = df.copy()
+        dff['purchase_date'] = pd.to_datetime(dff['purchase_date'])
         
-        # Filter the dataframe based on selected date range
+        if genders:
+            dff = dff[dff.gender.isin(genders)]
+        if products:
+            dff = dff[dff.product_name.isin(products)]
         dff = dff[(dff.purchase_date >= start_date) & (dff.purchase_date <= end_date)]
         
-        # Apply cross-filtering based on chart interactions
         if ctx.triggered:
             input_id = ctx.triggered[0]['prop_id'].split('.')[0]
             if input_id == 'reset-button':
-                # Reset all filters
                 dff = df[(df.purchase_date >= start_date) & (df.purchase_date <= end_date)]
             elif input_id == 'customer-purchase' and customer_click:
                 customer = customer_click['points'][0]['x']
-                dff = dff[dff['customer_name'] == customer]
+                dff = dff[dff['customer_id'] == customer]
             elif input_id == 'product-sales' and product_click:
                 product = product_click['points'][0]['x']
                 dff = dff[dff['product_name'] == product]
-            elif input_id == 'sales-rep-performance' and sales_rep_click:
-                sales_rep = sales_rep_click['points'][0]['x']
-                dff = dff[dff['sales_representative'] == sales_rep]
-            elif input_id == 'age-distribution' and age_selection:
-                age_range = [age_selection['range']['x'][0], age_selection['range']['x'][1]]
-                dff = dff[(dff['age'] >= age_range[0]) & (dff['age'] <= age_range[1])]
+            elif input_id == 'gender-distribution' and gender_click:
+                gender = gender_click['points'][0]['x']
+                dff = dff[dff['gender'] == gender]
+            elif input_id == 'payment-method-distribution' and payment_click:
+                payment_method = payment_click['points'][0]['x']
+                dff = dff[dff['payment_method'] == payment_method]
 
-        
-        # Calculate KPI values for the selected period
-        total_revenue = dff['purchase_amount'].sum()
+        total_revenue = dff['total_price'].sum()
         total_customers = dff['customer_id'].nunique()
-        average_order_value = dff['purchase_amount'].mean()
-        total_orders = dff['purchase_date'].count()
+        average_order_value = dff['total_price'].mean()
+        total_orders = dff['id'].nunique()
         
-        # Calculate KPI values for 6 months ago
-        past_start_date = start_date - timedelta(days=180)
-        past_end_date = end_date - timedelta(days=180)
+        past_start_date = start_date - timedelta(days=30)
+        past_end_date = end_date - timedelta(days=30)
         past_dff = df[(df.purchase_date >= past_start_date) & (df.purchase_date <= past_end_date)]
         
-        past_total_revenue = past_dff['purchase_amount'].sum()
+        past_total_revenue = past_dff['total_price'].sum()
         past_total_customers = past_dff['customer_id'].nunique()
-        past_average_order_value = past_dff['purchase_amount'].mean()
-        past_total_orders = past_dff['purchase_date'].count()
+        past_average_order_value = past_dff['total_price'].mean()
+        past_total_orders = past_dff['id'].nunique()
         
-        # Calculate changes
         revenue_change = total_revenue - past_total_revenue
         customers_change = total_customers - past_total_customers
         aov_change = average_order_value - past_average_order_value
         orders_change = total_orders - past_total_orders
         
-        # Function to create a KPI card
         def create_kpi_card(title, value, change):
             return html.Div([
                 html.H3(title, style={'color': colors['text'], 'marginBottom': '10px', 'fontSize': '16px', 'fontWeight': '400'}),
@@ -211,7 +188,6 @@ def create_app(df):
                 ])
             ], style=kpi_style)
         
-        # Create KPI indicators
         kpi_indicators = html.Div([
             create_kpi_card('Total Revenue', total_revenue, revenue_change),
             create_kpi_card('Total Customers', total_customers, customers_change),
@@ -219,7 +195,6 @@ def create_app(df):
             create_kpi_card('Total Orders', total_orders, orders_change)
         ], style={'display': 'flex', 'justifyContent': 'space-between'})
         
-        # Function to update chart layout
         def update_chart_layout(fig):
             fig.update_layout(
                 plot_bgcolor='rgba(0,0,0,0)',
@@ -237,29 +212,31 @@ def create_app(df):
             fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
             return fig
         
-        # Create graphs with interactivity
-        customer_purchase = px.bar(dff, x='customer_name', y='purchase_amount', title="Customer Purchase Analysis",
-                                   color_discrete_sequence=[colors['primary']], labels={'customer_name': 'Customer Name', 'purchase_amount': 'Purchase Amount'})
+        customer_purchase = px.bar(dff.groupby('customer_id')['total_price'].sum().reset_index().sort_values('total_price', ascending=False).head(10), 
+                                   x='customer_id', y='total_price', title="Top 10 Customers by Purchase Amount",
+                                   color_discrete_sequence=[colors['primary']], labels={'customer_id': 'Customer ID', 'total_price': 'Total Purchase Amount'})
         customer_purchase = update_chart_layout(customer_purchase)
         
-        product_sales = px.bar(dff, x='product_name', y='purchase_amount', title="Product Sales Analysis",
-                               color_discrete_sequence=[colors['primary']], labels={'product_name':'Product Name','purchase_amount':'Purchase amount'})
+        product_sales = px.bar(dff.groupby('product_name')['quantity'].sum().reset_index().sort_values('quantity', ascending=False).head(10), 
+                               x='product_name', y='quantity', title="Top 10 Products by Sales Quantity",
+                               color_discrete_sequence=[colors['primary']], labels={'product_name':'Product Name','quantity':'Quantity Sold'})
         product_sales = update_chart_layout(product_sales)
         
-        sales_rep_performance = px.bar(dff, x='sales_representative', y='purchase_amount', title="Sales Representative Performance",
-                                       color_discrete_sequence=[colors['primary']], labels={'sales_representative':'Sales Representative','purchase_amount':'Purchase Amount'})
-        sales_rep_performance = update_chart_layout(sales_rep_performance)
+        gender_distribution = px.pie(dff, names='gender', title="Gender Distribution of Customers",
+                                     color_discrete_sequence=[colors['primary'], colors['secondary']])
+        gender_distribution = update_chart_layout(gender_distribution)
         
-        age_distribution = px.histogram(dff, x='age', nbins=10, title="Customer Age Distribution",
-                                        color_discrete_sequence=[colors['primary']], labels={'age':'Age'})
-        age_distribution = update_chart_layout(age_distribution)
+        payment_method_distribution = px.pie(dff, names='payment_method', title="Distribution of Payment Methods",
+                                             color_discrete_sequence=px.colors.qualitative.Set3)
+        payment_method_distribution = update_chart_layout(payment_method_distribution)
         
-        return kpi_indicators, customer_purchase, product_sales, sales_rep_performance, age_distribution    
+        return kpi_indicators, customer_purchase, product_sales, gender_distribution, payment_method_distribution    
 
     return app
 
 def main():
-    df = load_data()
+    df_path = "C:/Users/aditya/Desktop/2024/auto-dash/Staging_Data/engineered_data.csv"
+    df=pd.read_csv(df_path)
     app = create_app(df)
     app.run(debug=True)
 

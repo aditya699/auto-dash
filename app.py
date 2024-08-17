@@ -83,8 +83,11 @@ if uploaded_file is not None:
                     else:
                         st.warning("No new features were added during feature engineering.")
                 else:
+                    output_path = "Staging_Data/engineered_data.csv"
                     st.write("Skipping feature engineering.")
                     engineered_data = cleaned_data
+                    engineered_data.to_csv(output_path, index=False)
+                    st.success(f"Engineered data saved to {output_path}")
                 
                 # Generate dashboard prompt
                 st.write("Generating dashboard prompt...")
@@ -92,7 +95,7 @@ if uploaded_file is not None:
                 
                 # Initialize ChatAnthropic
                 llm = ChatAnthropic(
-                    model="claude-3-haiku-20240307",
+                    model="claude-3-5-sonnet-20240620",
                     temperature=0,
                     max_tokens=4096,
                     timeout=None,
