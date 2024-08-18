@@ -1,1001 +1,1001 @@
-customer_id,energy_usage_kwh,energy_cost_usd,energy_provider,meter_reading_date,building_type,energy_source,energy_rating,energy_consumption_per_capita,energy_saving_tips
-1,344.78,320.81,XYZ Power,2022-08-22,Industrial,Natural Gas,4,480.31,Insulate your home
-2,903.79,461.07,ABC Energy,2022-04-07,Industrial,Solar,5,64.06,Use energy-efficient appliances
-3,921.31,431.88,ABC Energy,2022-05-25,Commercial,Electricity,2,27.6,Use energy-efficient appliances
-4,498.4,388.63,ABC Energy,2022-09-09,Commercial,Solar,5,380.76,Insulate your home
-5,746.99,375.56,Green Energy Co.,2022-01-29,Residential,Natural Gas,1,390.85,Turn off lights when not in use
-6,438.97,342.67,XYZ Power,2022-11-27,Commercial,Natural Gas,1,118.7,Use energy-efficient appliances
-7,830.92,41.59,XYZ Power,2022-06-09,Residential,Natural Gas,3,357.52,Insulate your home
-8,832.92,391.74,ABC Energy,2022-02-10,Commercial,Electricity,5,261.65,Insulate your home
-9,680.62,463.7,XYZ Power,2022-06-20,Residential,Electricity,5,480.0,Use energy-efficient appliances
-10,375.89,462.5,Green Energy Co.,2022-05-14,Commercial,Electricity,3,75.7,Insulate your home
-11,367.93,217.26,Green Energy Co.,2022-12-11,Residential,Electricity,4,421.39,Turn off lights when not in use
-12,552.1,150.15,XYZ Power,2022-11-30,Residential,Electricity,5,494.93,Use energy-efficient appliances
-13,515.29,204.91,ABC Energy,2022-10-02,Industrial,Electricity,5,303.38,Turn off lights when not in use
-14,289.76,356.87,Green Energy Co.,2022-09-04,Commercial,Natural Gas,4,266.64,Insulate your home
-15,5.75,139.2,ABC Energy,2022-11-13,Commercial,Electricity,3,380.57,Turn off lights when not in use
-16,665.32,334.09,ABC Energy,2022-05-07,Commercial,Solar,5,462.97,Turn off lights when not in use
-17,461.59,60.49,XYZ Power,2022-01-16,Industrial,Solar,5,281.58,Insulate your home
-18,77.59,190.51,Green Energy Co.,2022-01-18,Industrial,Electricity,5,127.88,Insulate your home
-19,15.89,443.59,Green Energy Co.,2022-05-25,Residential,Electricity,1,297.0,Insulate your home
-20,536.15,79.9,Green Energy Co.,2022-07-09,Residential,Electricity,4,45.04,Insulate your home
-21,910.69,176.83,ABC Energy,2022-11-20,Industrial,Solar,1,160.98,Use energy-efficient appliances
-22,735.03,167.11,ABC Energy,2022-02-07,Commercial,Natural Gas,2,370.7,Turn off lights when not in use
-23,371.28,445.54,Green Energy Co.,2022-08-31,Residential,Solar,3,379.99,Use energy-efficient appliances
-24,63.97,146.72,ABC Energy,2022-06-30,Industrial,Natural Gas,4,262.73,Use energy-efficient appliances
-25,193.39,10.79,ABC Energy,2022-04-19,Residential,Solar,3,174.33,Use energy-efficient appliances
-26,430.96,234.53,XYZ Power,2022-04-27,Residential,Natural Gas,1,383.26,Use energy-efficient appliances
-27,746.26,470.86,Green Energy Co.,2022-09-27,Residential,Solar,1,95.04,Turn off lights when not in use
-28,202.59,37.01,ABC Energy,2022-07-18,Residential,Solar,2,211.79,Turn off lights when not in use
-29,887.8,26.94,XYZ Power,2022-07-27,Residential,Natural Gas,4,91.96,Turn off lights when not in use
-30,93.74,11.96,Green Energy Co.,2022-10-04,Commercial,Solar,4,405.04,Insulate your home
-31,905.97,147.14,Green Energy Co.,2022-09-07,Industrial,Electricity,4,342.7,Turn off lights when not in use
-32,581.2,21.13,ABC Energy,2022-01-14,Residential,Natural Gas,4,473.59,Turn off lights when not in use
-33,836.98,165.58,XYZ Power,2022-02-10,Industrial,Electricity,5,109.61,Insulate your home
-34,106.64,421.96,ABC Energy,2022-12-19,Commercial,Electricity,3,401.19,Turn off lights when not in use
-35,248.06,366.85,XYZ Power,2022-04-21,Commercial,Electricity,2,36.75,Turn off lights when not in use
-36,254.46,50.56,ABC Energy,2022-07-15,Commercial,Solar,4,106.96,Turn off lights when not in use
-37,832.48,286.85,Green Energy Co.,2022-01-30,Residential,Electricity,4,115.67,Insulate your home
-38,32.26,24.9,ABC Energy,2022-07-15,Industrial,Electricity,4,276.87,Turn off lights when not in use
-39,595.94,250.33,XYZ Power,2022-04-19,Residential,Solar,3,181.13,Use energy-efficient appliances
-40,468.62,245.85,XYZ Power,2022-09-05,Residential,Natural Gas,1,254.34,Turn off lights when not in use
-41,284.35,461.6,Green Energy Co.,2022-03-04,Commercial,Natural Gas,4,407.94,Use energy-efficient appliances
-42,174.38,281.66,Green Energy Co.,2022-08-14,Residential,Electricity,1,46.2,Use energy-efficient appliances
-43,552.94,57.07,ABC Energy,2022-11-29,Industrial,Electricity,2,376.75,Insulate your home
-44,740.08,196.25,ABC Energy,2022-09-20,Industrial,Electricity,5,432.12,Insulate your home
-45,441.13,259.38,Green Energy Co.,2022-09-18,Residential,Solar,4,91.18,Turn off lights when not in use
-46,728.18,21.29,XYZ Power,2022-09-18,Residential,Solar,3,320.58,Insulate your home
-47,202.2,390.25,ABC Energy,2022-05-05,Industrial,Natural Gas,4,489.57,Use energy-efficient appliances
-48,765.47,5.6,Green Energy Co.,2022-07-13,Industrial,Electricity,5,48.9,Use energy-efficient appliances
-49,718.73,227.4,Green Energy Co.,2022-09-29,Commercial,Natural Gas,2,381.05,Insulate your home
-50,756.79,384.81,ABC Energy,2022-08-03,Residential,Solar,3,425.97,Turn off lights when not in use
-51,211.51,117.31,ABC Energy,2022-12-01,Industrial,Electricity,5,139.72,Turn off lights when not in use
-52,416.09,464.05,XYZ Power,2022-03-25,Residential,Solar,5,269.49,Insulate your home
-53,455.52,194.86,XYZ Power,2022-08-07,Commercial,Solar,2,340.43,Insulate your home
-54,363.59,497.83,ABC Energy,2022-12-07,Commercial,Natural Gas,3,197.1,Insulate your home
-55,438.01,27.08,XYZ Power,2022-08-30,Residential,Natural Gas,4,164.47,Use energy-efficient appliances
-56,656.33,317.0,XYZ Power,2022-11-10,Commercial,Solar,4,480.05,Turn off lights when not in use
-57,650.08,132.16,ABC Energy,2022-03-15,Residential,Solar,3,33.6,Turn off lights when not in use
-58,169.73,358.33,ABC Energy,2022-11-16,Commercial,Electricity,5,135.9,Turn off lights when not in use
-59,399.93,374.17,XYZ Power,2022-12-03,Commercial,Electricity,5,489.02,Turn off lights when not in use
-60,584.42,315.12,Green Energy Co.,2022-01-07,Commercial,Electricity,1,146.14,Insulate your home
-61,714.49,358.39,XYZ Power,2022-04-25,Residential,Solar,4,224.84,Turn off lights when not in use
-62,56.97,326.86,ABC Energy,2022-10-11,Commercial,Electricity,1,131.58,Use energy-efficient appliances
-63,961.07,189.01,XYZ Power,2022-12-11,Commercial,Solar,2,109.64,Turn off lights when not in use
-64,954.06,94.87,XYZ Power,2022-11-03,Commercial,Electricity,4,220.1,Insulate your home
-65,988.95,201.09,Green Energy Co.,2022-02-18,Residential,Electricity,1,105.59,Turn off lights when not in use
-66,644.57,27.91,Green Energy Co.,2022-06-21,Commercial,Natural Gas,4,397.98,Turn off lights when not in use
-67,671.19,275.92,ABC Energy,2022-02-13,Industrial,Natural Gas,3,237.02,Use energy-efficient appliances
-68,534.81,287.1,Green Energy Co.,2022-06-03,Industrial,Natural Gas,4,370.88,Use energy-efficient appliances
-69,10.95,126.33,XYZ Power,2022-08-24,Industrial,Solar,3,162.38,Turn off lights when not in use
-70,441.36,411.65,XYZ Power,2022-03-01,Residential,Solar,5,29.99,Insulate your home
-71,358.28,150.04,ABC Energy,2022-08-04,Industrial,Electricity,3,108.63,Insulate your home
-72,212.27,17.88,XYZ Power,2022-03-26,Industrial,Natural Gas,1,383.37,Turn off lights when not in use
-73,186.18,52.71,ABC Energy,2022-07-24,Commercial,Solar,1,87.64,Insulate your home
-74,240.32,246.32,ABC Energy,2022-11-22,Residential,Electricity,5,430.22,Turn off lights when not in use
-75,114.99,188.81,ABC Energy,2022-11-27,Industrial,Natural Gas,4,378.67,Turn off lights when not in use
-76,148.33,18.0,XYZ Power,2022-03-25,Residential,Electricity,4,441.93,Turn off lights when not in use
-77,597.69,4.77,XYZ Power,2022-06-17,Commercial,Solar,1,184.28,Turn off lights when not in use
-78,162.05,204.32,Green Energy Co.,2022-07-07,Commercial,Electricity,5,45.67,Use energy-efficient appliances
-79,302.03,211.57,Green Energy Co.,2022-07-19,Residential,Solar,3,178.44,Insulate your home
-80,540.6,76.4,ABC Energy,2022-05-26,Industrial,Solar,4,469.08,Turn off lights when not in use
-81,712.43,342.54,Green Energy Co.,2022-05-19,Residential,Electricity,1,59.1,Insulate your home
-82,115.95,85.39,ABC Energy,2022-11-14,Residential,Solar,4,221.11,Use energy-efficient appliances
-83,626.17,373.73,Green Energy Co.,2022-09-04,Residential,Solar,5,314.97,Turn off lights when not in use
-84,8.59,35.95,Green Energy Co.,2022-08-30,Residential,Natural Gas,2,73.18,Turn off lights when not in use
-85,509.78,49.45,Green Energy Co.,2022-10-24,Commercial,Electricity,1,76.02,Use energy-efficient appliances
-86,199.61,188.55,ABC Energy,2022-09-25,Industrial,Electricity,3,199.42,Turn off lights when not in use
-87,802.47,340.65,XYZ Power,2022-01-01,Residential,Solar,1,95.4,Use energy-efficient appliances
-88,524.29,2.36,ABC Energy,2022-06-11,Commercial,Natural Gas,2,442.08,Use energy-efficient appliances
-89,242.43,458.28,ABC Energy,2022-09-27,Commercial,Solar,2,231.0,Insulate your home
-90,366.57,7.73,Green Energy Co.,2022-02-22,Residential,Electricity,1,161.76,Turn off lights when not in use
-91,942.14,356.77,Green Energy Co.,2022-12-22,Commercial,Electricity,3,465.6,Use energy-efficient appliances
-92,553.48,79.04,XYZ Power,2022-07-23,Commercial,Solar,3,72.87,Use energy-efficient appliances
-93,399.4,189.8,ABC Energy,2022-01-19,Industrial,Solar,2,121.06,Insulate your home
-94,27.88,124.23,Green Energy Co.,2022-09-04,Industrial,Electricity,3,400.16,Turn off lights when not in use
-95,558.15,314.39,ABC Energy,2022-06-20,Industrial,Solar,3,433.64,Insulate your home
-96,452.77,216.48,Green Energy Co.,2022-06-12,Industrial,Solar,1,223.1,Insulate your home
-97,828.62,382.98,XYZ Power,2022-04-06,Commercial,Solar,2,434.35,Turn off lights when not in use
-98,8.13,287.63,Green Energy Co.,2022-05-22,Commercial,Natural Gas,1,398.05,Turn off lights when not in use
-99,493.08,106.19,XYZ Power,2022-02-20,Commercial,Natural Gas,5,126.88,Use energy-efficient appliances
-100,382.24,428.0,XYZ Power,2022-10-14,Commercial,Solar,2,374.32,Insulate your home
-101,781.96,90.29,Green Energy Co.,2022-09-08,Industrial,Electricity,4,214.01,Turn off lights when not in use
-102,26.69,212.26,ABC Energy,2022-12-21,Industrial,Solar,2,259.54,Insulate your home
-103,553.87,58.91,Green Energy Co.,2022-10-23,Residential,Solar,4,89.47,Turn off lights when not in use
-104,681.26,21.25,Green Energy Co.,2022-04-02,Commercial,Natural Gas,1,148.7,Insulate your home
-105,643.46,455.77,XYZ Power,2022-09-11,Industrial,Solar,2,146.57,Use energy-efficient appliances
-106,855.81,498.55,Green Energy Co.,2022-12-26,Residential,Electricity,4,110.59,Insulate your home
-107,787.49,147.63,XYZ Power,2022-08-30,Residential,Solar,1,361.4,Use energy-efficient appliances
-108,628.69,145.75,Green Energy Co.,2022-09-23,Industrial,Solar,2,365.44,Turn off lights when not in use
-109,766.08,134.11,XYZ Power,2022-09-24,Industrial,Solar,5,421.74,Use energy-efficient appliances
-110,5.54,327.28,Green Energy Co.,2022-09-18,Commercial,Electricity,4,272.61,Turn off lights when not in use
-111,41.23,143.72,ABC Energy,2022-03-25,Commercial,Electricity,3,353.23,Use energy-efficient appliances
-112,286.64,24.77,ABC Energy,2022-03-31,Industrial,Solar,3,380.59,Turn off lights when not in use
-113,28.98,264.73,ABC Energy,2022-04-18,Commercial,Solar,3,46.86,Turn off lights when not in use
-114,799.57,252.62,XYZ Power,2022-09-19,Industrial,Electricity,4,1.55,Use energy-efficient appliances
-115,984.01,15.55,ABC Energy,2022-03-14,Residential,Natural Gas,5,104.53,Turn off lights when not in use
-116,25.25,282.21,Green Energy Co.,2022-03-20,Residential,Solar,5,343.15,Insulate your home
-117,473.78,180.39,XYZ Power,2022-02-17,Industrial,Solar,3,287.29,Turn off lights when not in use
-118,804.61,29.78,Green Energy Co.,2022-03-27,Industrial,Solar,4,226.39,Insulate your home
-119,669.57,299.01,XYZ Power,2022-10-10,Industrial,Electricity,5,499.48,Turn off lights when not in use
-120,632.14,311.34,Green Energy Co.,2022-11-23,Commercial,Solar,1,493.24,Use energy-efficient appliances
-121,140.43,345.15,XYZ Power,2022-08-01,Residential,Electricity,3,146.13,Insulate your home
-122,849.98,364.24,ABC Energy,2022-07-07,Commercial,Electricity,1,307.55,Insulate your home
-123,25.77,297.22,ABC Energy,2022-11-24,Commercial,Natural Gas,3,221.12,Turn off lights when not in use
-124,19.87,209.44,ABC Energy,2022-08-13,Industrial,Solar,5,44.75,Use energy-efficient appliances
-125,95.54,341.37,ABC Energy,2022-04-24,Industrial,Natural Gas,1,192.55,Insulate your home
-126,944.78,441.38,Green Energy Co.,2022-09-05,Industrial,Solar,5,255.12,Insulate your home
-127,526.8,470.09,ABC Energy,2022-04-28,Commercial,Solar,5,289.07,Insulate your home
-128,947.82,50.35,Green Energy Co.,2022-03-24,Commercial,Electricity,1,91.61,Turn off lights when not in use
-129,709.55,341.87,Green Energy Co.,2022-03-26,Industrial,Solar,3,60.72,Use energy-efficient appliances
-130,882.66,173.76,Green Energy Co.,2022-02-10,Commercial,Electricity,5,50.97,Insulate your home
-131,572.97,273.04,Green Energy Co.,2022-04-15,Residential,Electricity,5,467.55,Insulate your home
-132,981.96,317.34,Green Energy Co.,2022-09-28,Commercial,Electricity,5,245.4,Turn off lights when not in use
-133,760.76,277.01,ABC Energy,2022-11-06,Commercial,Electricity,2,257.47,Turn off lights when not in use
-134,506.51,137.53,ABC Energy,2022-05-20,Commercial,Natural Gas,5,71.54,Use energy-efficient appliances
-135,992.0,238.17,Green Energy Co.,2022-10-27,Residential,Electricity,4,31.88,Turn off lights when not in use
-136,919.47,165.92,XYZ Power,2022-05-20,Industrial,Solar,4,108.74,Insulate your home
-137,866.03,114.21,Green Energy Co.,2022-04-17,Industrial,Solar,3,398.3,Turn off lights when not in use
-138,219.17,417.89,Green Energy Co.,2022-08-02,Industrial,Solar,3,381.96,Insulate your home
-139,468.13,369.21,Green Energy Co.,2022-05-13,Commercial,Electricity,5,35.59,Use energy-efficient appliances
-140,500.52,398.05,ABC Energy,2022-05-07,Residential,Solar,5,171.31,Use energy-efficient appliances
-141,886.99,297.16,Green Energy Co.,2022-10-23,Industrial,Natural Gas,2,88.31,Turn off lights when not in use
-142,692.06,349.35,ABC Energy,2022-02-16,Industrial,Natural Gas,5,121.24,Turn off lights when not in use
-143,878.41,377.25,Green Energy Co.,2022-10-09,Commercial,Electricity,3,460.92,Insulate your home
-144,662.8,18.54,Green Energy Co.,2022-06-16,Residential,Natural Gas,5,331.19,Turn off lights when not in use
-145,430.35,386.84,XYZ Power,2022-08-23,Commercial,Solar,2,385.61,Use energy-efficient appliances
-146,288.27,73.48,XYZ Power,2022-03-28,Commercial,Natural Gas,5,20.95,Turn off lights when not in use
-147,934.44,102.48,Green Energy Co.,2022-07-08,Residential,Electricity,3,235.09,Use energy-efficient appliances
-148,203.16,148.41,ABC Energy,2022-03-27,Residential,Electricity,2,407.19,Turn off lights when not in use
-149,5.47,11.34,Green Energy Co.,2022-01-24,Residential,Natural Gas,3,398.8,Insulate your home
-150,735.92,106.6,ABC Energy,2022-01-14,Residential,Solar,5,377.12,Use energy-efficient appliances
-151,628.29,379.14,ABC Energy,2022-08-10,Industrial,Natural Gas,5,108.78,Insulate your home
-152,96.15,173.36,Green Energy Co.,2022-12-07,Industrial,Electricity,4,24.71,Use energy-efficient appliances
-153,565.88,213.35,XYZ Power,2022-02-03,Residential,Solar,1,236.78,Use energy-efficient appliances
-154,405.0,368.12,ABC Energy,2022-12-11,Industrial,Solar,1,164.75,Turn off lights when not in use
-155,788.17,207.2,Green Energy Co.,2022-01-25,Commercial,Natural Gas,4,303.23,Turn off lights when not in use
-156,274.79,91.49,ABC Energy,2022-05-22,Residential,Solar,2,444.65,Use energy-efficient appliances
-157,48.38,206.28,Green Energy Co.,2022-01-13,Residential,Solar,4,306.78,Use energy-efficient appliances
-158,380.26,218.63,XYZ Power,2022-10-07,Industrial,Solar,1,307.72,Insulate your home
-159,999.24,458.77,XYZ Power,2022-10-18,Residential,Electricity,1,19.1,Use energy-efficient appliances
-160,654.61,55.75,ABC Energy,2022-09-20,Commercial,Solar,4,76.61,Use energy-efficient appliances
-161,120.07,275.73,XYZ Power,2022-08-23,Industrial,Natural Gas,2,450.17,Use energy-efficient appliances
-162,887.21,74.48,Green Energy Co.,2022-10-19,Industrial,Solar,4,342.46,Turn off lights when not in use
-163,617.61,129.62,ABC Energy,2022-09-28,Residential,Electricity,1,114.62,Insulate your home
-164,664.97,395.27,ABC Energy,2022-01-01,Residential,Solar,2,84.66,Turn off lights when not in use
-165,342.47,165.79,Green Energy Co.,2022-06-07,Industrial,Electricity,2,444.75,Use energy-efficient appliances
-166,304.67,373.31,XYZ Power,2022-08-16,Commercial,Natural Gas,5,14.79,Insulate your home
-167,980.41,251.3,XYZ Power,2022-10-02,Industrial,Solar,4,196.73,Turn off lights when not in use
-168,845.18,258.37,Green Energy Co.,2022-01-09,Commercial,Electricity,4,352.74,Insulate your home
-169,771.16,29.17,ABC Energy,2022-05-02,Industrial,Natural Gas,2,421.79,Use energy-efficient appliances
-170,62.55,438.93,Green Energy Co.,2022-07-12,Industrial,Solar,1,383.79,Insulate your home
-171,347.0,262.85,ABC Energy,2022-06-09,Industrial,Electricity,1,125.84,Turn off lights when not in use
-172,64.02,65.79,XYZ Power,2022-09-18,Industrial,Electricity,4,199.68,Insulate your home
-173,207.77,88.31,ABC Energy,2022-05-07,Commercial,Solar,5,173.64,Turn off lights when not in use
-174,784.99,369.69,XYZ Power,2022-01-10,Commercial,Electricity,1,42.5,Use energy-efficient appliances
-175,655.92,154.41,Green Energy Co.,2022-11-01,Commercial,Solar,3,100.68,Turn off lights when not in use
-176,462.82,181.84,ABC Energy,2022-02-17,Residential,Natural Gas,2,296.84,Insulate your home
-177,553.53,218.79,Green Energy Co.,2022-02-05,Residential,Electricity,4,452.8,Insulate your home
-178,197.32,218.53,ABC Energy,2022-05-28,Commercial,Electricity,2,356.81,Use energy-efficient appliances
-179,959.93,94.82,XYZ Power,2022-06-23,Residential,Solar,2,495.97,Turn off lights when not in use
-180,633.42,238.94,ABC Energy,2022-05-17,Residential,Solar,2,41.68,Turn off lights when not in use
-181,446.2,456.5,Green Energy Co.,2022-05-30,Industrial,Natural Gas,1,473.64,Insulate your home
-182,130.13,281.72,XYZ Power,2022-07-27,Residential,Solar,1,32.72,Use energy-efficient appliances
-183,342.26,159.68,ABC Energy,2022-12-29,Residential,Solar,1,315.76,Insulate your home
-184,273.53,252.31,Green Energy Co.,2022-09-30,Commercial,Solar,4,329.58,Turn off lights when not in use
-185,688.28,414.95,XYZ Power,2022-04-25,Commercial,Solar,1,365.0,Use energy-efficient appliances
-186,14.81,99.14,XYZ Power,2022-01-26,Commercial,Natural Gas,4,118.2,Use energy-efficient appliances
-187,4.44,88.89,XYZ Power,2022-03-20,Residential,Natural Gas,4,263.43,Insulate your home
-188,716.45,419.04,XYZ Power,2022-06-20,Residential,Solar,3,478.27,Insulate your home
-189,707.59,290.09,XYZ Power,2022-04-16,Industrial,Natural Gas,5,368.64,Turn off lights when not in use
-190,252.54,164.66,Green Energy Co.,2022-07-01,Residential,Solar,1,49.01,Turn off lights when not in use
-191,617.45,371.93,XYZ Power,2022-08-29,Residential,Solar,1,314.19,Insulate your home
-192,31.09,462.66,ABC Energy,2022-12-04,Commercial,Electricity,4,250.74,Insulate your home
-193,299.6,48.65,ABC Energy,2022-12-26,Residential,Natural Gas,1,260.64,Insulate your home
-194,394.05,352.94,Green Energy Co.,2022-12-07,Commercial,Natural Gas,5,337.84,Turn off lights when not in use
-195,270.8,311.85,Green Energy Co.,2022-04-19,Residential,Solar,2,89.49,Turn off lights when not in use
-196,679.38,428.86,XYZ Power,2022-12-02,Commercial,Solar,2,37.57,Turn off lights when not in use
-197,724.39,61.66,Green Energy Co.,2022-01-06,Residential,Electricity,5,373.97,Use energy-efficient appliances
-198,340.17,464.94,ABC Energy,2022-04-09,Industrial,Solar,3,250.36,Use energy-efficient appliances
-199,861.89,417.66,ABC Energy,2022-08-15,Industrial,Electricity,4,72.98,Turn off lights when not in use
-200,777.23,444.46,XYZ Power,2022-10-24,Industrial,Natural Gas,5,196.82,Insulate your home
-201,724.84,249.47,XYZ Power,2022-07-08,Industrial,Electricity,2,459.42,Use energy-efficient appliances
-202,168.46,155.01,Green Energy Co.,2022-09-24,Industrial,Electricity,2,376.35,Insulate your home
-203,653.86,28.63,Green Energy Co.,2022-02-24,Commercial,Electricity,4,106.98,Insulate your home
-204,910.55,303.26,ABC Energy,2022-03-27,Commercial,Solar,5,167.42,Use energy-efficient appliances
-205,361.45,352.06,Green Energy Co.,2022-05-18,Industrial,Solar,5,25.29,Use energy-efficient appliances
-206,266.63,225.38,Green Energy Co.,2022-12-17,Commercial,Electricity,4,326.27,Insulate your home
-207,290.35,315.7,ABC Energy,2022-10-11,Residential,Electricity,5,115.41,Turn off lights when not in use
-208,847.65,485.13,XYZ Power,2022-05-02,Residential,Solar,3,11.84,Insulate your home
-209,437.42,206.74,XYZ Power,2022-05-11,Residential,Electricity,5,82.33,Insulate your home
-210,371.48,224.17,ABC Energy,2022-12-26,Residential,Electricity,2,140.46,Use energy-efficient appliances
-211,339.65,290.18,ABC Energy,2022-05-09,Residential,Natural Gas,2,225.41,Turn off lights when not in use
-212,591.35,228.26,Green Energy Co.,2022-11-08,Industrial,Electricity,4,57.42,Use energy-efficient appliances
-213,778.64,243.28,Green Energy Co.,2022-04-17,Residential,Solar,4,125.18,Use energy-efficient appliances
-214,844.96,374.38,XYZ Power,2022-12-09,Residential,Electricity,4,80.32,Insulate your home
-215,333.64,474.14,ABC Energy,2022-04-23,Residential,Solar,3,20.74,Turn off lights when not in use
-216,70.09,273.16,XYZ Power,2022-10-20,Commercial,Electricity,1,164.67,Use energy-efficient appliances
-217,910.57,172.29,XYZ Power,2022-11-05,Residential,Natural Gas,2,188.05,Insulate your home
-218,285.35,102.82,XYZ Power,2022-03-10,Commercial,Electricity,1,143.12,Insulate your home
-219,772.36,460.58,Green Energy Co.,2022-04-14,Commercial,Electricity,1,164.62,Insulate your home
-220,783.86,463.45,XYZ Power,2022-03-22,Industrial,Natural Gas,2,57.58,Turn off lights when not in use
-221,55.73,322.45,Green Energy Co.,2022-07-02,Commercial,Natural Gas,4,77.35,Use energy-efficient appliances
-222,97.18,93.18,Green Energy Co.,2022-08-14,Commercial,Solar,5,343.76,Insulate your home
-223,922.81,64.48,XYZ Power,2022-11-21,Industrial,Solar,1,154.86,Turn off lights when not in use
-224,236.59,166.04,Green Energy Co.,2022-06-04,Industrial,Natural Gas,2,36.97,Use energy-efficient appliances
-225,739.87,75.57,ABC Energy,2022-10-23,Residential,Electricity,3,290.12,Turn off lights when not in use
-226,496.77,214.46,Green Energy Co.,2022-10-15,Commercial,Solar,3,105.43,Insulate your home
-227,679.33,100.98,ABC Energy,2022-07-18,Residential,Electricity,1,197.75,Use energy-efficient appliances
-228,12.15,352.79,ABC Energy,2022-09-03,Industrial,Natural Gas,3,59.65,Use energy-efficient appliances
-229,841.59,286.44,ABC Energy,2022-08-11,Industrial,Electricity,2,77.81,Use energy-efficient appliances
-230,885.26,322.46,XYZ Power,2022-09-22,Commercial,Electricity,2,387.08,Turn off lights when not in use
-231,94.61,400.39,XYZ Power,2022-08-05,Commercial,Solar,3,485.42,Use energy-efficient appliances
-232,698.12,335.35,ABC Energy,2022-03-02,Industrial,Electricity,5,197.27,Insulate your home
-233,869.56,371.51,ABC Energy,2022-11-14,Residential,Solar,3,150.01,Use energy-efficient appliances
-234,476.97,171.0,XYZ Power,2022-10-17,Residential,Electricity,5,272.48,Use energy-efficient appliances
-235,79.19,406.74,ABC Energy,2022-10-22,Residential,Natural Gas,1,374.83,Use energy-efficient appliances
-236,34.51,481.1,XYZ Power,2022-02-07,Commercial,Solar,4,154.68,Use energy-efficient appliances
-237,441.71,458.62,XYZ Power,2022-01-05,Commercial,Solar,5,33.85,Insulate your home
-238,629.87,224.38,ABC Energy,2022-09-10,Industrial,Solar,1,51.86,Insulate your home
-239,243.4,335.96,XYZ Power,2022-09-08,Residential,Natural Gas,2,30.85,Use energy-efficient appliances
-240,356.13,44.74,XYZ Power,2022-11-06,Commercial,Natural Gas,2,87.99,Turn off lights when not in use
-241,582.86,380.31,Green Energy Co.,2022-06-24,Industrial,Electricity,1,249.67,Insulate your home
-242,781.39,89.87,Green Energy Co.,2022-05-12,Residential,Natural Gas,4,204.61,Insulate your home
-243,176.87,498.36,XYZ Power,2022-10-30,Residential,Natural Gas,2,101.26,Use energy-efficient appliances
-244,275.1,104.35,ABC Energy,2022-03-01,Commercial,Electricity,5,278.11,Turn off lights when not in use
-245,506.82,341.31,XYZ Power,2022-02-14,Commercial,Natural Gas,5,314.22,Turn off lights when not in use
-246,667.21,268.73,XYZ Power,2022-09-27,Residential,Solar,3,224.86,Turn off lights when not in use
-247,87.17,466.61,ABC Energy,2022-10-16,Industrial,Natural Gas,4,176.15,Insulate your home
-248,801.26,374.09,Green Energy Co.,2022-04-01,Industrial,Natural Gas,2,358.04,Turn off lights when not in use
-249,160.24,154.84,Green Energy Co.,2022-03-22,Industrial,Electricity,2,488.62,Turn off lights when not in use
-250,377.5,95.38,XYZ Power,2022-06-29,Commercial,Solar,2,79.54,Insulate your home
-251,481.73,481.86,ABC Energy,2022-08-04,Residential,Natural Gas,2,246.59,Use energy-efficient appliances
-252,992.77,40.43,ABC Energy,2022-03-29,Commercial,Electricity,1,225.96,Turn off lights when not in use
-253,351.65,205.42,Green Energy Co.,2022-10-16,Industrial,Electricity,1,106.41,Turn off lights when not in use
-254,441.77,68.9,XYZ Power,2022-03-10,Residential,Natural Gas,2,160.04,Use energy-efficient appliances
-255,245.43,42.04,XYZ Power,2022-11-04,Commercial,Natural Gas,2,386.35,Turn off lights when not in use
-256,666.38,163.85,XYZ Power,2022-04-12,Residential,Solar,3,400.15,Insulate your home
-257,566.81,266.11,Green Energy Co.,2022-06-14,Industrial,Natural Gas,2,65.65,Use energy-efficient appliances
-258,37.32,306.0,Green Energy Co.,2022-05-04,Industrial,Natural Gas,2,160.04,Turn off lights when not in use
-259,929.87,260.19,Green Energy Co.,2022-08-13,Residential,Electricity,2,18.23,Turn off lights when not in use
-260,287.59,403.24,Green Energy Co.,2022-03-09,Residential,Solar,4,166.16,Turn off lights when not in use
-261,516.17,170.24,XYZ Power,2022-05-02,Commercial,Natural Gas,5,27.39,Turn off lights when not in use
-262,958.88,12.13,Green Energy Co.,2022-02-26,Commercial,Electricity,3,411.42,Turn off lights when not in use
-263,294.55,275.51,Green Energy Co.,2022-11-05,Residential,Electricity,5,250.11,Use energy-efficient appliances
-264,173.09,185.59,XYZ Power,2022-04-09,Industrial,Natural Gas,3,32.85,Insulate your home
-265,269.42,109.52,Green Energy Co.,2022-03-01,Industrial,Solar,4,157.64,Turn off lights when not in use
-266,708.0,39.47,ABC Energy,2022-08-11,Industrial,Electricity,3,19.98,Turn off lights when not in use
-267,425.68,495.95,Green Energy Co.,2022-04-30,Residential,Natural Gas,2,119.23,Use energy-efficient appliances
-268,125.39,33.48,Green Energy Co.,2022-03-08,Commercial,Electricity,1,182.99,Turn off lights when not in use
-269,456.14,481.15,Green Energy Co.,2022-08-10,Commercial,Natural Gas,5,373.82,Insulate your home
-270,615.65,226.38,Green Energy Co.,2022-06-11,Commercial,Electricity,3,357.9,Turn off lights when not in use
-271,183.45,332.41,Green Energy Co.,2022-03-27,Commercial,Solar,4,433.97,Turn off lights when not in use
-272,83.97,204.14,Green Energy Co.,2022-12-06,Residential,Solar,3,416.39,Insulate your home
-273,432.64,258.43,XYZ Power,2022-04-06,Industrial,Natural Gas,5,392.32,Use energy-efficient appliances
-274,799.23,461.52,ABC Energy,2022-09-12,Commercial,Electricity,5,256.63,Insulate your home
-275,683.08,285.26,ABC Energy,2022-01-16,Industrial,Electricity,4,354.21,Insulate your home
-276,891.76,454.25,Green Energy Co.,2022-08-27,Commercial,Natural Gas,5,242.26,Use energy-efficient appliances
-277,602.26,415.01,XYZ Power,2022-04-03,Commercial,Electricity,2,93.56,Use energy-efficient appliances
-278,293.02,362.03,XYZ Power,2022-08-06,Industrial,Natural Gas,2,217.06,Insulate your home
-279,797.54,147.25,ABC Energy,2022-10-04,Industrial,Solar,3,11.26,Turn off lights when not in use
-280,616.68,20.84,Green Energy Co.,2022-06-16,Residential,Natural Gas,3,326.11,Insulate your home
-281,683.75,348.42,XYZ Power,2022-04-28,Residential,Electricity,4,231.22,Use energy-efficient appliances
-282,721.35,137.9,Green Energy Co.,2022-12-05,Industrial,Natural Gas,1,347.09,Turn off lights when not in use
-283,82.94,172.51,Green Energy Co.,2022-03-18,Commercial,Electricity,1,254.67,Turn off lights when not in use
-284,878.06,107.22,XYZ Power,2022-12-29,Industrial,Solar,3,488.09,Insulate your home
-285,908.76,58.51,Green Energy Co.,2022-07-19,Residential,Electricity,5,210.52,Turn off lights when not in use
-286,921.41,441.08,XYZ Power,2022-07-13,Residential,Solar,2,436.64,Use energy-efficient appliances
-287,813.99,32.79,ABC Energy,2022-05-26,Industrial,Natural Gas,3,126.59,Insulate your home
-288,10.19,88.35,Green Energy Co.,2022-03-25,Residential,Electricity,4,473.34,Insulate your home
-289,864.27,151.31,Green Energy Co.,2022-12-22,Residential,Natural Gas,5,490.15,Turn off lights when not in use
-290,17.15,446.42,ABC Energy,2022-06-08,Industrial,Electricity,5,344.08,Turn off lights when not in use
-291,442.82,253.68,ABC Energy,2022-12-07,Industrial,Electricity,1,378.29,Use energy-efficient appliances
-292,277.04,212.47,ABC Energy,2022-02-17,Commercial,Electricity,5,492.97,Use energy-efficient appliances
-293,694.65,154.01,Green Energy Co.,2022-03-08,Commercial,Natural Gas,5,347.06,Turn off lights when not in use
-294,310.43,283.79,XYZ Power,2022-09-18,Commercial,Electricity,3,21.79,Use energy-efficient appliances
-295,828.72,310.54,XYZ Power,2022-04-24,Commercial,Electricity,4,8.32,Turn off lights when not in use
-296,821.83,409.88,Green Energy Co.,2022-04-20,Commercial,Solar,5,67.1,Turn off lights when not in use
-297,400.36,376.65,XYZ Power,2022-03-26,Commercial,Natural Gas,5,432.35,Use energy-efficient appliances
-298,698.09,365.56,XYZ Power,2022-05-29,Residential,Electricity,1,272.22,Use energy-efficient appliances
-299,247.57,239.92,XYZ Power,2022-12-14,Commercial,Electricity,2,201.17,Insulate your home
-300,762.03,365.44,Green Energy Co.,2022-04-24,Commercial,Electricity,1,426.19,Insulate your home
-301,854.01,313.81,Green Energy Co.,2022-08-05,Industrial,Solar,5,299.01,Turn off lights when not in use
-302,996.21,114.14,ABC Energy,2022-03-08,Residential,Electricity,4,223.84,Insulate your home
-303,671.53,248.51,XYZ Power,2022-04-15,Residential,Natural Gas,1,104.67,Insulate your home
-304,183.42,438.14,ABC Energy,2022-04-19,Commercial,Solar,4,84.49,Use energy-efficient appliances
-305,898.36,355.87,XYZ Power,2022-08-07,Industrial,Electricity,5,392.03,Turn off lights when not in use
-306,953.4,238.4,Green Energy Co.,2022-01-24,Industrial,Natural Gas,5,60.02,Insulate your home
-307,849.75,281.06,XYZ Power,2022-08-12,Industrial,Solar,1,99.24,Use energy-efficient appliances
-308,946.78,42.85,XYZ Power,2022-02-05,Residential,Electricity,3,304.54,Insulate your home
-309,871.57,469.58,Green Energy Co.,2022-10-02,Commercial,Natural Gas,1,174.86,Insulate your home
-310,209.53,349.35,ABC Energy,2022-10-24,Industrial,Solar,5,372.81,Insulate your home
-311,542.42,323.46,ABC Energy,2022-12-24,Residential,Solar,3,194.9,Insulate your home
-312,465.88,429.63,XYZ Power,2022-10-13,Industrial,Solar,1,49.03,Insulate your home
-313,903.3,7.68,ABC Energy,2022-04-11,Commercial,Solar,5,183.34,Turn off lights when not in use
-314,16.3,359.23,ABC Energy,2022-04-20,Industrial,Natural Gas,5,205.4,Use energy-efficient appliances
-315,656.66,358.99,Green Energy Co.,2022-08-06,Commercial,Solar,2,50.52,Turn off lights when not in use
-316,64.58,377.47,ABC Energy,2022-04-29,Industrial,Natural Gas,1,257.94,Turn off lights when not in use
-317,9.61,160.39,ABC Energy,2022-11-12,Industrial,Natural Gas,1,208.39,Use energy-efficient appliances
-318,50.07,235.44,Green Energy Co.,2022-04-02,Residential,Electricity,4,480.6,Insulate your home
-319,386.78,166.98,ABC Energy,2022-03-17,Commercial,Solar,3,274.34,Use energy-efficient appliances
-320,935.32,288.07,XYZ Power,2022-09-20,Industrial,Natural Gas,1,230.87,Turn off lights when not in use
-321,27.07,353.51,Green Energy Co.,2022-03-19,Industrial,Electricity,1,412.26,Insulate your home
-322,371.97,241.41,XYZ Power,2022-01-01,Industrial,Electricity,1,466.04,Insulate your home
-323,721.13,342.2,XYZ Power,2022-11-09,Residential,Electricity,4,128.24,Turn off lights when not in use
-324,60.03,47.95,ABC Energy,2022-04-08,Commercial,Natural Gas,1,238.15,Insulate your home
-325,273.05,256.89,XYZ Power,2022-06-09,Commercial,Natural Gas,1,306.26,Insulate your home
-326,167.37,423.09,Green Energy Co.,2022-03-07,Commercial,Natural Gas,5,482.75,Use energy-efficient appliances
-327,938.07,265.17,Green Energy Co.,2022-09-06,Industrial,Electricity,1,46.62,Insulate your home
-328,761.11,412.95,XYZ Power,2022-07-09,Industrial,Natural Gas,3,434.11,Turn off lights when not in use
-329,400.16,491.42,ABC Energy,2022-01-26,Commercial,Natural Gas,5,368.51,Insulate your home
-330,826.6,293.94,Green Energy Co.,2022-01-31,Commercial,Solar,3,488.07,Insulate your home
-331,903.03,437.27,Green Energy Co.,2022-03-01,Commercial,Solar,2,127.05,Turn off lights when not in use
-332,46.93,239.69,ABC Energy,2022-05-05,Industrial,Electricity,5,97.94,Insulate your home
-333,459.58,357.21,Green Energy Co.,2022-05-10,Industrial,Solar,3,17.46,Use energy-efficient appliances
-334,894.47,416.21,XYZ Power,2022-01-20,Commercial,Electricity,5,372.64,Turn off lights when not in use
-335,908.22,335.53,XYZ Power,2022-09-29,Industrial,Natural Gas,5,382.56,Use energy-efficient appliances
-336,632.55,245.06,ABC Energy,2022-07-10,Commercial,Solar,2,116.79,Use energy-efficient appliances
-337,130.8,182.77,Green Energy Co.,2022-04-05,Residential,Solar,2,461.53,Use energy-efficient appliances
-338,466.09,260.1,Green Energy Co.,2022-10-10,Commercial,Solar,4,412.13,Turn off lights when not in use
-339,143.26,278.36,ABC Energy,2022-02-05,Residential,Natural Gas,5,111.05,Use energy-efficient appliances
-340,47.72,362.67,XYZ Power,2022-08-21,Commercial,Electricity,2,268.54,Insulate your home
-341,620.52,34.62,XYZ Power,2022-10-29,Commercial,Solar,4,159.8,Insulate your home
-342,51.5,161.75,ABC Energy,2022-06-16,Residential,Natural Gas,3,98.19,Use energy-efficient appliances
-343,229.1,53.75,ABC Energy,2022-08-09,Residential,Electricity,1,487.91,Turn off lights when not in use
-344,37.89,263.47,ABC Energy,2022-07-14,Commercial,Solar,1,166.07,Turn off lights when not in use
-345,522.96,365.83,XYZ Power,2022-04-26,Commercial,Electricity,4,447.61,Insulate your home
-346,601.16,438.88,XYZ Power,2022-12-01,Commercial,Natural Gas,5,427.33,Use energy-efficient appliances
-347,472.48,230.89,XYZ Power,2022-06-03,Commercial,Electricity,4,364.72,Insulate your home
-348,580.29,398.61,ABC Energy,2022-12-23,Commercial,Electricity,1,360.34,Turn off lights when not in use
-349,104.25,65.04,ABC Energy,2022-10-24,Residential,Natural Gas,1,377.32,Use energy-efficient appliances
-350,243.49,57.07,Green Energy Co.,2022-03-23,Residential,Electricity,1,195.38,Turn off lights when not in use
-351,783.31,39.99,XYZ Power,2022-09-24,Industrial,Solar,3,283.88,Turn off lights when not in use
-352,199.92,285.8,XYZ Power,2022-12-27,Commercial,Solar,2,133.66,Use energy-efficient appliances
-353,207.43,330.35,XYZ Power,2022-07-10,Commercial,Electricity,5,343.71,Use energy-efficient appliances
-354,264.96,71.76,Green Energy Co.,2022-02-22,Industrial,Electricity,3,326.23,Use energy-efficient appliances
-355,565.22,350.38,XYZ Power,2022-12-10,Industrial,Electricity,5,34.42,Insulate your home
-356,951.96,430.06,ABC Energy,2022-01-27,Commercial,Natural Gas,3,393.58,Use energy-efficient appliances
-357,316.83,244.68,Green Energy Co.,2022-09-02,Residential,Natural Gas,5,330.64,Insulate your home
-358,44.97,443.81,ABC Energy,2022-10-13,Commercial,Natural Gas,2,62.64,Insulate your home
-359,516.58,54.82,ABC Energy,2022-04-09,Industrial,Electricity,5,167.57,Insulate your home
-360,484.44,302.83,XYZ Power,2022-08-02,Industrial,Electricity,2,362.42,Turn off lights when not in use
-361,624.67,313.98,Green Energy Co.,2022-10-31,Industrial,Solar,3,286.15,Turn off lights when not in use
-362,1.96,187.51,XYZ Power,2022-11-10,Commercial,Solar,2,169.83,Insulate your home
-363,415.47,253.67,ABC Energy,2022-11-15,Commercial,Solar,2,490.47,Turn off lights when not in use
-364,777.08,165.81,Green Energy Co.,2022-01-12,Residential,Electricity,3,221.85,Turn off lights when not in use
-365,202.56,94.54,Green Energy Co.,2022-04-03,Commercial,Electricity,1,365.29,Turn off lights when not in use
-366,315.53,387.53,XYZ Power,2022-09-25,Commercial,Electricity,5,20.72,Insulate your home
-367,516.59,463.08,ABC Energy,2022-02-04,Residential,Solar,2,487.8,Turn off lights when not in use
-368,32.49,278.76,ABC Energy,2022-07-13,Commercial,Electricity,5,296.15,Turn off lights when not in use
-369,507.32,122.29,XYZ Power,2022-03-20,Commercial,Solar,4,373.28,Use energy-efficient appliances
-370,354.72,467.61,ABC Energy,2022-01-24,Industrial,Natural Gas,1,223.88,Use energy-efficient appliances
-371,498.37,209.98,ABC Energy,2022-07-27,Industrial,Natural Gas,1,19.85,Use energy-efficient appliances
-372,301.26,121.44,XYZ Power,2022-12-13,Industrial,Electricity,3,483.01,Insulate your home
-373,512.99,91.56,XYZ Power,2022-01-28,Residential,Electricity,2,450.45,Insulate your home
-374,975.92,212.83,XYZ Power,2022-03-13,Residential,Natural Gas,4,4.12,Use energy-efficient appliances
-375,503.61,104.27,XYZ Power,2022-04-02,Residential,Natural Gas,3,328.79,Use energy-efficient appliances
-376,163.17,357.1,Green Energy Co.,2022-07-28,Industrial,Natural Gas,2,196.95,Insulate your home
-377,303.92,178.79,ABC Energy,2022-11-11,Commercial,Natural Gas,4,178.95,Use energy-efficient appliances
-378,775.93,170.61,XYZ Power,2022-09-21,Residential,Electricity,4,80.31,Use energy-efficient appliances
-379,186.79,62.57,XYZ Power,2022-07-04,Residential,Natural Gas,5,287.9,Turn off lights when not in use
-380,203.67,404.04,ABC Energy,2022-12-24,Residential,Electricity,5,203.52,Turn off lights when not in use
-381,58.7,207.53,ABC Energy,2022-06-07,Residential,Solar,4,302.59,Use energy-efficient appliances
-382,775.85,324.45,Green Energy Co.,2022-12-25,Residential,Electricity,4,341.43,Turn off lights when not in use
-383,903.54,437.86,ABC Energy,2022-06-29,Residential,Electricity,1,142.27,Use energy-efficient appliances
-384,26.81,124.27,ABC Energy,2022-01-22,Industrial,Natural Gas,3,331.94,Insulate your home
-385,802.93,154.72,Green Energy Co.,2022-11-22,Residential,Natural Gas,4,26.79,Use energy-efficient appliances
-386,645.85,184.72,Green Energy Co.,2022-02-07,Commercial,Natural Gas,5,163.18,Use energy-efficient appliances
-387,44.99,406.66,ABC Energy,2022-12-04,Residential,Electricity,2,304.59,Use energy-efficient appliances
-388,311.61,401.79,XYZ Power,2022-08-05,Residential,Solar,2,59.12,Insulate your home
-389,154.29,129.69,ABC Energy,2022-09-17,Commercial,Natural Gas,5,365.59,Insulate your home
-390,529.63,283.01,Green Energy Co.,2022-09-04,Residential,Solar,5,97.21,Turn off lights when not in use
-391,557.67,300.37,XYZ Power,2022-12-04,Industrial,Solar,2,139.51,Turn off lights when not in use
-392,790.11,363.58,XYZ Power,2022-06-09,Residential,Natural Gas,5,356.17,Insulate your home
-393,794.65,308.97,ABC Energy,2022-10-23,Residential,Natural Gas,3,403.84,Turn off lights when not in use
-394,306.27,119.91,ABC Energy,2022-04-29,Industrial,Solar,3,23.8,Insulate your home
-395,12.81,102.57,XYZ Power,2022-07-24,Industrial,Electricity,5,170.53,Turn off lights when not in use
-396,626.32,92.85,XYZ Power,2022-05-17,Commercial,Electricity,5,438.06,Use energy-efficient appliances
-397,0.97,489.79,Green Energy Co.,2022-07-23,Residential,Solar,4,488.3,Insulate your home
-398,208.54,36.88,XYZ Power,2022-02-27,Industrial,Solar,1,274.65,Use energy-efficient appliances
-399,796.59,169.27,ABC Energy,2022-07-11,Residential,Natural Gas,3,426.04,Use energy-efficient appliances
-400,538.15,162.78,Green Energy Co.,2022-04-09,Commercial,Natural Gas,4,445.5,Use energy-efficient appliances
-401,827.4,322.21,ABC Energy,2022-07-27,Industrial,Natural Gas,2,185.53,Turn off lights when not in use
-402,40.95,163.03,XYZ Power,2022-07-08,Commercial,Electricity,5,161.26,Insulate your home
-403,857.47,251.8,XYZ Power,2022-12-17,Residential,Natural Gas,1,450.92,Insulate your home
-404,539.95,226.95,XYZ Power,2022-07-12,Residential,Solar,5,92.35,Insulate your home
-405,630.53,455.9,Green Energy Co.,2022-12-03,Residential,Natural Gas,1,8.48,Insulate your home
-406,546.36,297.72,Green Energy Co.,2022-09-27,Commercial,Solar,1,151.49,Insulate your home
-407,823.51,342.56,XYZ Power,2022-01-05,Commercial,Natural Gas,3,213.18,Use energy-efficient appliances
-408,605.27,405.92,Green Energy Co.,2022-07-03,Commercial,Electricity,5,158.37,Insulate your home
-409,944.24,109.09,Green Energy Co.,2022-11-02,Residential,Electricity,1,221.89,Use energy-efficient appliances
-410,216.8,7.02,ABC Energy,2022-06-23,Commercial,Natural Gas,4,411.69,Use energy-efficient appliances
-411,231.83,365.16,Green Energy Co.,2022-09-12,Residential,Electricity,1,393.55,Turn off lights when not in use
-412,971.39,287.34,ABC Energy,2022-07-20,Commercial,Electricity,4,41.91,Use energy-efficient appliances
-413,243.56,271.11,ABC Energy,2022-08-03,Residential,Natural Gas,4,312.9,Use energy-efficient appliances
-414,473.81,83.61,XYZ Power,2022-05-13,Commercial,Solar,5,207.28,Turn off lights when not in use
-415,249.47,262.6,XYZ Power,2022-07-25,Residential,Electricity,5,8.81,Use energy-efficient appliances
-416,132.57,328.85,ABC Energy,2022-11-21,Residential,Natural Gas,5,114.15,Insulate your home
-417,620.87,36.43,Green Energy Co.,2022-04-29,Commercial,Natural Gas,2,240.37,Use energy-efficient appliances
-418,111.87,449.23,ABC Energy,2022-12-25,Residential,Electricity,1,434.31,Use energy-efficient appliances
-419,296.09,114.9,XYZ Power,2022-09-18,Commercial,Natural Gas,4,20.88,Turn off lights when not in use
-420,569.28,199.47,XYZ Power,2022-02-20,Residential,Electricity,4,312.91,Use energy-efficient appliances
-421,430.34,57.76,XYZ Power,2022-01-03,Residential,Solar,2,97.77,Use energy-efficient appliances
-422,875.91,224.6,ABC Energy,2022-10-18,Residential,Solar,2,308.31,Turn off lights when not in use
-423,293.79,307.8,XYZ Power,2022-08-18,Commercial,Solar,1,166.83,Insulate your home
-424,285.02,394.46,XYZ Power,2022-11-17,Residential,Natural Gas,2,64.47,Use energy-efficient appliances
-425,635.32,19.2,ABC Energy,2022-02-16,Commercial,Natural Gas,4,123.65,Insulate your home
-426,918.06,342.85,Green Energy Co.,2022-09-14,Residential,Natural Gas,3,252.39,Turn off lights when not in use
-427,107.1,225.66,Green Energy Co.,2022-04-04,Residential,Solar,4,100.88,Insulate your home
-428,446.06,82.3,XYZ Power,2022-10-08,Commercial,Electricity,1,370.72,Use energy-efficient appliances
-429,170.99,158.97,ABC Energy,2022-09-29,Industrial,Electricity,3,94.68,Turn off lights when not in use
-430,553.08,341.39,XYZ Power,2022-04-21,Residential,Solar,1,232.56,Insulate your home
-431,479.16,419.79,ABC Energy,2022-03-17,Commercial,Natural Gas,3,270.76,Turn off lights when not in use
-432,76.64,37.91,ABC Energy,2022-07-04,Commercial,Solar,5,153.12,Insulate your home
-433,183.48,276.86,ABC Energy,2022-07-10,Residential,Solar,4,209.87,Turn off lights when not in use
-434,603.2,265.1,XYZ Power,2022-07-18,Commercial,Natural Gas,3,80.3,Use energy-efficient appliances
-435,765.89,125.51,Green Energy Co.,2022-12-25,Industrial,Electricity,1,422.1,Use energy-efficient appliances
-436,860.43,16.71,Green Energy Co.,2022-08-01,Commercial,Natural Gas,3,71.45,Turn off lights when not in use
-437,329.48,53.83,Green Energy Co.,2022-02-14,Commercial,Electricity,4,457.68,Insulate your home
-438,144.73,339.63,XYZ Power,2022-10-22,Commercial,Natural Gas,3,370.99,Turn off lights when not in use
-439,482.35,262.09,ABC Energy,2022-04-12,Residential,Natural Gas,5,29.25,Turn off lights when not in use
-440,187.75,141.47,XYZ Power,2022-07-25,Residential,Electricity,4,107.15,Insulate your home
-441,213.74,310.36,Green Energy Co.,2022-04-25,Industrial,Electricity,5,8.28,Turn off lights when not in use
-442,79.11,3.99,Green Energy Co.,2022-04-25,Commercial,Natural Gas,1,284.56,Insulate your home
-443,124.48,105.23,XYZ Power,2022-03-21,Residential,Electricity,2,16.48,Turn off lights when not in use
-444,216.52,95.91,XYZ Power,2022-05-04,Commercial,Electricity,2,136.96,Insulate your home
-445,775.38,450.03,Green Energy Co.,2022-03-01,Commercial,Solar,2,72.2,Turn off lights when not in use
-446,44.63,303.57,ABC Energy,2022-06-28,Commercial,Natural Gas,2,443.85,Turn off lights when not in use
-447,693.35,440.25,ABC Energy,2022-11-22,Commercial,Electricity,4,25.14,Insulate your home
-448,324.72,250.52,ABC Energy,2022-09-08,Industrial,Electricity,1,340.28,Use energy-efficient appliances
-449,869.13,346.08,ABC Energy,2022-07-12,Residential,Electricity,3,333.25,Turn off lights when not in use
-450,842.76,275.09,Green Energy Co.,2022-04-23,Industrial,Solar,3,384.1,Insulate your home
-451,574.64,193.45,ABC Energy,2022-09-21,Commercial,Solar,5,409.29,Turn off lights when not in use
-452,799.12,282.01,ABC Energy,2022-03-17,Residential,Solar,4,112.12,Insulate your home
-453,372.96,342.72,XYZ Power,2022-10-09,Residential,Solar,3,281.95,Insulate your home
-454,81.66,411.07,ABC Energy,2022-09-12,Commercial,Solar,1,353.36,Insulate your home
-455,208.41,89.87,Green Energy Co.,2022-08-21,Commercial,Solar,3,56.45,Insulate your home
-456,220.24,129.45,Green Energy Co.,2022-07-31,Residential,Natural Gas,5,60.62,Turn off lights when not in use
-457,852.07,97.01,Green Energy Co.,2022-07-03,Commercial,Solar,5,37.98,Insulate your home
-458,892.09,350.88,ABC Energy,2022-06-11,Industrial,Natural Gas,5,383.19,Insulate your home
-459,105.98,273.68,Green Energy Co.,2022-04-11,Commercial,Electricity,1,151.94,Use energy-efficient appliances
-460,459.93,420.8,XYZ Power,2022-11-03,Residential,Natural Gas,5,475.23,Use energy-efficient appliances
-461,441.9,173.1,Green Energy Co.,2022-01-29,Residential,Electricity,4,324.48,Use energy-efficient appliances
-462,106.37,262.7,XYZ Power,2022-01-19,Residential,Electricity,4,400.02,Use energy-efficient appliances
-463,440.34,484.36,XYZ Power,2022-08-25,Residential,Natural Gas,5,248.96,Insulate your home
-464,313.15,95.99,Green Energy Co.,2022-09-04,Commercial,Solar,1,31.45,Use energy-efficient appliances
-465,568.43,173.71,Green Energy Co.,2022-10-18,Commercial,Natural Gas,1,419.41,Turn off lights when not in use
-466,605.0,295.66,XYZ Power,2022-09-02,Industrial,Electricity,5,333.67,Turn off lights when not in use
-467,104.47,123.4,Green Energy Co.,2022-06-13,Residential,Electricity,5,493.61,Use energy-efficient appliances
-468,821.54,372.27,Green Energy Co.,2022-04-20,Commercial,Electricity,5,77.98,Use energy-efficient appliances
-469,628.92,114.06,ABC Energy,2022-01-19,Industrial,Natural Gas,1,197.46,Insulate your home
-470,592.76,159.5,ABC Energy,2022-06-11,Industrial,Electricity,5,247.63,Insulate your home
-471,852.39,198.2,Green Energy Co.,2022-12-22,Residential,Natural Gas,2,126.0,Use energy-efficient appliances
-472,287.88,198.99,ABC Energy,2022-01-11,Residential,Solar,4,227.92,Use energy-efficient appliances
-473,186.91,455.92,Green Energy Co.,2022-03-09,Industrial,Electricity,4,363.47,Turn off lights when not in use
-474,327.01,482.44,ABC Energy,2022-02-03,Commercial,Natural Gas,3,391.79,Use energy-efficient appliances
-475,673.68,291.63,ABC Energy,2022-05-04,Residential,Solar,4,495.55,Use energy-efficient appliances
-476,690.66,432.06,XYZ Power,2022-10-20,Commercial,Solar,2,206.39,Use energy-efficient appliances
-477,633.54,432.0,ABC Energy,2022-12-25,Commercial,Electricity,2,317.6,Insulate your home
-478,192.07,239.74,XYZ Power,2022-08-24,Industrial,Electricity,4,421.33,Insulate your home
-479,834.33,130.73,XYZ Power,2022-09-16,Residential,Electricity,2,270.91,Insulate your home
-480,31.64,27.22,Green Energy Co.,2022-09-01,Industrial,Solar,3,206.76,Insulate your home
-481,887.61,411.57,Green Energy Co.,2022-04-09,Commercial,Electricity,2,246.39,Insulate your home
-482,456.18,41.25,Green Energy Co.,2022-05-30,Residential,Natural Gas,4,229.77,Use energy-efficient appliances
-483,309.76,252.25,Green Energy Co.,2022-06-04,Residential,Natural Gas,1,167.38,Insulate your home
-484,160.6,330.64,XYZ Power,2022-12-18,Residential,Solar,4,402.94,Insulate your home
-485,314.23,8.53,XYZ Power,2022-07-25,Commercial,Natural Gas,3,56.01,Insulate your home
-486,375.39,304.88,ABC Energy,2022-02-26,Industrial,Electricity,5,350.83,Insulate your home
-487,171.36,478.36,ABC Energy,2022-12-19,Residential,Solar,3,197.48,Insulate your home
-488,576.64,133.26,ABC Energy,2022-05-23,Industrial,Electricity,3,496.58,Use energy-efficient appliances
-489,85.94,199.19,XYZ Power,2022-02-22,Residential,Electricity,3,29.35,Insulate your home
-490,6.37,154.0,ABC Energy,2022-12-20,Residential,Natural Gas,2,133.5,Insulate your home
-491,174.56,82.45,XYZ Power,2022-03-13,Commercial,Electricity,1,204.46,Turn off lights when not in use
-492,828.81,35.15,Green Energy Co.,2022-09-17,Residential,Natural Gas,3,447.11,Insulate your home
-493,701.33,215.67,Green Energy Co.,2022-02-04,Commercial,Solar,3,92.3,Use energy-efficient appliances
-494,361.28,256.08,Green Energy Co.,2022-10-06,Residential,Solar,4,407.71,Turn off lights when not in use
-495,202.88,34.03,XYZ Power,2022-02-12,Residential,Solar,4,313.53,Insulate your home
-496,372.83,37.54,Green Energy Co.,2022-10-19,Industrial,Electricity,5,499.65,Turn off lights when not in use
-497,520.08,434.95,XYZ Power,2022-06-23,Industrial,Natural Gas,4,318.82,Use energy-efficient appliances
-498,389.18,34.42,Green Energy Co.,2022-08-24,Commercial,Electricity,1,312.76,Insulate your home
-499,249.26,202.79,XYZ Power,2022-11-06,Industrial,Solar,1,245.74,Insulate your home
-500,422.21,485.39,XYZ Power,2022-03-08,Industrial,Solar,3,451.07,Turn off lights when not in use
-501,237.68,330.22,XYZ Power,2022-04-11,Industrial,Electricity,2,162.89,Insulate your home
-502,527.01,421.78,XYZ Power,2022-02-25,Residential,Electricity,1,45.75,Insulate your home
-503,12.1,168.18,ABC Energy,2022-12-18,Residential,Electricity,4,165.77,Turn off lights when not in use
-504,624.42,454.48,Green Energy Co.,2022-06-09,Residential,Natural Gas,3,43.16,Use energy-efficient appliances
-505,423.06,16.66,XYZ Power,2022-07-12,Industrial,Natural Gas,5,26.21,Turn off lights when not in use
-506,126.57,9.73,ABC Energy,2022-09-26,Industrial,Electricity,1,157.88,Use energy-efficient appliances
-507,738.65,380.38,ABC Energy,2022-09-09,Industrial,Solar,1,219.34,Insulate your home
-508,273.09,115.7,ABC Energy,2022-06-22,Residential,Electricity,5,346.41,Use energy-efficient appliances
-509,672.8,414.97,XYZ Power,2022-12-04,Industrial,Natural Gas,2,282.12,Turn off lights when not in use
-510,896.79,393.77,ABC Energy,2022-03-11,Industrial,Solar,1,247.44,Use energy-efficient appliances
-511,501.75,208.35,ABC Energy,2022-07-12,Industrial,Natural Gas,1,481.02,Use energy-efficient appliances
-512,108.89,259.7,XYZ Power,2022-01-28,Commercial,Electricity,5,164.71,Insulate your home
-513,927.16,87.48,ABC Energy,2022-06-18,Commercial,Electricity,2,302.06,Turn off lights when not in use
-514,835.74,255.83,ABC Energy,2022-02-26,Commercial,Electricity,5,319.04,Insulate your home
-515,110.72,4.07,ABC Energy,2022-08-17,Residential,Natural Gas,1,96.27,Insulate your home
-516,973.7,303.62,XYZ Power,2022-04-18,Industrial,Electricity,4,60.87,Insulate your home
-517,917.2,199.88,XYZ Power,2022-03-05,Industrial,Electricity,2,120.2,Insulate your home
-518,866.42,116.4,XYZ Power,2022-06-10,Industrial,Solar,1,8.21,Use energy-efficient appliances
-519,16.94,20.46,ABC Energy,2022-09-05,Residential,Solar,5,158.12,Use energy-efficient appliances
-520,299.36,443.67,XYZ Power,2022-08-31,Commercial,Natural Gas,1,452.49,Insulate your home
-521,990.42,483.75,XYZ Power,2022-10-10,Commercial,Solar,5,205.24,Insulate your home
-522,508.16,222.34,XYZ Power,2022-02-18,Commercial,Electricity,2,279.22,Insulate your home
-523,347.11,473.52,XYZ Power,2022-01-01,Industrial,Solar,3,427.17,Use energy-efficient appliances
-524,746.59,446.38,ABC Energy,2022-09-25,Commercial,Natural Gas,2,84.22,Turn off lights when not in use
-525,438.52,140.63,ABC Energy,2022-04-21,Residential,Electricity,4,223.5,Insulate your home
-526,420.3,145.6,Green Energy Co.,2022-01-19,Residential,Electricity,3,201.08,Turn off lights when not in use
-527,393.26,348.88,XYZ Power,2022-10-05,Industrial,Natural Gas,1,314.0,Use energy-efficient appliances
-528,408.71,323.87,ABC Energy,2022-08-25,Residential,Solar,3,467.54,Turn off lights when not in use
-529,650.42,258.52,XYZ Power,2022-05-27,Commercial,Solar,4,494.48,Turn off lights when not in use
-530,421.78,102.48,XYZ Power,2022-04-18,Commercial,Electricity,3,28.07,Use energy-efficient appliances
-531,341.83,112.31,ABC Energy,2022-03-24,Commercial,Electricity,3,65.04,Use energy-efficient appliances
-532,777.34,458.93,Green Energy Co.,2022-01-18,Commercial,Solar,2,498.18,Insulate your home
-533,469.33,365.37,XYZ Power,2022-05-23,Industrial,Solar,3,134.74,Use energy-efficient appliances
-534,907.23,218.35,XYZ Power,2022-11-07,Industrial,Natural Gas,4,179.71,Use energy-efficient appliances
-535,694.52,20.91,Green Energy Co.,2022-05-28,Residential,Solar,4,172.25,Use energy-efficient appliances
-536,918.16,373.77,XYZ Power,2022-07-04,Residential,Natural Gas,1,90.91,Use energy-efficient appliances
-537,564.29,33.4,Green Energy Co.,2022-12-05,Industrial,Natural Gas,4,373.49,Use energy-efficient appliances
-538,688.02,199.95,Green Energy Co.,2022-02-11,Residential,Electricity,5,9.07,Use energy-efficient appliances
-539,775.6,189.17,Green Energy Co.,2022-12-15,Industrial,Electricity,3,208.12,Use energy-efficient appliances
-540,418.66,71.5,ABC Energy,2022-05-16,Residential,Solar,3,237.99,Insulate your home
-541,891.91,323.26,XYZ Power,2022-08-25,Commercial,Electricity,3,176.85,Turn off lights when not in use
-542,154.61,348.35,XYZ Power,2022-11-05,Commercial,Solar,5,352.34,Use energy-efficient appliances
-543,450.95,91.86,ABC Energy,2022-12-28,Industrial,Electricity,3,461.27,Insulate your home
-544,601.61,309.84,ABC Energy,2022-06-11,Industrial,Solar,1,497.92,Use energy-efficient appliances
-545,348.02,300.04,Green Energy Co.,2022-08-29,Commercial,Natural Gas,4,256.17,Use energy-efficient appliances
-546,931.59,490.89,Green Energy Co.,2022-08-11,Industrial,Electricity,5,461.79,Turn off lights when not in use
-547,114.84,118.87,ABC Energy,2022-10-10,Commercial,Electricity,5,272.82,Turn off lights when not in use
-548,142.34,399.36,XYZ Power,2022-10-20,Industrial,Natural Gas,3,389.61,Use energy-efficient appliances
-549,592.78,190.6,XYZ Power,2022-08-13,Residential,Natural Gas,5,163.43,Insulate your home
-550,214.61,169.25,Green Energy Co.,2022-07-16,Residential,Electricity,2,384.52,Turn off lights when not in use
-551,428.19,193.49,ABC Energy,2022-12-21,Residential,Solar,5,157.51,Use energy-efficient appliances
-552,303.93,461.52,ABC Energy,2022-11-20,Residential,Solar,5,315.93,Turn off lights when not in use
-553,371.14,483.38,Green Energy Co.,2022-07-07,Residential,Solar,1,60.45,Insulate your home
-554,685.19,17.83,Green Energy Co.,2022-09-05,Residential,Solar,4,333.88,Use energy-efficient appliances
-555,933.76,448.97,ABC Energy,2022-08-04,Industrial,Solar,4,397.4,Use energy-efficient appliances
-556,745.74,208.54,XYZ Power,2022-07-10,Residential,Solar,1,465.58,Turn off lights when not in use
-557,39.74,467.72,Green Energy Co.,2022-12-22,Commercial,Solar,5,141.63,Insulate your home
-558,827.78,397.75,Green Energy Co.,2022-07-21,Residential,Electricity,4,320.47,Turn off lights when not in use
-559,908.6,217.51,XYZ Power,2022-06-28,Residential,Solar,3,150.87,Use energy-efficient appliances
-560,888.32,337.14,Green Energy Co.,2022-04-20,Commercial,Solar,1,370.09,Use energy-efficient appliances
-561,916.19,226.73,XYZ Power,2022-06-24,Industrial,Solar,1,496.24,Use energy-efficient appliances
-562,473.54,45.82,Green Energy Co.,2022-04-22,Commercial,Natural Gas,3,114.69,Use energy-efficient appliances
-563,616.87,158.44,Green Energy Co.,2022-03-10,Commercial,Natural Gas,2,487.7,Use energy-efficient appliances
-564,693.72,448.87,Green Energy Co.,2022-12-24,Industrial,Natural Gas,5,399.33,Use energy-efficient appliances
-565,160.71,161.32,Green Energy Co.,2022-02-12,Industrial,Electricity,1,60.67,Use energy-efficient appliances
-566,388.16,213.15,ABC Energy,2022-04-07,Industrial,Electricity,1,379.35,Use energy-efficient appliances
-567,814.71,172.69,ABC Energy,2022-04-14,Commercial,Solar,3,411.58,Turn off lights when not in use
-568,208.79,159.05,XYZ Power,2022-07-23,Industrial,Solar,4,266.35,Use energy-efficient appliances
-569,610.73,338.42,Green Energy Co.,2022-09-22,Residential,Electricity,5,354.8,Turn off lights when not in use
-570,864.51,374.91,ABC Energy,2022-10-06,Residential,Natural Gas,3,220.87,Insulate your home
-571,488.93,355.59,ABC Energy,2022-03-15,Industrial,Solar,3,187.36,Insulate your home
-572,194.37,353.52,ABC Energy,2022-09-12,Residential,Solar,3,62.96,Insulate your home
-573,976.51,250.51,Green Energy Co.,2022-08-15,Commercial,Electricity,2,276.83,Insulate your home
-574,4.92,490.02,ABC Energy,2022-02-07,Industrial,Electricity,5,92.49,Use energy-efficient appliances
-575,669.29,116.64,Green Energy Co.,2022-12-23,Industrial,Electricity,4,91.77,Turn off lights when not in use
-576,168.73,20.78,Green Energy Co.,2022-11-18,Residential,Solar,5,155.63,Turn off lights when not in use
-577,841.82,311.11,ABC Energy,2022-01-01,Industrial,Natural Gas,2,22.9,Use energy-efficient appliances
-578,396.07,89.38,XYZ Power,2022-01-08,Industrial,Natural Gas,2,191.61,Insulate your home
-579,481.75,93.11,Green Energy Co.,2022-05-10,Commercial,Solar,3,162.72,Turn off lights when not in use
-580,966.47,348.65,ABC Energy,2022-12-26,Commercial,Electricity,3,140.72,Use energy-efficient appliances
-581,629.81,397.76,XYZ Power,2022-08-22,Commercial,Electricity,5,348.54,Turn off lights when not in use
-582,158.73,416.91,XYZ Power,2022-07-11,Commercial,Solar,2,238.09,Turn off lights when not in use
-583,370.45,321.23,XYZ Power,2022-05-24,Industrial,Natural Gas,3,267.24,Insulate your home
-584,789.57,231.9,XYZ Power,2022-11-23,Residential,Solar,3,483.53,Turn off lights when not in use
-585,931.36,454.9,ABC Energy,2022-06-03,Residential,Solar,5,20.44,Use energy-efficient appliances
-586,836.93,173.58,Green Energy Co.,2022-06-12,Industrial,Electricity,4,192.68,Insulate your home
-587,121.34,87.18,Green Energy Co.,2022-01-07,Industrial,Solar,2,95.27,Use energy-efficient appliances
-588,671.38,300.23,XYZ Power,2022-12-01,Commercial,Natural Gas,4,256.72,Use energy-efficient appliances
-589,297.46,76.3,XYZ Power,2022-07-13,Commercial,Natural Gas,3,335.87,Insulate your home
-590,759.46,328.91,XYZ Power,2022-03-17,Industrial,Solar,1,141.76,Turn off lights when not in use
-591,919.05,240.96,ABC Energy,2022-05-13,Commercial,Solar,1,324.77,Insulate your home
-592,432.95,251.33,Green Energy Co.,2022-02-02,Commercial,Solar,5,414.29,Use energy-efficient appliances
-593,124.89,374.07,XYZ Power,2022-10-02,Industrial,Electricity,2,399.25,Turn off lights when not in use
-594,477.16,409.17,ABC Energy,2022-09-24,Residential,Electricity,4,136.18,Turn off lights when not in use
-595,262.97,173.78,ABC Energy,2022-03-21,Residential,Electricity,5,439.48,Insulate your home
-596,114.23,111.22,XYZ Power,2022-08-08,Commercial,Electricity,1,258.12,Use energy-efficient appliances
-597,829.71,314.43,Green Energy Co.,2022-09-05,Residential,Natural Gas,3,346.53,Insulate your home
-598,569.37,349.77,ABC Energy,2022-11-10,Industrial,Electricity,2,485.21,Use energy-efficient appliances
-599,507.38,234.88,Green Energy Co.,2022-02-05,Residential,Electricity,2,36.34,Insulate your home
-600,649.86,310.02,XYZ Power,2022-05-29,Commercial,Natural Gas,4,250.48,Turn off lights when not in use
-601,771.96,424.26,ABC Energy,2022-09-17,Industrial,Natural Gas,1,101.73,Insulate your home
-602,191.3,305.28,ABC Energy,2022-06-07,Industrial,Electricity,4,45.7,Use energy-efficient appliances
-603,82.87,150.29,XYZ Power,2022-06-12,Residential,Solar,1,389.9,Turn off lights when not in use
-604,103.33,319.29,Green Energy Co.,2022-11-11,Commercial,Solar,1,25.17,Use energy-efficient appliances
-605,812.4,186.49,Green Energy Co.,2022-08-14,Industrial,Electricity,2,113.08,Use energy-efficient appliances
-606,182.26,110.96,ABC Energy,2022-03-18,Industrial,Solar,5,332.52,Insulate your home
-607,62.78,11.16,ABC Energy,2022-11-05,Commercial,Electricity,3,88.75,Insulate your home
-608,402.32,70.48,XYZ Power,2022-10-04,Residential,Natural Gas,2,449.2,Turn off lights when not in use
-609,387.62,235.09,XYZ Power,2022-05-10,Commercial,Solar,5,20.62,Insulate your home
-610,377.76,351.36,Green Energy Co.,2022-03-14,Industrial,Electricity,2,228.11,Use energy-efficient appliances
-611,28.76,129.36,ABC Energy,2022-03-24,Residential,Solar,5,201.4,Turn off lights when not in use
-612,245.77,172.69,ABC Energy,2022-01-12,Residential,Natural Gas,5,101.93,Use energy-efficient appliances
-613,340.79,163.16,Green Energy Co.,2022-05-28,Commercial,Natural Gas,5,419.86,Insulate your home
-614,246.63,202.47,XYZ Power,2022-11-11,Industrial,Electricity,5,30.79,Turn off lights when not in use
-615,118.36,22.16,Green Energy Co.,2022-05-26,Industrial,Solar,2,109.02,Use energy-efficient appliances
-616,662.61,473.82,Green Energy Co.,2022-02-18,Commercial,Electricity,4,217.12,Insulate your home
-617,716.73,121.35,XYZ Power,2022-08-10,Industrial,Solar,3,29.72,Use energy-efficient appliances
-618,646.87,450.49,Green Energy Co.,2022-04-05,Industrial,Solar,2,395.91,Insulate your home
-619,311.54,417.71,ABC Energy,2022-11-10,Commercial,Solar,2,72.92,Turn off lights when not in use
-620,37.16,232.61,Green Energy Co.,2022-02-08,Commercial,Natural Gas,4,340.23,Turn off lights when not in use
-621,723.19,52.63,ABC Energy,2022-05-25,Commercial,Natural Gas,5,296.97,Insulate your home
-622,360.6,388.02,Green Energy Co.,2022-04-21,Industrial,Natural Gas,2,125.02,Turn off lights when not in use
-623,39.07,201.11,Green Energy Co.,2022-09-27,Industrial,Solar,2,28.76,Turn off lights when not in use
-624,871.05,345.59,ABC Energy,2022-09-25,Industrial,Electricity,2,326.76,Turn off lights when not in use
-625,465.07,50.39,ABC Energy,2022-07-30,Residential,Electricity,1,207.82,Use energy-efficient appliances
-626,171.69,146.11,XYZ Power,2022-08-15,Industrial,Natural Gas,4,73.13,Turn off lights when not in use
-627,425.26,276.0,Green Energy Co.,2022-06-29,Industrial,Electricity,5,421.55,Use energy-efficient appliances
-628,443.72,123.85,Green Energy Co.,2022-02-23,Residential,Electricity,4,257.22,Insulate your home
-629,672.43,434.27,ABC Energy,2022-01-26,Commercial,Solar,4,376.3,Insulate your home
-630,125.28,342.29,ABC Energy,2022-04-11,Commercial,Electricity,3,24.43,Turn off lights when not in use
-631,554.74,192.52,ABC Energy,2022-11-12,Industrial,Electricity,4,364.34,Turn off lights when not in use
-632,714.4,81.88,XYZ Power,2022-09-27,Industrial,Natural Gas,1,247.06,Turn off lights when not in use
-633,992.46,67.1,ABC Energy,2022-01-05,Commercial,Solar,5,372.84,Use energy-efficient appliances
-634,843.05,75.39,ABC Energy,2022-08-19,Commercial,Natural Gas,2,170.7,Use energy-efficient appliances
-635,155.3,105.52,XYZ Power,2022-02-14,Residential,Solar,1,59.32,Insulate your home
-636,644.16,421.98,Green Energy Co.,2022-03-03,Residential,Electricity,2,347.51,Turn off lights when not in use
-637,554.84,158.85,ABC Energy,2022-09-28,Industrial,Natural Gas,3,358.56,Turn off lights when not in use
-638,843.41,128.86,XYZ Power,2022-05-30,Commercial,Natural Gas,1,168.83,Insulate your home
-639,111.97,53.58,ABC Energy,2022-02-09,Residential,Electricity,4,165.25,Insulate your home
-640,70.85,454.42,Green Energy Co.,2022-10-08,Commercial,Solar,3,215.6,Turn off lights when not in use
-641,99.16,460.23,ABC Energy,2022-04-09,Residential,Natural Gas,5,39.09,Use energy-efficient appliances
-642,193.4,426.54,XYZ Power,2022-11-14,Commercial,Electricity,1,136.8,Turn off lights when not in use
-643,856.36,410.03,XYZ Power,2022-04-19,Commercial,Solar,5,244.01,Turn off lights when not in use
-644,88.31,491.15,XYZ Power,2022-10-12,Industrial,Natural Gas,3,353.99,Use energy-efficient appliances
-645,570.74,379.3,Green Energy Co.,2022-04-18,Commercial,Solar,2,337.51,Turn off lights when not in use
-646,44.76,475.04,ABC Energy,2022-03-19,Residential,Solar,3,159.09,Turn off lights when not in use
-647,609.39,223.83,XYZ Power,2022-08-13,Residential,Natural Gas,1,458.12,Insulate your home
-648,539.39,101.97,XYZ Power,2022-12-14,Industrial,Electricity,5,272.78,Turn off lights when not in use
-649,870.13,200.1,ABC Energy,2022-01-15,Commercial,Electricity,2,178.84,Insulate your home
-650,918.22,40.71,Green Energy Co.,2022-04-16,Industrial,Solar,3,488.25,Insulate your home
-651,659.48,246.62,XYZ Power,2022-05-04,Commercial,Electricity,5,243.7,Turn off lights when not in use
-652,982.69,33.91,Green Energy Co.,2022-05-28,Industrial,Solar,2,389.45,Turn off lights when not in use
-653,168.64,434.53,Green Energy Co.,2022-11-16,Residential,Electricity,2,248.4,Turn off lights when not in use
-654,627.61,20.27,ABC Energy,2022-01-05,Residential,Solar,2,115.51,Use energy-efficient appliances
-655,108.94,358.43,ABC Energy,2022-06-08,Residential,Natural Gas,2,31.47,Use energy-efficient appliances
-656,936.41,268.78,ABC Energy,2022-05-19,Residential,Solar,4,360.02,Insulate your home
-657,715.4,312.66,Green Energy Co.,2022-03-08,Residential,Solar,4,351.73,Use energy-efficient appliances
-658,538.39,477.61,ABC Energy,2022-10-18,Commercial,Solar,5,447.02,Turn off lights when not in use
-659,87.58,220.45,XYZ Power,2022-06-13,Commercial,Natural Gas,4,459.84,Insulate your home
-660,403.6,157.37,XYZ Power,2022-02-07,Industrial,Electricity,1,451.4,Insulate your home
-661,315.07,460.16,ABC Energy,2022-08-24,Commercial,Natural Gas,4,449.46,Insulate your home
-662,831.85,322.72,XYZ Power,2022-02-27,Industrial,Natural Gas,5,265.99,Insulate your home
-663,545.4,300.01,XYZ Power,2022-03-05,Industrial,Electricity,4,381.54,Insulate your home
-664,40.6,12.32,Green Energy Co.,2022-10-18,Industrial,Natural Gas,1,254.58,Insulate your home
-665,722.78,66.54,ABC Energy,2022-03-29,Residential,Electricity,1,415.01,Insulate your home
-666,749.34,201.17,XYZ Power,2022-10-12,Commercial,Electricity,3,18.83,Turn off lights when not in use
-667,476.97,252.02,Green Energy Co.,2022-06-01,Residential,Electricity,3,317.64,Insulate your home
-668,251.53,283.23,Green Energy Co.,2022-06-17,Residential,Electricity,4,280.94,Turn off lights when not in use
-669,570.73,367.19,Green Energy Co.,2022-06-16,Residential,Natural Gas,4,116.87,Use energy-efficient appliances
-670,536.78,117.74,XYZ Power,2022-11-08,Commercial,Solar,1,176.24,Use energy-efficient appliances
-671,490.06,100.28,ABC Energy,2022-06-09,Residential,Electricity,5,495.15,Turn off lights when not in use
-672,434.29,219.22,Green Energy Co.,2022-06-17,Commercial,Natural Gas,1,38.77,Insulate your home
-673,123.77,440.18,XYZ Power,2022-10-23,Residential,Solar,4,397.09,Insulate your home
-674,615.22,291.76,ABC Energy,2022-01-05,Residential,Solar,5,204.75,Turn off lights when not in use
-675,294.42,455.36,ABC Energy,2022-01-20,Commercial,Natural Gas,2,378.58,Insulate your home
-676,497.96,104.45,Green Energy Co.,2022-09-21,Industrial,Solar,2,79.24,Insulate your home
-677,696.83,128.66,ABC Energy,2022-09-23,Industrial,Electricity,4,162.84,Turn off lights when not in use
-678,100.66,142.53,ABC Energy,2022-01-27,Residential,Electricity,4,275.05,Insulate your home
-679,250.84,267.3,Green Energy Co.,2022-03-19,Residential,Electricity,2,297.58,Use energy-efficient appliances
-680,233.44,35.96,XYZ Power,2022-04-20,Industrial,Electricity,3,437.56,Use energy-efficient appliances
-681,133.34,146.32,Green Energy Co.,2022-05-10,Commercial,Natural Gas,1,318.91,Insulate your home
-682,48.53,330.24,Green Energy Co.,2022-09-16,Industrial,Electricity,3,41.85,Use energy-efficient appliances
-683,660.93,327.33,Green Energy Co.,2022-11-15,Residential,Electricity,5,226.66,Use energy-efficient appliances
-684,321.19,361.3,XYZ Power,2022-04-22,Industrial,Electricity,3,445.97,Turn off lights when not in use
-685,136.61,168.21,Green Energy Co.,2022-06-15,Industrial,Natural Gas,2,77.81,Turn off lights when not in use
-686,271.85,118.92,XYZ Power,2022-12-27,Industrial,Electricity,2,353.65,Insulate your home
-687,623.01,245.61,Green Energy Co.,2022-09-13,Commercial,Natural Gas,1,63.2,Insulate your home
-688,739.51,48.71,XYZ Power,2022-03-28,Commercial,Electricity,5,161.04,Use energy-efficient appliances
-689,143.33,53.88,XYZ Power,2022-02-09,Commercial,Electricity,4,178.16,Use energy-efficient appliances
-690,812.35,273.67,Green Energy Co.,2022-09-19,Residential,Solar,1,142.24,Turn off lights when not in use
-691,567.7,136.74,ABC Energy,2022-12-02,Industrial,Electricity,4,140.65,Insulate your home
-692,388.24,138.32,Green Energy Co.,2022-07-03,Industrial,Solar,3,24.41,Turn off lights when not in use
-693,740.93,472.13,ABC Energy,2022-10-12,Residential,Electricity,1,362.84,Insulate your home
-694,213.32,334.12,Green Energy Co.,2022-01-27,Commercial,Natural Gas,5,326.85,Use energy-efficient appliances
-695,259.95,275.33,Green Energy Co.,2022-02-03,Industrial,Electricity,4,215.14,Use energy-efficient appliances
-696,441.61,497.29,ABC Energy,2022-10-15,Residential,Solar,4,79.44,Insulate your home
-697,917.75,129.93,Green Energy Co.,2022-02-01,Residential,Electricity,1,293.09,Turn off lights when not in use
-698,961.21,203.35,XYZ Power,2022-02-02,Residential,Natural Gas,3,79.88,Use energy-efficient appliances
-699,248.11,391.25,Green Energy Co.,2022-10-16,Industrial,Natural Gas,4,196.28,Use energy-efficient appliances
-700,794.36,37.98,Green Energy Co.,2022-11-04,Industrial,Electricity,3,179.38,Insulate your home
-701,932.8,441.54,XYZ Power,2022-02-13,Industrial,Electricity,4,172.31,Insulate your home
-702,971.55,36.38,XYZ Power,2022-08-12,Residential,Natural Gas,4,204.39,Turn off lights when not in use
-703,510.45,467.29,XYZ Power,2022-09-21,Commercial,Electricity,1,8.17,Use energy-efficient appliances
-704,380.97,162.55,ABC Energy,2022-04-23,Commercial,Natural Gas,5,362.97,Insulate your home
-705,684.22,86.73,ABC Energy,2022-12-03,Residential,Natural Gas,5,352.98,Turn off lights when not in use
-706,434.72,341.51,ABC Energy,2022-05-09,Commercial,Natural Gas,2,417.23,Insulate your home
-707,983.78,472.25,Green Energy Co.,2022-04-09,Commercial,Solar,1,266.59,Turn off lights when not in use
-708,587.65,60.32,ABC Energy,2022-07-25,Residential,Solar,1,145.38,Use energy-efficient appliances
-709,568.78,457.63,Green Energy Co.,2022-12-18,Industrial,Natural Gas,5,492.37,Turn off lights when not in use
-710,184.54,327.31,Green Energy Co.,2022-07-05,Commercial,Natural Gas,2,482.33,Insulate your home
-711,371.58,254.92,XYZ Power,2022-01-07,Commercial,Solar,1,179.9,Use energy-efficient appliances
-712,885.76,367.05,Green Energy Co.,2022-04-28,Commercial,Solar,4,210.82,Turn off lights when not in use
-713,532.7,485.12,XYZ Power,2022-11-25,Commercial,Solar,5,227.08,Insulate your home
-714,367.84,171.59,ABC Energy,2022-12-22,Commercial,Electricity,2,150.57,Insulate your home
-715,411.01,477.82,XYZ Power,2022-07-06,Industrial,Solar,1,376.55,Turn off lights when not in use
-716,89.54,349.75,XYZ Power,2022-01-27,Commercial,Natural Gas,2,431.08,Insulate your home
-717,902.69,478.31,ABC Energy,2022-11-24,Residential,Solar,2,43.98,Use energy-efficient appliances
-718,144.75,210.44,XYZ Power,2022-04-21,Industrial,Natural Gas,4,195.79,Use energy-efficient appliances
-719,188.87,376.38,ABC Energy,2022-06-02,Industrial,Natural Gas,5,446.07,Use energy-efficient appliances
-720,616.18,8.76,ABC Energy,2022-01-16,Commercial,Electricity,4,226.49,Use energy-efficient appliances
-721,263.75,411.51,XYZ Power,2022-10-18,Industrial,Solar,3,434.04,Insulate your home
-722,938.77,98.96,Green Energy Co.,2022-09-11,Residential,Solar,3,221.49,Use energy-efficient appliances
-723,989.39,260.58,XYZ Power,2022-12-27,Commercial,Solar,4,245.3,Use energy-efficient appliances
-724,80.13,315.97,XYZ Power,2022-11-02,Industrial,Solar,4,163.69,Turn off lights when not in use
-725,936.19,359.36,XYZ Power,2022-02-02,Industrial,Natural Gas,3,415.91,Use energy-efficient appliances
-726,571.67,377.32,ABC Energy,2022-05-19,Industrial,Electricity,4,237.39,Insulate your home
-727,984.37,149.41,XYZ Power,2022-11-24,Industrial,Natural Gas,1,368.36,Insulate your home
-728,633.23,18.08,Green Energy Co.,2022-11-02,Commercial,Natural Gas,2,304.13,Use energy-efficient appliances
-729,825.1,42.8,Green Energy Co.,2022-11-20,Commercial,Natural Gas,2,463.39,Turn off lights when not in use
-730,793.83,488.16,Green Energy Co.,2022-06-28,Commercial,Electricity,3,385.72,Insulate your home
-731,448.33,144.33,ABC Energy,2022-06-12,Commercial,Solar,2,152.57,Insulate your home
-732,45.93,1.88,XYZ Power,2022-05-31,Industrial,Natural Gas,5,46.95,Insulate your home
-733,913.23,16.45,ABC Energy,2022-10-11,Commercial,Natural Gas,4,61.18,Turn off lights when not in use
-734,116.13,488.95,XYZ Power,2022-02-28,Residential,Electricity,3,466.33,Insulate your home
-735,989.38,138.65,XYZ Power,2022-07-21,Industrial,Electricity,1,33.85,Turn off lights when not in use
-736,486.97,295.7,XYZ Power,2022-08-26,Residential,Natural Gas,2,367.67,Insulate your home
-737,339.76,334.76,Green Energy Co.,2022-11-03,Commercial,Solar,3,481.29,Use energy-efficient appliances
-738,42.86,163.69,XYZ Power,2022-01-25,Commercial,Electricity,5,25.24,Insulate your home
-739,182.6,358.51,ABC Energy,2022-11-01,Industrial,Solar,4,405.04,Turn off lights when not in use
-740,705.31,490.75,XYZ Power,2022-12-24,Commercial,Electricity,1,463.45,Insulate your home
-741,418.45,155.62,XYZ Power,2022-09-22,Residential,Electricity,4,400.66,Use energy-efficient appliances
-742,398.01,345.95,ABC Energy,2022-04-06,Residential,Natural Gas,4,499.06,Insulate your home
-743,663.2,325.6,Green Energy Co.,2022-12-03,Residential,Natural Gas,2,154.1,Turn off lights when not in use
-744,413.88,396.39,Green Energy Co.,2022-06-19,Industrial,Natural Gas,2,104.33,Turn off lights when not in use
-745,753.28,87.45,Green Energy Co.,2022-12-03,Residential,Electricity,5,449.79,Insulate your home
-746,689.52,419.12,Green Energy Co.,2022-06-26,Commercial,Natural Gas,1,316.23,Use energy-efficient appliances
-747,681.67,247.32,Green Energy Co.,2022-02-06,Commercial,Electricity,4,296.91,Turn off lights when not in use
-748,891.76,490.65,XYZ Power,2022-12-09,Commercial,Solar,4,488.52,Use energy-efficient appliances
-749,375.37,468.04,ABC Energy,2022-01-15,Residential,Natural Gas,2,100.47,Insulate your home
-750,258.66,42.86,XYZ Power,2022-04-27,Commercial,Solar,2,280.62,Turn off lights when not in use
-751,125.78,61.87,ABC Energy,2022-10-20,Industrial,Electricity,2,202.35,Insulate your home
-752,278.17,243.06,XYZ Power,2022-01-18,Commercial,Electricity,3,187.19,Insulate your home
-753,408.85,363.72,XYZ Power,2022-03-27,Industrial,Electricity,1,27.26,Insulate your home
-754,960.59,311.82,Green Energy Co.,2022-08-29,Commercial,Solar,1,37.09,Insulate your home
-755,863.94,66.82,ABC Energy,2022-07-04,Commercial,Electricity,1,279.89,Insulate your home
-756,480.34,230.39,ABC Energy,2022-09-21,Commercial,Solar,5,139.06,Turn off lights when not in use
-757,609.41,82.05,ABC Energy,2022-01-21,Commercial,Natural Gas,5,387.08,Use energy-efficient appliances
-758,309.48,162.45,XYZ Power,2022-09-29,Commercial,Solar,3,64.55,Turn off lights when not in use
-759,776.62,334.72,Green Energy Co.,2022-03-06,Industrial,Electricity,3,369.7,Insulate your home
-760,228.87,235.61,ABC Energy,2022-06-14,Industrial,Electricity,3,69.89,Turn off lights when not in use
-761,396.22,376.24,ABC Energy,2022-12-28,Industrial,Electricity,1,55.4,Use energy-efficient appliances
-762,486.01,293.13,XYZ Power,2022-06-17,Residential,Solar,1,224.25,Insulate your home
-763,681.42,407.66,XYZ Power,2022-08-16,Commercial,Natural Gas,4,140.23,Use energy-efficient appliances
-764,295.09,71.48,Green Energy Co.,2022-09-26,Residential,Electricity,3,133.17,Turn off lights when not in use
-765,798.14,103.11,ABC Energy,2022-06-19,Commercial,Solar,1,124.12,Use energy-efficient appliances
-766,642.38,87.79,ABC Energy,2022-09-08,Residential,Electricity,3,177.05,Use energy-efficient appliances
-767,759.32,469.92,ABC Energy,2022-10-30,Residential,Electricity,3,128.72,Insulate your home
-768,780.86,348.26,XYZ Power,2022-05-05,Industrial,Natural Gas,2,74.07,Use energy-efficient appliances
-769,757.81,176.06,ABC Energy,2022-06-13,Residential,Electricity,5,387.58,Insulate your home
-770,292.61,249.15,Green Energy Co.,2022-07-08,Commercial,Solar,5,383.57,Use energy-efficient appliances
-771,131.51,278.23,Green Energy Co.,2022-01-21,Industrial,Natural Gas,3,398.17,Use energy-efficient appliances
-772,237.11,156.42,ABC Energy,2022-12-15,Industrial,Solar,3,397.11,Turn off lights when not in use
-773,847.86,424.37,XYZ Power,2022-02-04,Residential,Natural Gas,2,86.49,Insulate your home
-774,390.29,110.67,XYZ Power,2022-07-17,Residential,Natural Gas,3,339.04,Turn off lights when not in use
-775,925.96,95.21,XYZ Power,2022-04-18,Residential,Solar,3,479.87,Insulate your home
-776,654.0,74.75,ABC Energy,2022-05-01,Industrial,Solar,3,117.93,Use energy-efficient appliances
-777,67.22,1.88,XYZ Power,2022-06-18,Commercial,Natural Gas,1,473.26,Use energy-efficient appliances
-778,512.42,371.27,Green Energy Co.,2022-12-20,Commercial,Natural Gas,4,122.02,Insulate your home
-779,592.51,317.24,Green Energy Co.,2022-09-12,Residential,Natural Gas,5,43.19,Turn off lights when not in use
-780,586.08,100.71,Green Energy Co.,2022-04-04,Industrial,Electricity,4,399.89,Turn off lights when not in use
-781,155.67,424.97,XYZ Power,2022-12-13,Residential,Natural Gas,2,359.19,Use energy-efficient appliances
-782,450.72,206.0,ABC Energy,2022-11-08,Industrial,Electricity,2,158.97,Use energy-efficient appliances
-783,436.05,316.72,ABC Energy,2022-07-23,Industrial,Natural Gas,4,90.12,Turn off lights when not in use
-784,991.92,358.91,ABC Energy,2022-07-17,Industrial,Electricity,1,409.04,Insulate your home
-785,545.23,192.21,ABC Energy,2022-04-08,Industrial,Solar,1,249.17,Insulate your home
-786,876.02,8.57,ABC Energy,2022-05-28,Residential,Electricity,4,412.1,Insulate your home
-787,179.23,453.79,XYZ Power,2022-02-17,Industrial,Natural Gas,1,117.42,Insulate your home
-788,329.54,172.25,XYZ Power,2022-03-22,Residential,Natural Gas,2,437.19,Insulate your home
-789,522.33,437.51,Green Energy Co.,2022-07-12,Commercial,Natural Gas,1,325.75,Use energy-efficient appliances
-790,779.22,2.07,Green Energy Co.,2022-10-06,Industrial,Electricity,1,461.78,Turn off lights when not in use
-791,123.72,113.48,Green Energy Co.,2022-03-03,Residential,Natural Gas,2,129.7,Turn off lights when not in use
-792,396.29,365.48,ABC Energy,2022-09-17,Industrial,Electricity,4,137.97,Turn off lights when not in use
-793,1.82,249.89,ABC Energy,2022-11-14,Commercial,Solar,3,14.11,Insulate your home
-794,590.21,29.72,ABC Energy,2022-02-04,Residential,Solar,4,22.63,Turn off lights when not in use
-795,703.38,136.64,ABC Energy,2022-01-09,Commercial,Natural Gas,5,437.91,Use energy-efficient appliances
-796,197.65,176.76,XYZ Power,2022-07-09,Commercial,Electricity,5,281.12,Turn off lights when not in use
-797,582.78,390.79,ABC Energy,2022-12-20,Residential,Electricity,4,394.85,Insulate your home
-798,185.91,145.03,XYZ Power,2022-11-05,Commercial,Electricity,3,396.35,Turn off lights when not in use
-799,570.1,301.68,ABC Energy,2022-08-26,Commercial,Natural Gas,3,166.66,Turn off lights when not in use
-800,268.18,65.53,ABC Energy,2022-12-27,Commercial,Solar,5,492.86,Insulate your home
-801,651.92,364.81,Green Energy Co.,2022-10-17,Commercial,Solar,2,125.52,Turn off lights when not in use
-802,468.94,263.08,Green Energy Co.,2022-08-31,Industrial,Solar,4,242.55,Use energy-efficient appliances
-803,19.29,137.5,ABC Energy,2022-11-08,Residential,Electricity,2,264.79,Turn off lights when not in use
-804,442.58,29.1,XYZ Power,2022-01-27,Residential,Solar,5,269.42,Insulate your home
-805,837.9,106.6,ABC Energy,2022-11-05,Industrial,Electricity,2,363.46,Turn off lights when not in use
-806,323.47,152.69,Green Energy Co.,2022-12-29,Residential,Solar,2,307.84,Insulate your home
-807,527.34,361.26,XYZ Power,2022-11-16,Commercial,Electricity,3,337.06,Turn off lights when not in use
-808,649.46,82.98,XYZ Power,2022-12-24,Commercial,Natural Gas,5,231.19,Insulate your home
-809,347.18,484.05,ABC Energy,2022-12-27,Industrial,Natural Gas,3,179.49,Use energy-efficient appliances
-810,569.0,283.48,Green Energy Co.,2022-08-22,Industrial,Solar,4,418.89,Use energy-efficient appliances
-811,927.78,445.43,XYZ Power,2022-06-26,Residential,Electricity,4,48.78,Insulate your home
-812,317.94,267.73,Green Energy Co.,2022-10-27,Industrial,Natural Gas,2,65.58,Use energy-efficient appliances
-813,847.16,361.45,XYZ Power,2022-08-12,Residential,Electricity,5,495.25,Turn off lights when not in use
-814,509.78,474.4,XYZ Power,2022-01-13,Commercial,Electricity,5,185.34,Turn off lights when not in use
-815,588.69,26.39,XYZ Power,2022-07-04,Commercial,Natural Gas,3,46.26,Insulate your home
-816,863.45,237.48,XYZ Power,2022-06-30,Industrial,Electricity,5,187.62,Insulate your home
-817,551.08,286.72,XYZ Power,2022-03-04,Residential,Electricity,1,113.22,Insulate your home
-818,668.66,486.88,ABC Energy,2022-05-14,Commercial,Solar,2,110.93,Turn off lights when not in use
-819,284.57,247.19,XYZ Power,2022-04-20,Residential,Solar,1,454.57,Use energy-efficient appliances
-820,607.3,67.18,XYZ Power,2022-10-03,Residential,Solar,5,328.33,Turn off lights when not in use
-821,303.98,33.12,ABC Energy,2022-09-30,Commercial,Natural Gas,4,8.31,Use energy-efficient appliances
-822,575.07,263.54,ABC Energy,2022-01-19,Commercial,Electricity,4,239.29,Insulate your home
-823,174.48,409.59,XYZ Power,2022-12-23,Commercial,Solar,3,146.88,Turn off lights when not in use
-824,66.08,435.84,XYZ Power,2022-01-13,Residential,Electricity,5,329.49,Insulate your home
-825,305.44,293.98,Green Energy Co.,2022-03-30,Residential,Electricity,5,73.93,Insulate your home
-826,427.79,250.79,ABC Energy,2022-12-03,Commercial,Electricity,3,145.78,Turn off lights when not in use
-827,744.91,320.79,Green Energy Co.,2022-08-05,Industrial,Solar,1,156.8,Insulate your home
-828,540.8,467.8,Green Energy Co.,2022-07-24,Residential,Natural Gas,3,269.56,Turn off lights when not in use
-829,562.98,28.54,XYZ Power,2022-11-13,Commercial,Electricity,1,471.54,Insulate your home
-830,856.65,32.92,XYZ Power,2022-07-13,Commercial,Electricity,2,158.8,Insulate your home
-831,994.07,64.23,XYZ Power,2022-10-12,Commercial,Natural Gas,4,193.56,Insulate your home
-832,577.69,9.71,ABC Energy,2022-08-22,Industrial,Natural Gas,3,482.15,Use energy-efficient appliances
-833,191.44,200.38,Green Energy Co.,2022-12-04,Residential,Solar,4,53.31,Use energy-efficient appliances
-834,231.58,423.91,XYZ Power,2022-01-17,Residential,Electricity,5,114.79,Insulate your home
-835,505.31,200.78,Green Energy Co.,2022-03-24,Industrial,Solar,1,350.87,Use energy-efficient appliances
-836,163.36,214.5,Green Energy Co.,2022-02-23,Industrial,Electricity,5,209.35,Use energy-efficient appliances
-837,659.82,205.77,Green Energy Co.,2022-06-08,Industrial,Natural Gas,4,138.87,Insulate your home
-838,858.11,285.09,ABC Energy,2022-07-31,Commercial,Electricity,4,30.68,Insulate your home
-839,825.71,35.6,ABC Energy,2022-11-29,Residential,Electricity,5,173.24,Turn off lights when not in use
-840,655.21,272.69,XYZ Power,2022-01-30,Commercial,Electricity,4,112.94,Insulate your home
-841,849.09,5.18,XYZ Power,2022-08-29,Commercial,Electricity,5,294.38,Turn off lights when not in use
-842,662.74,83.86,Green Energy Co.,2022-12-12,Commercial,Natural Gas,3,290.28,Insulate your home
-843,329.68,5.77,XYZ Power,2022-09-03,Commercial,Electricity,4,323.95,Insulate your home
-844,229.45,120.08,XYZ Power,2022-10-15,Residential,Solar,3,2.5,Insulate your home
-845,507.49,64.65,ABC Energy,2022-12-26,Industrial,Natural Gas,4,301.77,Insulate your home
-846,877.5,261.96,XYZ Power,2022-02-26,Commercial,Solar,2,409.53,Turn off lights when not in use
-847,857.09,153.81,XYZ Power,2022-07-25,Residential,Electricity,5,8.13,Use energy-efficient appliances
-848,138.27,7.13,XYZ Power,2022-09-07,Industrial,Solar,3,411.1,Use energy-efficient appliances
-849,54.2,360.78,ABC Energy,2022-01-04,Residential,Electricity,1,70.49,Turn off lights when not in use
-850,394.41,220.43,XYZ Power,2022-11-19,Residential,Natural Gas,4,306.6,Turn off lights when not in use
-851,192.04,73.1,ABC Energy,2022-11-22,Industrial,Natural Gas,5,109.0,Use energy-efficient appliances
-852,133.13,209.05,Green Energy Co.,2022-12-12,Residential,Solar,4,299.79,Insulate your home
-853,646.82,397.08,ABC Energy,2022-12-24,Industrial,Solar,2,407.79,Use energy-efficient appliances
-854,592.53,76.14,Green Energy Co.,2022-08-02,Industrial,Natural Gas,5,428.19,Use energy-efficient appliances
-855,136.98,454.2,ABC Energy,2022-06-08,Industrial,Electricity,3,260.04,Turn off lights when not in use
-856,575.17,214.84,ABC Energy,2022-05-26,Commercial,Natural Gas,2,145.26,Turn off lights when not in use
-857,696.17,389.33,ABC Energy,2022-09-30,Residential,Electricity,1,398.97,Insulate your home
-858,677.11,111.05,Green Energy Co.,2022-01-07,Industrial,Electricity,1,494.87,Turn off lights when not in use
-859,43.39,212.31,Green Energy Co.,2022-07-03,Industrial,Solar,4,353.02,Turn off lights when not in use
-860,14.79,343.72,ABC Energy,2022-02-17,Industrial,Natural Gas,3,428.54,Use energy-efficient appliances
-861,159.78,403.26,ABC Energy,2022-04-05,Commercial,Solar,1,223.29,Use energy-efficient appliances
-862,665.89,16.2,Green Energy Co.,2022-11-27,Residential,Electricity,3,53.25,Use energy-efficient appliances
-863,619.87,82.05,Green Energy Co.,2022-09-17,Commercial,Natural Gas,3,155.06,Use energy-efficient appliances
-864,624.72,148.7,Green Energy Co.,2022-11-25,Commercial,Electricity,2,391.41,Insulate your home
-865,2.92,191.43,XYZ Power,2022-05-25,Industrial,Solar,3,336.66,Turn off lights when not in use
-866,241.04,342.8,Green Energy Co.,2022-01-31,Industrial,Natural Gas,5,312.85,Insulate your home
-867,964.91,415.53,Green Energy Co.,2022-01-21,Residential,Solar,1,39.24,Turn off lights when not in use
-868,604.57,401.76,XYZ Power,2022-06-01,Commercial,Natural Gas,3,258.99,Turn off lights when not in use
-869,8.56,319.11,XYZ Power,2022-10-17,Commercial,Natural Gas,3,174.96,Turn off lights when not in use
-870,44.65,247.57,XYZ Power,2022-10-03,Commercial,Electricity,2,276.94,Turn off lights when not in use
-871,297.47,263.88,XYZ Power,2022-02-13,Commercial,Solar,3,187.2,Insulate your home
-872,995.32,113.62,XYZ Power,2022-08-16,Industrial,Solar,3,55.39,Use energy-efficient appliances
-873,881.63,310.72,ABC Energy,2022-02-11,Commercial,Natural Gas,5,153.12,Turn off lights when not in use
-874,503.6,250.52,XYZ Power,2022-10-18,Residential,Solar,5,492.2,Turn off lights when not in use
-875,91.52,491.74,Green Energy Co.,2022-09-02,Residential,Electricity,5,314.7,Turn off lights when not in use
-876,10.27,276.76,XYZ Power,2022-07-25,Industrial,Natural Gas,5,78.64,Insulate your home
-877,371.68,312.7,ABC Energy,2022-04-26,Residential,Solar,5,427.64,Turn off lights when not in use
-878,933.55,3.03,XYZ Power,2022-05-12,Industrial,Natural Gas,3,231.95,Use energy-efficient appliances
-879,23.93,272.68,ABC Energy,2022-09-14,Residential,Natural Gas,1,404.71,Turn off lights when not in use
-880,367.06,305.5,Green Energy Co.,2022-07-19,Residential,Solar,3,4.98,Turn off lights when not in use
-881,840.46,91.73,ABC Energy,2022-10-03,Industrial,Electricity,2,116.86,Use energy-efficient appliances
-882,935.82,257.96,ABC Energy,2022-05-15,Commercial,Electricity,5,414.52,Insulate your home
-883,163.38,303.76,ABC Energy,2022-03-04,Industrial,Electricity,1,465.3,Turn off lights when not in use
-884,926.09,409.98,ABC Energy,2022-05-22,Industrial,Natural Gas,4,152.23,Insulate your home
-885,496.12,463.87,ABC Energy,2022-02-08,Industrial,Electricity,2,325.93,Turn off lights when not in use
-886,145.19,274.37,ABC Energy,2022-09-13,Residential,Electricity,4,90.59,Turn off lights when not in use
-887,927.81,20.97,ABC Energy,2022-06-26,Residential,Natural Gas,1,406.65,Use energy-efficient appliances
-888,121.16,67.7,XYZ Power,2022-02-14,Commercial,Solar,1,261.44,Use energy-efficient appliances
-889,687.61,383.14,Green Energy Co.,2022-11-23,Commercial,Solar,1,70.59,Use energy-efficient appliances
-890,13.34,33.01,ABC Energy,2022-01-17,Commercial,Natural Gas,5,372.93,Turn off lights when not in use
-891,918.85,222.27,XYZ Power,2022-07-04,Commercial,Electricity,3,212.08,Insulate your home
-892,597.31,452.97,Green Energy Co.,2022-05-21,Residential,Solar,3,270.07,Insulate your home
-893,327.81,426.41,ABC Energy,2022-01-14,Commercial,Electricity,2,424.44,Use energy-efficient appliances
-894,391.37,323.72,XYZ Power,2022-02-17,Residential,Electricity,5,101.14,Insulate your home
-895,133.62,249.98,Green Energy Co.,2022-06-18,Residential,Solar,1,351.43,Use energy-efficient appliances
-896,176.35,101.13,ABC Energy,2022-12-14,Industrial,Solar,3,175.72,Turn off lights when not in use
-897,309.68,419.38,Green Energy Co.,2022-09-25,Residential,Electricity,1,358.78,Use energy-efficient appliances
-898,655.99,90.23,ABC Energy,2022-11-17,Industrial,Solar,1,220.59,Insulate your home
-899,728.0,65.22,ABC Energy,2022-01-26,Industrial,Electricity,5,75.46,Use energy-efficient appliances
-900,202.7,201.6,XYZ Power,2022-09-27,Commercial,Electricity,3,139.1,Use energy-efficient appliances
-901,745.81,77.75,XYZ Power,2022-06-06,Industrial,Solar,3,210.36,Turn off lights when not in use
-902,446.19,311.43,Green Energy Co.,2022-06-09,Commercial,Solar,3,272.19,Turn off lights when not in use
-903,331.22,161.24,XYZ Power,2022-11-24,Commercial,Solar,3,33.36,Turn off lights when not in use
-904,638.21,38.42,ABC Energy,2022-09-19,Commercial,Solar,1,190.86,Use energy-efficient appliances
-905,328.31,102.51,Green Energy Co.,2022-04-15,Commercial,Electricity,3,488.54,Turn off lights when not in use
-906,152.94,117.74,Green Energy Co.,2022-04-09,Residential,Electricity,5,379.59,Turn off lights when not in use
-907,682.87,365.47,Green Energy Co.,2022-05-07,Industrial,Natural Gas,1,210.59,Turn off lights when not in use
-908,762.86,441.34,ABC Energy,2022-11-11,Commercial,Natural Gas,5,243.13,Insulate your home
-909,501.58,210.38,ABC Energy,2022-05-11,Residential,Solar,5,243.58,Use energy-efficient appliances
-910,97.44,133.31,XYZ Power,2022-05-07,Commercial,Solar,3,28.63,Turn off lights when not in use
-911,702.69,490.93,ABC Energy,2022-11-27,Industrial,Solar,2,97.25,Insulate your home
-912,935.1,431.22,ABC Energy,2022-05-31,Residential,Electricity,4,1.94,Turn off lights when not in use
-913,133.12,158.07,XYZ Power,2022-05-29,Industrial,Electricity,1,57.47,Insulate your home
-914,242.16,139.18,Green Energy Co.,2022-06-23,Industrial,Electricity,3,166.5,Use energy-efficient appliances
-915,547.35,87.41,Green Energy Co.,2022-09-24,Commercial,Electricity,2,23.78,Use energy-efficient appliances
-916,776.47,204.23,ABC Energy,2022-08-22,Residential,Electricity,4,16.41,Turn off lights when not in use
-917,823.26,354.69,ABC Energy,2022-01-30,Residential,Solar,3,77.19,Insulate your home
-918,878.13,87.39,XYZ Power,2022-06-07,Commercial,Electricity,5,338.79,Insulate your home
-919,463.99,191.83,XYZ Power,2022-02-12,Residential,Natural Gas,1,254.13,Use energy-efficient appliances
-920,354.17,49.38,Green Energy Co.,2022-06-20,Residential,Electricity,5,270.99,Use energy-efficient appliances
-921,852.51,86.84,XYZ Power,2022-05-29,Industrial,Natural Gas,5,101.72,Turn off lights when not in use
-922,289.36,425.55,ABC Energy,2022-06-01,Residential,Solar,3,140.03,Insulate your home
-923,267.92,141.03,XYZ Power,2022-09-01,Industrial,Solar,4,274.63,Insulate your home
-924,146.33,149.97,ABC Energy,2022-10-10,Commercial,Natural Gas,1,490.59,Insulate your home
-925,638.97,422.57,XYZ Power,2022-03-29,Industrial,Electricity,2,64.9,Use energy-efficient appliances
-926,383.38,186.62,ABC Energy,2022-03-08,Residential,Solar,1,171.19,Use energy-efficient appliances
-927,37.99,407.41,Green Energy Co.,2022-05-05,Residential,Solar,2,295.43,Insulate your home
-928,220.46,9.05,XYZ Power,2022-10-03,Industrial,Electricity,5,195.16,Insulate your home
-929,998.13,85.8,Green Energy Co.,2022-02-01,Residential,Electricity,1,2.85,Use energy-efficient appliances
-930,756.82,194.88,Green Energy Co.,2022-08-10,Residential,Natural Gas,3,274.64,Turn off lights when not in use
-931,484.03,401.72,Green Energy Co.,2022-08-12,Industrial,Solar,1,80.32,Insulate your home
-932,828.95,293.48,Green Energy Co.,2022-01-08,Commercial,Natural Gas,3,237.51,Use energy-efficient appliances
-933,81.72,214.77,Green Energy Co.,2022-12-17,Commercial,Natural Gas,5,449.55,Turn off lights when not in use
-934,142.46,44.67,XYZ Power,2022-06-26,Commercial,Solar,3,478.48,Use energy-efficient appliances
-935,784.47,204.34,Green Energy Co.,2022-04-24,Commercial,Electricity,2,112.1,Use energy-efficient appliances
-936,204.12,458.16,Green Energy Co.,2022-11-17,Industrial,Electricity,5,303.52,Use energy-efficient appliances
-937,120.32,242.95,ABC Energy,2022-12-12,Industrial,Electricity,4,25.92,Turn off lights when not in use
-938,213.41,384.49,XYZ Power,2022-09-24,Commercial,Electricity,1,143.23,Insulate your home
-939,354.03,325.29,ABC Energy,2022-02-27,Commercial,Electricity,5,470.37,Insulate your home
-940,133.5,331.5,XYZ Power,2022-06-20,Commercial,Solar,3,402.13,Turn off lights when not in use
-941,297.21,498.57,ABC Energy,2022-03-10,Industrial,Natural Gas,1,295.42,Turn off lights when not in use
-942,269.87,385.33,Green Energy Co.,2022-03-23,Industrial,Natural Gas,4,183.58,Use energy-efficient appliances
-943,458.53,65.78,XYZ Power,2022-12-15,Residential,Electricity,5,269.23,Turn off lights when not in use
-944,384.52,306.14,XYZ Power,2022-03-21,Industrial,Natural Gas,2,260.47,Turn off lights when not in use
-945,361.96,109.78,Green Energy Co.,2022-07-14,Commercial,Natural Gas,4,345.85,Insulate your home
-946,185.78,11.34,ABC Energy,2022-06-21,Commercial,Natural Gas,2,85.6,Use energy-efficient appliances
-947,585.25,243.43,Green Energy Co.,2022-04-14,Residential,Natural Gas,4,256.04,Insulate your home
-948,372.93,451.11,ABC Energy,2022-12-18,Industrial,Electricity,4,71.01,Insulate your home
-949,921.52,154.13,ABC Energy,2022-05-23,Industrial,Solar,3,357.39,Insulate your home
-950,553.47,137.91,ABC Energy,2022-05-13,Commercial,Electricity,5,307.94,Insulate your home
-951,683.27,383.7,ABC Energy,2022-05-24,Residential,Natural Gas,4,293.29,Use energy-efficient appliances
-952,629.73,371.8,ABC Energy,2022-01-19,Industrial,Solar,4,26.64,Turn off lights when not in use
-953,17.58,483.1,Green Energy Co.,2022-12-06,Industrial,Electricity,1,479.13,Use energy-efficient appliances
-954,271.33,236.51,ABC Energy,2022-07-12,Industrial,Solar,3,3.9,Insulate your home
-955,334.36,459.45,Green Energy Co.,2022-08-16,Residential,Solar,2,36.25,Turn off lights when not in use
-956,84.16,471.09,Green Energy Co.,2022-07-14,Industrial,Solar,3,17.65,Use energy-efficient appliances
-957,169.51,448.69,ABC Energy,2022-11-24,Industrial,Solar,5,316.95,Use energy-efficient appliances
-958,326.84,482.03,XYZ Power,2022-05-22,Commercial,Natural Gas,3,390.6,Turn off lights when not in use
-959,113.36,470.26,ABC Energy,2022-03-13,Commercial,Natural Gas,5,227.65,Insulate your home
-960,404.62,355.34,Green Energy Co.,2022-11-17,Industrial,Solar,3,281.13,Insulate your home
-961,175.02,303.59,Green Energy Co.,2022-01-01,Commercial,Solar,5,202.88,Use energy-efficient appliances
-962,778.01,91.67,XYZ Power,2022-08-20,Commercial,Natural Gas,3,98.56,Use energy-efficient appliances
-963,954.73,465.89,Green Energy Co.,2022-05-01,Industrial,Natural Gas,4,186.03,Use energy-efficient appliances
-964,150.1,135.33,XYZ Power,2022-04-14,Commercial,Electricity,1,434.87,Insulate your home
-965,833.1,372.7,ABC Energy,2022-02-26,Residential,Electricity,3,376.34,Turn off lights when not in use
-966,538.45,119.71,XYZ Power,2022-08-02,Commercial,Natural Gas,2,18.39,Use energy-efficient appliances
-967,902.26,119.14,XYZ Power,2022-01-06,Commercial,Solar,4,341.3,Insulate your home
-968,484.58,403.66,ABC Energy,2022-09-03,Industrial,Solar,1,217.26,Use energy-efficient appliances
-969,759.17,138.97,ABC Energy,2022-11-20,Industrial,Natural Gas,5,88.89,Turn off lights when not in use
-970,161.59,446.57,Green Energy Co.,2022-08-28,Commercial,Solar,1,295.5,Turn off lights when not in use
-971,970.47,187.95,Green Energy Co.,2022-08-31,Commercial,Solar,4,237.72,Use energy-efficient appliances
-972,922.21,471.96,XYZ Power,2022-02-02,Industrial,Electricity,4,70.03,Turn off lights when not in use
-973,403.14,450.97,XYZ Power,2022-03-29,Commercial,Electricity,3,118.64,Insulate your home
-974,250.47,95.18,XYZ Power,2022-10-30,Industrial,Natural Gas,3,155.7,Insulate your home
-975,582.66,263.42,XYZ Power,2022-11-05,Commercial,Solar,3,244.68,Use energy-efficient appliances
-976,221.83,39.09,ABC Energy,2022-10-18,Commercial,Natural Gas,1,301.69,Turn off lights when not in use
-977,622.93,10.15,Green Energy Co.,2022-12-08,Residential,Electricity,5,377.78,Turn off lights when not in use
-978,300.78,140.76,XYZ Power,2022-03-25,Commercial,Natural Gas,3,467.42,Use energy-efficient appliances
-979,771.76,65.5,ABC Energy,2022-06-30,Commercial,Solar,4,226.81,Insulate your home
-980,824.36,13.5,XYZ Power,2022-01-05,Residential,Natural Gas,1,74.82,Turn off lights when not in use
-981,16.26,364.41,ABC Energy,2022-03-18,Commercial,Natural Gas,1,453.67,Use energy-efficient appliances
-982,689.39,287.15,Green Energy Co.,2022-07-12,Industrial,Electricity,5,385.68,Insulate your home
-983,767.23,238.83,XYZ Power,2022-05-24,Industrial,Electricity,1,432.06,Use energy-efficient appliances
-984,371.52,243.9,XYZ Power,2022-12-01,Commercial,Natural Gas,4,47.78,Use energy-efficient appliances
-985,935.26,407.1,XYZ Power,2022-07-30,Residential,Natural Gas,4,388.24,Insulate your home
-986,423.14,219.89,XYZ Power,2022-10-17,Commercial,Electricity,1,126.17,Insulate your home
-987,994.09,461.24,XYZ Power,2022-02-27,Residential,Electricity,2,479.33,Insulate your home
-988,847.91,408.84,Green Energy Co.,2022-08-16,Industrial,Natural Gas,4,215.78,Insulate your home
-989,259.71,491.62,Green Energy Co.,2022-01-06,Residential,Natural Gas,2,396.89,Use energy-efficient appliances
-990,71.36,338.11,XYZ Power,2022-09-09,Commercial,Solar,5,461.02,Use energy-efficient appliances
-991,67.16,431.74,Green Energy Co.,2022-02-14,Commercial,Solar,4,418.44,Use energy-efficient appliances
-992,381.11,470.48,ABC Energy,2022-12-01,Industrial,Electricity,4,37.7,Use energy-efficient appliances
-993,749.37,362.55,ABC Energy,2022-07-05,Commercial,Electricity,2,397.11,Insulate your home
-994,351.24,453.01,XYZ Power,2022-08-02,Industrial,Electricity,2,324.68,Turn off lights when not in use
-995,579.29,476.59,ABC Energy,2022-06-17,Industrial,Solar,5,235.09,Turn off lights when not in use
-996,819.94,89.76,Green Energy Co.,2022-07-31,Residential,Solar,2,411.49,Insulate your home
-997,818.7,441.23,ABC Energy,2022-02-08,Commercial,Natural Gas,1,123.72,Use energy-efficient appliances
-998,921.63,331.91,Green Energy Co.,2022-10-27,Residential,Electricity,4,159.22,Use energy-efficient appliances
-999,26.81,253.51,Green Energy Co.,2022-05-24,Commercial,Natural Gas,5,354.44,Turn off lights when not in use
-1000,225.23,387.48,Green Energy Co.,2022-07-30,Commercial,Natural Gas,4,112.3,Use energy-efficient appliances
+user_id,income,expenses,savings,investment_portfolio_value,credit_score,loan_amount,loan_interest_rate,loan_term_months,retirement_savings_balance
+1,229257.17,365819.87,732399.79,649134.48,578,553055.62,98.38,137,911441.33
+2,69167.38,707481.96,863614.91,16693.6,469,545838.72,62.5,116,6914.66
+3,64610.04,997377.07,593793.85,846636.17,508,226184.51,46.8,228,865008.44
+4,40627.01,47588.98,507724.19,95332.64,512,67178.23,59.75,170,164228.41
+5,395716.11,694802.75,513932.48,857183.43,464,240577.04,1.69,316,236760.7
+6,9601.59,631175.77,561783.91,753682.8,594,170881.3,27.76,222,62375.01
+7,982719.18,928834.03,380171.8,148184.4,391,900533.28,50.55,308,898191.48
+8,554031.69,66977.04,869384.2,921985.28,460,588863.55,27.47,165,639693.47
+9,186159.53,155453.16,689570.6,278382.46,781,931146.85,14.72,346,247995.83
+10,429370.69,644699.25,475954.13,216729.75,455,512396.76,62.22,339,970823.79
+11,938454.36,627330.77,892977.38,732243.92,338,473968.75,83.39,77,934255.26
+12,175091.13,658421.89,315081.48,209828.73,583,222477.96,80.5,42,168181.05
+13,838035.57,607597.6,515893.98,222632.67,683,481496.2,74.03,106,33885.23
+14,977995.82,383401.55,729665.59,251769.76,652,572814.68,21.34,37,850269.39
+15,254952.25,867763.33,131970.1,277675.58,435,429384.76,17.21,257,397944.0
+16,998756.69,243350.03,287469.78,454072.35,825,285372.38,44.05,272,366241.24
+17,193775.3,771977.75,738862.1,692634.97,491,228291.0,51.29,38,41190.17
+18,342495.44,451562.35,995745.87,958158.3,820,770612.3,70.65,130,37972.48
+19,446658.24,856274.29,808088.54,181818.2,587,284752.24,65.85,230,258019.92
+20,519440.67,586766.5,864967.99,669016.14,424,537482.28,65.12,300,830765.63
+21,499697.24,13089.22,290052.17,392500.8,843,299510.42,14.28,101,84190.23
+22,804242.69,20949.48,513135.3,235199.31,424,987027.84,77.81,200,4718.72
+23,976288.07,209518.43,738876.06,950477.88,373,214520.07,48.61,259,849268.16
+24,797717.74,787107.57,639162.74,887776.37,509,734762.03,16.01,327,199035.23
+25,384663.0,743670.63,291701.7,235837.56,601,674067.67,86.77,262,89531.96
+26,31913.49,476640.92,15439.36,959708.97,620,278857.83,88.29,126,153939.2
+27,219428.62,435581.16,466102.32,43201.47,767,73391.64,69.16,167,633333.7
+28,545015.53,335999.21,948415.77,180046.95,608,864081.83,39.45,131,666915.75
+29,22638.56,14715.14,450962.62,753476.27,386,984916.25,68.44,115,96026.24
+30,166786.41,880240.22,974519.38,48094.95,365,62811.16,5.9,300,126529.86
+31,550490.13,799714.59,699158.35,928419.25,526,426551.69,1.58,304,5440.58
+32,984145.68,548594.9,60434.06,433510.78,706,587197.98,96.72,325,296598.31
+33,127722.21,671550.95,597361.15,359105.33,540,963492.33,76.01,165,73444.02
+34,839397.34,887293.11,722268.11,652532.56,840,569746.69,55.57,225,125188.79
+35,666909.82,956428.7,161858.86,255164.84,393,599877.76,81.87,127,516209.73
+36,113343.93,634348.79,274726.91,828814.96,382,828445.4,47.13,219,175009.68
+37,97272.18,311295.65,165897.24,67380.91,817,899690.7,9.98,295,994074.36
+38,122158.67,391470.24,710899.13,744865.06,543,210748.28,17.58,302,481727.81
+39,3660.31,543669.47,456227.92,567893.79,783,677850.96,36.28,19,981635.77
+40,525527.58,669712.7,330177.23,385383.71,455,693831.77,40.18,321,744880.31
+41,194746.4,909574.62,743165.35,123049.27,836,56310.34,41.21,234,629939.61
+42,373792.28,82734.69,338198.97,590549.0,307,958901.22,1.94,258,546544.61
+43,3765.51,207051.62,887024.27,706500.91,810,331691.35,35.97,235,811229.41
+44,105292.91,647343.88,972027.74,848593.31,724,304512.54,78.65,46,981510.41
+45,749758.59,597964.42,127297.46,306934.1,570,114033.91,29.81,11,965632.05
+46,138109.84,685019.74,937710.56,827534.56,654,784427.36,32.04,217,52194.77
+47,692409.45,585845.17,712828.5,928640.33,453,724739.03,42.89,201,367895.58
+48,85547.55,560826.34,549154.31,200597.94,502,733507.18,13.63,116,536833.36
+49,287250.46,126699.86,179082.76,115415.09,795,385783.8,17.84,139,270354.13
+50,476280.46,140865.71,467817.2,88208.09,466,358308.92,73.01,351,418034.99
+51,732830.34,2541.53,383607.88,668888.42,314,371701.98,62.6,61,832515.4
+52,25508.76,759896.12,977055.97,985477.28,346,488841.23,76.86,202,330031.23
+53,598949.04,154942.24,634426.98,463382.75,332,522543.75,58.36,197,942412.24
+54,314461.18,272734.99,620329.19,274150.49,319,640493.15,27.75,31,653498.76
+55,266969.99,183967.07,135227.82,479382.29,747,580840.71,28.44,232,772895.45
+56,98956.0,959832.46,510893.97,903694.3,517,198575.21,60.98,314,132385.39
+57,125185.01,910757.43,925250.52,830150.99,787,85107.38,92.62,331,311819.57
+58,796335.38,736112.95,604841.59,490176.68,366,788257.44,77.28,13,671713.99
+59,914108.59,662521.81,695650.86,928160.71,406,819147.95,85.36,43,224972.83
+60,798004.16,713136.58,252748.12,353087.6,692,128824.99,28.33,303,6471.46
+61,362575.06,402869.14,575786.57,330839.53,425,444225.88,99.1,91,636286.03
+62,3763.11,430065.48,611150.0,404602.24,717,125430.32,29.12,227,484099.88
+63,434560.83,528304.02,198360.9,848714.01,451,45311.86,44.76,144,657926.68
+64,466476.96,557553.32,304711.43,751193.87,732,10375.12,47.08,94,974861.1
+65,609043.93,190402.92,530583.42,556091.03,825,891630.33,71.93,64,671764.95
+66,732845.82,675966.12,306699.52,596992.81,826,693138.69,91.01,182,780684.63
+67,84263.02,224332.98,427386.85,986938.15,495,850699.79,51.32,232,484892.2
+68,905956.27,685055.61,141372.39,922705.69,613,11173.02,71.57,321,681202.72
+69,904566.26,997484.52,953139.64,154798.64,350,343608.62,23.2,301,307269.69
+70,646995.3,244410.45,41867.05,30614.12,536,591709.28,70.11,120,665841.92
+71,456948.53,836463.87,323126.18,647661.37,512,466483.52,62.58,38,957245.7
+72,322462.88,153290.16,387104.6,756077.63,482,385814.03,4.89,328,861045.71
+73,41636.17,280591.6,406257.51,196964.88,435,566739.38,90.41,181,726688.77
+74,542154.89,297698.95,708132.86,22111.21,541,532210.6,13.54,152,304289.59
+75,321520.93,169517.53,564439.25,108929.59,518,666161.62,19.31,348,537398.46
+76,613377.58,879999.36,382083.33,612634.11,631,674210.7,40.19,198,455910.45
+77,588443.46,84260.77,544102.97,572228.24,738,799660.9,48.85,221,40266.97
+78,824592.92,241157.67,323110.55,708643.37,434,321823.58,70.59,112,32225.67
+79,759458.7,136659.93,278308.6,523268.45,694,992364.86,33.09,199,875302.23
+80,374428.18,201322.83,553948.32,617038.79,753,695314.96,63.54,320,32677.38
+81,345938.99,721188.22,741246.14,734064.48,484,138410.75,87.22,187,155818.63
+82,459561.64,249685.11,321189.62,936574.37,558,926783.19,76.48,321,573162.2
+83,966347.1,574113.24,155137.14,869524.5,745,817609.8,7.43,291,872604.82
+84,652835.8,588062.46,357341.55,664669.63,424,429567.06,82.05,85,711688.59
+85,809793.8,560410.1,271008.87,224072.91,653,743954.95,96.38,58,945622.67
+86,110730.47,291048.65,222384.58,436493.8,781,593979.46,56.35,108,58901.18
+87,341131.57,413737.1,340681.92,192205.95,641,767263.8,76.99,180,495706.58
+88,883839.19,887445.19,546490.05,86801.35,606,14102.11,34.77,27,968378.44
+89,393105.68,520394.99,378391.29,376851.47,691,336855.12,99.83,211,744939.24
+90,713486.67,406135.2,499536.05,163352.76,778,669371.05,94.76,111,697083.59
+91,522271.27,961435.53,815211.47,56117.21,828,386621.37,75.88,112,142739.5
+92,263957.65,438068.94,209764.26,804232.43,786,500086.08,63.0,165,118515.74
+93,782264.26,285048.87,323829.45,298516.84,441,265377.12,90.69,170,474541.05
+94,224107.31,980347.31,326528.09,119642.05,445,753232.84,77.44,75,573564.71
+95,40481.65,197042.77,175420.03,957041.14,370,684767.91,49.11,212,592151.72
+96,339141.23,962135.01,645160.25,929131.63,396,533461.1,32.39,250,464963.18
+97,590505.64,430267.01,865801.74,472609.34,312,638740.45,80.01,6,63768.92
+98,943103.42,107236.2,381477.38,149905.6,740,460890.11,33.75,129,374632.4
+99,514636.12,320499.96,276201.32,470003.05,750,324416.02,29.77,77,382771.26
+100,454160.71,941757.46,739135.62,699097.35,385,337777.48,95.28,346,838773.73
+101,7043.7,731801.99,763620.39,261849.56,768,583081.92,95.38,121,157814.37
+102,336150.79,795546.04,143671.31,759903.24,315,510317.01,54.07,226,528053.35
+103,30512.32,413277.38,830166.6,535118.36,798,355444.2,14.92,113,323673.61
+104,876820.36,762200.06,746925.74,884968.84,395,228445.61,79.98,337,557930.0
+105,259134.61,617867.54,691578.46,479398.11,505,502359.59,53.61,224,68362.31
+106,938856.14,928249.92,31170.35,135919.59,822,382839.44,96.25,177,96552.42
+107,410449.37,410079.54,86070.97,44942.42,602,863349.67,54.13,77,984780.1
+108,498190.76,421188.13,224800.42,734649.76,754,256208.27,91.82,104,656978.49
+109,432144.09,613564.01,555684.67,3867.24,688,365552.32,98.84,239,885383.42
+110,726561.15,234486.4,720870.87,493439.85,451,814906.37,55.38,124,137977.84
+111,735971.04,749965.47,382104.27,381872.02,512,160238.15,9.19,317,687730.57
+112,954290.74,97567.22,125462.11,146881.42,454,18701.57,82.29,193,396785.02
+113,780356.91,716703.71,772689.4,936309.86,581,871470.56,17.56,49,947776.37
+114,238233.17,909614.0,833181.3,646942.45,466,401098.86,86.52,12,302836.29
+115,384816.23,72307.13,669827.1,474.17,400,356340.73,7.05,281,128495.8
+116,167662.09,556330.48,749174.27,84483.62,751,166360.92,47.62,239,74461.56
+117,680172.92,589549.99,324717.45,329729.1,300,804762.07,0.54,341,916063.26
+118,352400.0,214138.07,289916.11,290768.64,721,256015.2,43.95,116,864597.4
+119,192969.22,549716.83,528160.99,284411.28,684,675922.85,50.65,1,558406.55
+120,784450.53,691449.63,3426.53,338486.07,439,392912.19,72.96,334,966808.48
+121,133839.23,834426.49,595455.69,808444.18,666,636762.12,97.83,250,40920.1
+122,986505.6,840671.87,987898.19,595228.91,618,353364.36,88.74,277,434002.3
+123,786640.75,334224.87,667935.87,180409.28,787,294132.65,22.79,144,11075.08
+124,198008.56,670785.24,481202.75,203633.08,415,7803.02,56.23,74,145574.61
+125,862438.1,369570.67,901558.33,435225.52,356,514034.35,72.8,265,544792.94
+126,538943.7,350925.02,854228.87,539376.73,647,164124.1,69.43,41,375814.62
+127,52079.1,495543.43,676971.52,697929.03,778,150282.76,69.62,126,590750.98
+128,412695.6,558581.71,760157.31,164375.09,511,131711.39,69.56,101,796256.98
+129,496661.53,378120.63,645588.22,329082.16,473,950965.94,78.52,313,957488.2
+130,422523.25,936645.68,689662.97,430434.63,705,820873.02,17.07,336,319344.21
+131,970519.98,908595.36,953274.39,626813.68,585,179715.48,40.95,13,551996.63
+132,565741.25,66938.1,849583.67,813249.75,803,721677.79,97.69,296,96836.42
+133,564983.28,412460.8,687904.09,866824.32,313,382913.57,75.45,84,10035.32
+134,591307.15,614881.04,461451.07,9075.56,364,780299.55,20.53,297,45750.87
+135,75840.07,1009.95,972272.52,828877.2,460,365690.7,98.88,43,798254.54
+136,251617.89,94571.8,432864.04,148177.29,385,182401.06,47.43,269,155627.7
+137,257960.66,575819.53,922664.07,674016.66,483,419899.1,58.17,150,644086.87
+138,815718.24,307433.94,636091.24,987094.87,388,658661.57,31.78,244,471239.16
+139,805917.54,885157.32,602121.84,246198.33,583,193750.47,27.43,317,857088.85
+140,662994.84,144254.96,853092.9,245907.38,700,236961.15,90.57,331,979021.63
+141,769084.54,422642.85,458318.51,630239.93,341,657492.13,13.26,270,767574.17
+142,225587.47,81548.64,557281.69,747982.33,377,502993.39,61.1,110,516469.35
+143,924615.62,704754.63,1542.45,601277.15,837,943882.71,52.8,17,342008.39
+144,879251.9,78037.44,240386.07,469371.23,643,96141.49,72.52,253,733513.87
+145,61012.72,814680.36,463703.2,806196.84,635,147662.59,38.42,96,974696.5
+146,56028.86,849188.15,714057.07,262972.49,515,352479.22,73.15,312,229299.71
+147,99812.52,761403.27,52098.92,566226.64,645,583676.01,77.98,156,771070.32
+148,638000.01,124717.12,390361.07,771594.85,663,315614.85,18.72,48,147741.41
+149,211927.97,772340.95,594774.67,553207.76,785,105131.51,0.54,326,504088.63
+150,495683.15,460900.55,49689.63,507451.95,353,205503.41,95.92,122,768873.41
+151,170533.95,950319.88,743401.0,536701.57,739,123772.97,72.37,324,993173.98
+152,862934.4,526992.86,476851.18,32546.55,456,524505.83,58.21,270,904478.89
+153,543791.86,103423.51,377603.3,561473.43,711,348750.23,86.35,191,905069.07
+154,870884.54,981918.61,402496.26,999892.84,682,736707.16,86.43,287,343884.32
+155,609136.21,189309.31,399754.22,949100.59,523,42376.03,66.08,190,748904.05
+156,899096.66,698652.15,42506.46,710234.18,335,954483.58,17.7,94,676365.76
+157,518754.67,119324.14,621025.96,361619.39,311,638877.36,71.01,52,459535.57
+158,49396.37,600865.94,513227.14,309065.95,727,356385.11,89.81,172,782530.46
+159,856853.46,404310.48,446981.04,113886.31,840,346452.89,32.09,137,640145.84
+160,118511.05,875997.2,410045.7,387072.49,626,54333.82,64.32,291,162936.82
+161,655744.41,776555.93,576053.16,387073.05,477,692634.48,3.42,240,182396.11
+162,575806.33,322344.68,180040.58,76958.04,453,637360.89,10.47,128,703013.64
+163,881224.84,266520.61,562594.12,346298.66,747,915020.96,48.84,180,120411.06
+164,927707.81,906311.35,399655.68,719254.77,733,232680.2,86.27,255,791856.48
+165,813892.69,281610.83,202835.56,197584.58,776,78342.43,29.78,210,843597.23
+166,987583.17,962641.61,49160.4,445158.01,399,834762.75,17.75,245,827287.91
+167,742044.36,377463.64,346440.79,59519.97,372,655304.75,81.63,261,746980.24
+168,600541.63,598949.56,35593.57,656954.05,674,839269.09,34.76,53,751589.86
+169,373382.34,228433.97,656936.98,536570.33,699,497651.73,55.4,189,663104.33
+170,723146.66,316341.67,673952.37,581363.58,403,538223.04,34.33,212,441973.31
+171,494909.15,217892.69,743045.21,276315.92,326,77747.26,87.63,131,29844.42
+172,795693.94,730833.0,709810.38,100985.45,335,64348.34,91.2,216,252478.64
+173,909662.44,737789.81,387974.33,372167.42,526,870382.78,11.03,223,985308.6
+174,279885.77,193392.51,759065.03,701898.31,847,358863.19,5.88,269,254411.84
+175,903308.59,290318.96,961798.94,443048.52,627,111026.74,60.25,193,235114.49
+176,461145.9,37698.63,782431.23,285214.71,811,41442.03,32.16,258,28241.7
+177,253222.6,921963.31,207011.67,568151.81,453,376465.32,39.29,148,365367.03
+178,469549.09,323472.21,421403.94,594313.91,633,409159.63,60.84,102,406940.32
+179,465691.6,642133.6,992080.36,39727.97,590,253944.27,89.19,99,999531.39
+180,899025.07,249692.11,899007.35,349764.59,683,880784.77,10.75,88,729144.38
+181,882239.2,196199.7,242326.65,401202.29,555,426162.82,84.97,190,414788.23
+182,53312.6,414118.8,644117.73,331443.56,466,162556.98,49.96,47,457459.17
+183,806066.87,66181.47,253007.18,227492.53,661,534756.42,79.16,143,613833.51
+184,45878.48,885649.49,258554.82,382654.05,519,379043.78,51.42,67,371028.24
+185,257418.62,73665.23,572738.92,742428.38,350,478053.65,66.78,3,777590.79
+186,733319.17,716824.84,997252.6,722378.88,368,703254.47,3.3,98,19260.47
+187,132260.4,883604.15,990559.26,446004.79,418,140355.6,40.65,254,417300.21
+188,914958.3,98020.78,12716.43,464837.28,391,124726.52,84.38,159,576245.19
+189,740803.55,594737.92,340313.38,188944.14,320,415004.11,1.5,304,150828.71
+190,393189.09,541734.38,985946.08,459795.85,650,563517.09,81.88,53,778389.27
+191,938633.0,162427.87,128665.8,35568.55,813,159201.77,9.9,37,652574.85
+192,636709.32,174025.76,818458.37,838727.64,824,13600.96,9.26,103,559655.76
+193,688833.42,371912.82,567500.12,239759.12,796,16996.13,81.46,84,934312.41
+194,825330.12,900240.41,182753.49,436545.3,821,386290.19,57.46,58,656278.78
+195,223347.39,656093.59,353738.96,617822.28,680,575563.83,19.42,187,753974.13
+196,981279.7,270892.32,275781.96,5224.95,635,52524.32,25.34,349,179540.42
+197,344455.05,309935.45,217474.41,211990.55,531,119981.83,55.95,227,300754.45
+198,262115.34,105334.68,648026.4,416802.19,816,625982.77,47.45,18,460782.24
+199,659754.75,73689.62,43702.13,817689.99,494,588584.92,48.06,40,915857.91
+200,290494.1,307408.73,666747.7,530532.8,440,115125.65,15.85,33,126741.28
+201,188994.13,366645.89,576710.58,147651.98,429,780615.38,54.6,353,223570.04
+202,682522.12,396431.51,375344.69,553330.2,780,652097.56,11.44,198,686173.26
+203,795321.74,990002.09,940431.67,118819.67,301,324234.13,38.05,220,391237.62
+204,625658.07,116961.34,172350.68,238228.19,330,930658.3,55.31,346,463120.39
+205,722531.41,420664.95,854729.28,663272.16,394,943934.83,82.96,238,928884.04
+206,85154.48,671741.94,512620.61,993611.03,392,607795.05,31.77,52,155933.92
+207,279075.06,950326.55,591587.3,223072.04,508,3263.36,98.45,125,930705.7
+208,343611.0,459160.09,83708.66,638536.64,559,166016.56,15.07,78,462337.89
+209,899232.79,354410.14,417590.21,231946.98,322,438066.72,55.7,148,854774.91
+210,520317.31,945302.16,199716.16,331285.88,633,883780.37,3.66,342,751073.83
+211,446616.2,244134.79,330547.08,918991.39,680,852922.86,63.63,339,806809.03
+212,811554.09,812719.31,87780.11,488177.43,422,929373.8,80.1,239,898830.26
+213,147672.12,960318.94,673730.86,643539.38,665,309274.78,75.1,260,270891.03
+214,544935.22,15752.43,594073.95,574992.61,464,690561.15,28.99,73,520917.78
+215,120680.29,973274.7,919752.8,915345.34,750,933059.77,40.37,17,917998.52
+216,495225.21,401077.02,315637.27,571687.57,771,366433.61,73.75,15,854621.76
+217,540918.84,917706.45,882773.77,889849.88,411,577963.78,18.94,209,298433.86
+218,881994.27,311441.72,913515.81,262583.7,528,802900.82,85.7,163,955451.21
+219,792473.91,236852.24,603518.65,824645.47,362,431926.0,89.54,142,587425.9
+220,447853.39,945239.29,754634.01,243302.68,367,548872.0,81.08,257,978130.38
+221,817265.71,814921.95,697002.81,899157.7,641,641943.38,96.31,292,883071.86
+222,231298.9,610679.75,420712.01,933107.85,431,867813.24,61.54,147,761318.51
+223,34429.67,160981.11,48913.58,292372.16,327,250892.61,40.45,97,428925.54
+224,147435.43,962596.38,46558.91,495993.95,426,168817.56,35.93,277,625768.36
+225,322562.63,432310.4,763475.19,580052.44,530,452449.99,94.59,136,109330.4
+226,794914.95,503752.45,702244.99,557467.45,362,202884.19,10.65,296,794790.23
+227,289889.57,640210.13,402694.36,644007.45,323,174840.13,86.0,336,542439.2
+228,141088.16,194259.84,119974.08,364109.95,301,316156.08,29.92,31,99491.25
+229,3003.2,25495.75,711904.39,362854.2,634,457304.68,36.25,343,993563.2
+230,907793.82,960417.23,530004.71,769415.47,613,970154.2,86.68,334,560703.61
+231,62238.08,607148.87,579425.12,436331.24,574,190429.84,58.03,221,203758.12
+232,818149.28,870396.46,106458.29,396917.78,395,63907.34,97.35,314,944182.23
+233,307274.94,502023.9,793928.7,884278.39,489,101116.66,4.12,98,745909.7
+234,859461.78,19382.73,338267.13,570523.61,404,616992.47,62.48,186,176595.35
+235,92344.5,372107.33,448256.37,58910.47,626,838072.23,1.93,156,786233.33
+236,314503.62,491044.63,796668.25,462669.5,475,353338.29,90.75,125,570354.2
+237,344519.49,849116.32,275887.84,543959.22,411,155726.47,28.62,161,736237.33
+238,58333.42,247237.64,876318.27,862796.96,335,737866.39,73.14,195,864053.09
+239,427252.3,279941.62,387068.87,20314.34,341,180283.96,95.2,314,465651.77
+240,58745.26,619962.83,196399.76,984518.58,823,221828.81,8.0,142,295361.4
+241,163571.62,617855.99,117935.72,127473.41,345,320132.22,15.19,151,150145.83
+242,690857.88,993938.47,714404.71,64011.64,730,664368.9,41.11,247,255625.89
+243,405899.46,705214.31,605308.6,937827.77,398,673034.94,53.89,285,712596.46
+244,687816.48,193146.0,560642.02,678966.31,647,604159.1,36.17,338,174130.02
+245,300449.29,188351.25,538134.88,355595.25,543,873346.39,67.53,52,94262.34
+246,316157.99,305656.9,182914.16,36062.68,698,16756.75,43.17,275,190275.45
+247,642110.93,932896.89,739489.63,139595.48,505,246335.48,25.57,249,132114.11
+248,547778.39,226040.38,910084.07,691497.07,637,425603.68,1.78,111,392632.38
+249,289812.86,764330.09,295263.67,744548.26,798,907839.72,6.27,212,791067.89
+250,742328.69,802982.09,503788.47,52565.25,584,487751.26,66.37,298,536269.05
+251,89967.15,144552.31,281655.87,598583.36,757,324685.34,21.56,108,720406.05
+252,133884.4,289651.75,930287.73,409098.45,611,677997.93,76.75,237,387434.49
+253,159.03,967621.39,664663.72,500494.95,522,344255.13,47.57,44,666363.68
+254,888073.19,355441.22,320101.7,793493.66,593,725795.13,77.5,88,752299.01
+255,359475.16,353050.03,819448.33,543787.68,716,560539.91,77.96,195,968606.22
+256,16359.28,226530.87,599399.26,92673.88,571,525221.87,94.55,221,893126.73
+257,585885.46,469443.13,907156.05,532956.63,520,459495.89,91.58,257,525786.25
+258,451722.26,319722.33,379072.69,921162.24,774,111173.06,76.54,127,607655.95
+259,626880.36,973058.22,452833.21,247398.83,397,712269.22,0.76,297,757089.34
+260,378654.24,630381.66,569221.97,725354.76,531,305829.07,28.24,137,91111.01
+261,7453.88,702071.78,856914.55,39466.02,733,110243.67,31.84,4,625493.81
+262,606368.96,5222.26,44236.13,908381.01,804,842748.38,3.86,35,64391.64
+263,36896.77,13511.77,724348.97,568321.89,499,48475.31,51.35,81,962801.51
+264,239597.05,367675.02,816515.87,767293.64,366,26480.11,77.68,114,573588.7
+265,264570.85,417592.94,862118.88,59424.44,785,90.12,84.75,51,237863.32
+266,546773.37,223281.76,600620.29,7975.22,681,204888.34,48.06,279,557283.94
+267,855281.12,81957.71,94783.17,803173.89,335,9728.96,14.0,116,733668.74
+268,418092.7,137859.71,29685.62,974109.09,423,866547.41,97.38,221,18078.35
+269,91394.26,662904.95,463540.69,423077.75,433,228807.1,45.34,240,135633.75
+270,348463.78,333391.65,855431.81,200966.66,344,731789.86,20.71,340,785251.39
+271,13090.68,5653.17,47307.65,64296.81,441,30888.56,31.61,256,346724.81
+272,738137.86,321409.79,434033.6,253444.88,622,686800.13,65.0,223,397440.63
+273,300553.31,387539.48,903927.78,721580.53,528,386127.73,84.8,191,597846.56
+274,730269.1,824318.37,444715.39,635598.8,540,179004.63,1.99,198,27616.74
+275,502743.5,569832.36,14468.09,446983.39,616,212724.72,5.84,160,618731.11
+276,666951.57,857434.47,571246.46,339772.75,588,46203.79,57.58,218,169229.72
+277,636356.52,701638.92,991458.61,534156.84,699,726425.21,68.89,121,260557.32
+278,445421.96,784851.99,418996.48,906962.3,306,512265.26,27.69,135,356509.08
+279,861582.16,49326.26,567436.74,687875.11,376,861210.25,23.55,356,696068.13
+280,408281.55,890756.5,177367.27,180192.3,360,484370.64,22.2,35,699348.81
+281,135645.28,807568.55,415152.59,107273.2,373,524309.5,52.23,239,137951.55
+282,624063.82,296640.28,944193.69,264784.4,818,414664.42,78.24,263,465492.78
+283,706654.05,297274.42,783396.74,32903.39,640,848477.23,19.72,342,278332.77
+284,564819.93,28107.84,740046.43,970389.9,576,356822.03,27.9,42,156760.37
+285,833721.28,216405.03,834126.53,608175.87,372,248565.0,49.19,222,412649.35
+286,296053.92,573264.0,229484.76,921306.7,601,550092.13,45.03,18,673225.32
+287,810417.77,949857.79,695517.27,616321.11,643,492028.45,83.77,338,139477.92
+288,205880.12,404111.15,614488.27,116984.06,420,928480.47,82.77,344,861861.95
+289,631361.78,704422.9,25621.79,574917.67,742,798504.61,80.87,329,167161.41
+290,761065.69,325660.86,973348.4,487148.3,823,534888.37,90.68,88,926029.69
+291,154929.51,889193.52,47250.49,141700.91,592,866351.4,5.86,242,274135.77
+292,966702.12,761261.23,851971.19,781222.75,535,222801.02,90.49,133,367685.73
+293,205343.22,187572.52,284838.16,722191.33,384,677948.0,66.32,6,353813.82
+294,258709.33,352444.19,242622.21,918044.65,843,107492.69,48.27,222,56288.21
+295,812985.31,790919.25,178311.99,816024.51,809,440146.04,70.83,63,555534.18
+296,781682.22,193611.64,913568.47,668985.1,572,326453.28,24.51,315,105535.03
+297,79661.19,380875.71,309567.77,692793.65,749,719078.52,41.12,90,413182.28
+298,907660.37,500194.15,50324.27,725728.04,548,195577.3,90.95,311,681775.38
+299,869802.44,175560.46,301222.64,859880.2,343,501573.97,37.09,314,890269.7
+300,758246.98,105699.57,549965.48,781974.1,845,614068.77,11.81,44,15916.5
+301,383141.45,916871.63,527599.92,228632.48,782,760442.44,49.48,65,634017.14
+302,88920.69,692439.86,350415.66,196295.08,775,464884.19,5.27,210,628618.52
+303,881037.97,404635.53,910389.78,486523.51,534,519040.53,67.7,165,362944.11
+304,19573.05,585489.98,258214.52,7377.91,562,481163.78,81.67,57,909371.66
+305,967313.09,48141.9,12573.47,714931.22,506,407131.46,50.16,331,722435.93
+306,102148.04,900790.19,870174.21,83550.83,495,33782.82,86.51,256,598103.17
+307,548832.96,577275.55,916951.95,655282.61,331,722187.35,66.08,175,120963.41
+308,572911.85,551970.74,188482.26,161969.3,388,139159.36,65.87,273,500712.3
+309,783484.92,147074.56,891284.5,866135.95,815,86592.79,91.2,102,63397.83
+310,655337.03,364291.64,947679.47,418909.82,593,645782.01,73.39,117,607046.95
+311,694563.79,299071.94,522092.9,565257.32,764,402475.75,58.37,37,908299.16
+312,437180.24,626987.85,68661.01,468994.2,807,315694.61,84.65,31,861029.34
+313,681732.91,140215.62,322529.49,581711.46,718,960641.74,31.77,221,321627.89
+314,115532.92,176216.56,292052.96,844246.31,445,822001.51,44.74,175,874018.45
+315,951481.87,359756.56,386053.02,319610.02,492,665585.22,75.18,1,998787.7
+316,858019.2,227378.63,827443.96,823865.48,786,483008.11,25.94,116,868341.14
+317,402255.65,864448.13,693284.11,632831.12,578,712534.53,6.58,84,205467.08
+318,460088.91,460998.34,924960.94,44608.17,835,481313.21,7.35,115,782100.03
+319,780005.06,71584.79,696185.84,939789.68,822,299603.6,22.96,250,315459.15
+320,859656.17,98169.89,539152.12,251703.57,549,469102.34,55.42,205,980913.0
+321,905952.88,135364.47,278909.06,606475.26,362,916009.74,2.17,347,637505.57
+322,327054.63,13156.75,761318.42,146550.36,797,372951.93,80.69,296,764230.72
+323,2737.87,220617.48,405380.6,683024.59,619,527704.39,27.1,202,851209.71
+324,539131.72,195293.55,443262.52,924128.49,565,903094.17,60.82,196,84006.35
+325,303400.92,957303.53,715695.04,25805.83,624,755802.48,80.02,171,845394.8
+326,761589.0,555629.04,83461.55,770113.3,840,964129.11,51.89,1,802157.37
+327,708001.16,606851.61,879944.91,418451.71,530,497404.1,78.29,99,480851.48
+328,382245.91,269209.33,536850.55,914751.78,377,58318.89,0.46,266,453101.75
+329,580199.62,812888.91,536148.13,234894.07,315,608581.98,12.75,338,427485.94
+330,242576.67,876142.96,545787.26,502649.54,407,426601.36,98.67,60,715676.39
+331,600949.94,82928.85,160742.38,129399.72,429,192273.3,46.94,112,742624.68
+332,624758.22,857373.9,464989.65,57892.22,718,1480.02,8.99,121,906685.59
+333,683166.85,753211.79,197818.5,843995.34,804,10045.58,26.29,9,251949.61
+334,439441.13,7081.86,557615.43,751227.61,588,727905.87,99.25,94,870593.31
+335,24605.24,328552.38,390661.04,583158.08,433,720293.18,2.47,5,119696.27
+336,495298.96,393039.0,731971.03,286762.01,381,697411.32,28.74,3,161361.94
+337,667365.03,285508.16,959820.78,128893.19,383,477231.31,55.69,104,251980.95
+338,793806.31,83251.83,938280.06,116149.63,736,334985.14,39.0,313,482308.77
+339,526016.58,10065.98,403223.97,938141.84,663,418956.66,62.36,188,474633.2
+340,101456.82,103892.46,245979.02,887191.59,828,545604.76,0.36,284,374916.72
+341,120453.43,252844.17,146919.14,441140.22,502,449603.06,91.11,249,789368.66
+342,703641.48,403886.47,789307.35,892552.23,820,84168.83,2.74,14,502106.91
+343,351582.27,668857.88,197755.18,939048.69,317,92088.16,62.68,130,539149.37
+344,302552.58,517119.14,970532.47,426808.74,800,588779.09,80.39,168,390609.0
+345,720804.44,382169.26,585874.0,98645.37,410,943826.99,87.08,351,329144.24
+346,59037.82,357272.8,169186.8,934826.75,740,215376.2,56.36,225,314982.57
+347,330059.76,735958.59,207992.63,81003.47,327,586400.81,47.95,111,236164.93
+348,94992.39,441272.59,385480.22,310441.04,735,998111.29,11.36,288,256994.57
+349,34816.3,282013.26,973392.59,358882.24,533,953516.74,57.82,120,462666.5
+350,194914.21,953729.25,813942.06,976624.33,584,354153.9,63.55,326,22133.76
+351,456244.24,570382.62,416434.04,576193.76,358,590425.72,87.23,191,574012.45
+352,425887.52,115377.86,71253.98,850483.75,783,454212.72,86.45,258,539894.39
+353,612856.18,808577.2,30112.06,386724.3,304,181327.57,6.46,178,192699.83
+354,964106.27,951943.98,579113.6,80740.35,709,336274.03,90.91,265,805960.01
+355,718564.02,644758.01,826260.72,401044.18,448,445822.15,40.63,112,562425.02
+356,811448.93,850876.63,912505.87,337476.98,531,666701.88,6.59,314,272826.59
+357,198119.83,291677.16,91460.83,666814.57,707,954645.23,73.72,323,235189.88
+358,672094.31,366238.17,304907.41,140001.32,795,200530.7,18.02,170,708533.39
+359,831855.44,894419.27,286971.47,130192.46,398,736922.67,81.25,248,234724.38
+360,756236.27,469438.59,79932.45,367273.86,461,127606.91,11.91,80,981275.12
+361,790919.88,574099.59,434235.2,311073.97,825,330729.74,53.04,121,330600.89
+362,13781.23,287508.77,105991.07,81717.5,333,917414.48,77.31,253,91965.08
+363,391719.71,575111.49,580437.12,370846.84,410,615685.66,0.97,354,885173.68
+364,864419.22,701760.13,167140.92,62183.07,469,62651.67,95.4,38,952662.12
+365,532756.07,571738.69,237288.75,211355.3,368,798223.27,51.55,38,626643.79
+366,130872.22,28713.64,994343.92,722835.19,532,451357.18,69.6,252,404540.39
+367,25697.18,356477.77,23599.41,195503.17,794,433635.09,17.95,299,632459.07
+368,259081.57,197538.37,773779.58,109595.0,355,796488.63,85.84,312,190663.43
+369,41492.95,321290.59,258088.35,368222.28,777,984356.61,58.55,300,713120.69
+370,188420.48,491959.83,471603.38,239484.56,774,297471.74,49.63,82,149808.04
+371,399281.81,950960.65,332144.94,830987.99,435,678524.68,8.59,63,310445.57
+372,988050.67,802597.31,205527.56,598628.98,350,369702.96,57.03,242,747742.11
+373,857754.63,782603.16,460299.82,627967.39,405,747912.38,30.63,71,100965.3
+374,417377.68,35988.09,759562.07,484176.89,608,375344.08,4.12,262,320523.08
+375,837949.59,864878.27,215192.82,83636.56,560,718045.67,33.37,101,74207.94
+376,267545.92,422472.82,528097.37,968585.76,331,483612.54,33.68,73,437593.83
+377,397632.44,352218.9,459458.96,183211.36,563,817695.09,90.37,301,977744.35
+378,720093.86,756035.65,100153.16,824945.91,577,922260.51,94.83,147,161502.79
+379,761341.1,835654.81,561539.31,119311.12,823,7775.66,7.58,279,987351.07
+380,724923.15,264006.95,841051.86,97225.86,308,33719.1,83.52,281,880000.55
+381,355112.32,513635.22,792367.32,852091.47,847,9915.56,73.44,197,946020.29
+382,916362.41,648440.42,694696.82,336372.24,782,554329.73,95.82,315,255706.22
+383,72843.16,109643.99,53844.33,210794.64,723,19854.85,48.55,305,867003.53
+384,101866.62,367530.64,639026.3,195292.7,836,224860.93,11.76,134,583162.51
+385,770960.25,99752.81,475269.66,600054.65,642,724360.61,51.64,183,89441.29
+386,287063.89,800635.65,166597.98,362510.87,849,132424.79,30.34,120,717582.99
+387,233374.0,176764.71,6499.19,803231.65,717,576223.89,16.24,228,785849.51
+388,19496.57,412198.11,862149.67,622776.9,622,418421.8,86.04,253,438927.98
+389,264032.12,485151.41,879265.35,182540.97,683,214161.71,53.68,51,988262.05
+390,299773.86,110332.85,62035.21,469291.79,413,622683.07,83.7,229,436273.5
+391,380845.5,855315.77,687040.0,18379.45,647,683361.17,74.88,303,968801.95
+392,808985.5,615302.7,706662.3,751783.43,352,738629.94,28.93,243,217670.37
+393,761798.58,523133.12,178662.76,753343.22,822,280339.63,81.2,283,813818.04
+394,536100.31,470236.15,492855.62,157157.59,631,222650.01,66.83,52,327450.25
+395,972460.07,340410.31,588120.98,528514.69,342,820874.0,35.26,355,450822.95
+396,633201.21,191704.54,591432.83,362012.7,376,952484.04,81.76,13,989543.7
+397,700074.72,983805.95,783963.85,232798.71,394,309450.74,60.03,284,435933.37
+398,199180.75,635385.14,325350.47,553666.96,782,900298.24,77.96,146,711946.75
+399,844959.67,802326.82,717674.86,735591.67,471,547851.74,10.24,107,916910.06
+400,323500.42,891317.75,380524.12,247198.76,544,461446.27,71.99,210,22552.28
+401,239254.74,587114.82,506468.6,795084.94,530,63273.94,13.35,318,348795.44
+402,346296.44,273816.34,408237.48,634202.39,796,856860.05,22.48,213,82714.17
+403,675316.58,575475.31,205227.54,356049.78,315,932386.04,79.02,21,77041.3
+404,127793.41,23060.42,649227.17,850377.29,356,167837.94,17.01,168,430544.22
+405,469013.83,900769.79,268324.63,692391.28,568,436906.4,45.16,209,127914.71
+406,488031.63,907380.42,809846.42,760649.27,639,417709.9,31.17,47,339484.28
+407,243931.51,506190.79,720452.21,917876.94,777,43839.77,53.35,91,749667.07
+408,761205.43,275101.61,583833.69,534641.87,629,700787.82,36.15,213,832892.07
+409,653511.27,674784.52,400591.62,964587.18,682,402233.37,49.73,44,530990.84
+410,487142.58,678699.22,44782.35,443320.73,609,913591.31,1.49,16,514436.46
+411,566862.71,322272.65,225799.16,414237.56,569,362774.0,7.58,324,53644.53
+412,915695.62,343492.01,684752.86,340790.46,309,876949.8,42.12,113,670296.43
+413,688025.03,354045.3,757984.62,620795.22,843,431495.25,95.33,260,659639.53
+414,92889.71,410990.94,988717.7,45132.02,800,475068.29,74.02,77,719483.89
+415,149300.29,686967.01,409815.27,70644.99,781,76187.97,86.86,82,775769.71
+416,892300.41,545317.96,578397.45,182008.81,397,428671.71,36.86,218,482663.29
+417,60485.71,304629.68,46008.69,415827.85,507,954658.74,65.88,330,544535.92
+418,88556.64,943347.1,814581.1,229802.33,340,499226.17,60.31,91,901972.82
+419,619765.3,244608.06,805073.7,544290.54,780,205527.97,68.87,159,309752.2
+420,733750.51,439357.57,197870.59,204054.59,835,417409.61,74.04,147,268592.3
+421,678638.28,433751.68,522584.53,294294.72,542,377337.59,86.19,189,378785.65
+422,831052.52,359425.3,284634.46,508024.56,698,882240.81,9.51,52,94336.47
+423,5005.91,241682.74,540989.14,588176.73,785,857389.06,51.24,3,964042.46
+424,665421.72,945225.83,539375.42,274856.19,303,960596.34,75.2,99,604645.66
+425,926742.91,896515.23,292793.87,306793.59,650,514586.51,4.68,267,46937.64
+426,679967.98,763689.52,818542.44,404063.74,659,347977.27,80.11,175,708253.49
+427,46048.37,949817.99,223516.8,235231.01,498,761741.71,37.27,65,539047.5
+428,999739.88,471587.15,875274.84,114075.98,656,961233.72,55.73,205,749822.36
+429,647074.66,944930.04,533137.65,569678.21,434,557685.64,67.93,151,192362.73
+430,836703.29,147873.5,659497.26,463547.24,834,792061.3,73.97,332,965105.73
+431,646795.01,326158.31,819687.96,643514.92,634,185456.84,7.85,328,799342.48
+432,101459.19,650627.05,302813.87,720921.85,504,5968.22,14.4,178,473150.57
+433,65481.48,87821.28,611616.33,760255.48,778,406318.84,47.02,171,148015.45
+434,26924.11,547022.82,790032.55,584454.33,767,612876.47,33.75,199,102563.31
+435,745469.76,375958.19,771024.84,893391.06,607,456504.13,89.36,66,941290.71
+436,809137.67,361393.35,865049.56,520744.08,695,217401.89,15.55,135,354344.66
+437,311373.42,350476.2,151209.19,181322.83,424,226203.44,49.86,75,652340.93
+438,104860.77,378894.24,662213.37,299619.19,546,644025.57,56.5,281,865495.28
+439,684355.66,644333.47,677611.98,149865.81,505,948828.05,19.01,6,16046.95
+440,431127.64,721486.45,200793.41,17906.79,326,994803.61,28.24,234,805110.32
+441,213209.91,551072.3,984212.53,948023.82,715,717023.51,40.51,218,917352.07
+442,795908.98,881804.62,940957.41,319966.24,784,717533.77,3.98,353,393280.04
+443,842609.68,707995.8,645376.71,356159.65,791,301449.77,78.09,252,99749.17
+444,86337.92,367881.07,654341.42,199045.19,849,545410.15,8.29,208,778884.45
+445,781024.44,671875.3,960548.79,339813.15,847,201247.83,85.32,315,885669.85
+446,998866.65,193576.24,763827.33,575617.27,555,456137.61,70.25,23,728582.72
+447,21552.97,520298.63,732690.6,643689.14,304,34305.76,0.07,36,989119.68
+448,127331.54,573713.16,502265.6,641317.18,594,213485.01,20.18,307,841399.25
+449,703797.81,402079.09,797993.96,60462.34,449,30057.33,8.68,173,374932.99
+450,733114.9,480804.42,952382.1,306315.11,346,603541.13,24.58,87,759268.76
+451,570483.02,614920.08,301447.25,603477.76,762,153923.45,94.07,163,258629.47
+452,646954.9,528665.5,736106.6,776692.67,302,10274.21,8.83,291,426616.57
+453,157609.43,989525.68,676467.34,696401.46,516,987654.22,27.25,313,282044.67
+454,385262.67,718853.58,166855.72,753940.61,593,509985.19,68.03,341,845039.03
+455,812276.69,599923.95,341518.79,410361.55,652,467498.7,88.51,334,538602.69
+456,896781.12,259204.15,441694.42,557235.91,626,122158.13,8.67,180,179265.21
+457,486795.9,371169.61,202344.95,727378.28,473,73827.58,62.33,334,639152.08
+458,475888.01,224348.13,765611.81,323104.29,818,864000.71,38.88,295,299429.2
+459,766343.03,395463.24,171206.06,505927.92,744,197394.72,15.35,128,416783.07
+460,604311.11,893651.72,371728.91,619437.56,503,970415.36,73.39,130,939338.84
+461,788368.59,306408.53,650376.37,963355.74,427,110090.81,74.92,239,641244.03
+462,530113.1,591127.07,399100.5,920871.01,764,437134.1,46.27,163,863297.41
+463,95750.64,559443.85,472167.32,516424.99,377,906194.9,94.17,48,250100.27
+464,17168.65,651594.64,291996.32,217572.78,635,584526.7,0.31,209,562694.41
+465,925777.39,131695.67,615142.44,436323.85,810,107818.41,94.3,130,758589.42
+466,209768.97,745463.03,553619.75,426069.87,366,289227.07,76.36,197,956574.21
+467,159101.89,886134.17,446757.44,428170.08,508,281071.61,26.43,204,12352.13
+468,811269.61,709657.97,252955.94,602684.17,313,995504.94,20.26,59,53963.55
+469,763090.86,781713.16,933838.87,561109.94,400,442822.18,65.61,33,947605.85
+470,965312.96,539756.83,258905.78,901614.09,549,985285.89,55.68,101,703164.84
+471,597614.14,570381.61,4739.48,83771.64,571,821243.44,6.3,141,260624.62
+472,172524.62,689406.46,509732.52,765533.83,455,803024.64,51.52,59,800397.62
+473,400114.54,170119.33,624306.92,945991.28,807,311749.12,40.28,350,650080.15
+474,722272.05,645879.21,971682.79,962177.9,738,358252.02,5.39,145,913646.68
+475,309231.79,909875.0,991439.15,105798.94,645,583508.08,23.7,239,103600.26
+476,395565.07,983979.52,632947.42,768857.44,642,969614.14,3.6,113,561656.64
+477,185838.76,898062.99,390900.12,101182.5,724,18442.25,77.65,228,6124.1
+478,734415.54,459272.41,418318.39,301703.9,635,559049.84,83.73,171,576746.06
+479,185091.27,514279.91,542151.43,213299.57,348,893364.85,5.53,85,268921.91
+480,547976.03,37904.14,666025.47,960607.46,446,406315.04,53.75,175,941740.49
+481,495551.35,573990.9,315844.15,561111.48,602,196512.18,59.06,275,248485.49
+482,189415.75,495119.17,251679.0,613019.21,501,136406.81,38.23,218,309533.73
+483,153044.64,409774.47,752599.94,901305.12,646,530747.37,32.16,48,769518.4
+484,847933.82,193441.98,758397.65,704334.3,440,579507.8,16.67,267,751855.15
+485,261620.11,631126.91,246438.96,907954.34,442,992765.63,50.16,307,691962.18
+486,191663.3,400504.82,968361.69,280095.06,846,374520.03,41.82,339,503204.16
+487,727277.57,684191.27,356992.81,540262.39,611,97608.84,98.41,198,42305.72
+488,658549.43,549436.63,45069.18,479241.53,727,398849.82,9.52,300,371398.31
+489,801008.38,698321.55,308292.18,545146.08,685,503902.67,72.87,354,170872.98
+490,644211.82,498595.36,431018.38,215785.93,520,402194.0,0.7,54,169486.61
+491,259254.64,863106.26,460083.72,982784.86,569,104580.23,21.28,187,319125.85
+492,274500.05,587743.89,547181.73,810664.62,543,624005.94,84.16,150,907981.92
+493,915082.11,240536.97,252658.84,746319.47,701,204122.04,21.81,107,661522.72
+494,839202.12,937751.16,857473.51,10245.46,502,793489.85,23.22,208,572636.4
+495,467666.43,743248.15,503481.19,181412.98,755,814943.9,78.57,348,19197.1
+496,92052.25,123458.0,145280.63,63227.89,378,525627.36,91.03,342,847105.6
+497,608235.21,486756.85,493927.76,603576.05,708,704765.51,30.04,209,96796.36
+498,456747.51,98555.45,329536.46,267061.14,423,910503.59,17.56,351,607614.7
+499,915897.67,475158.63,604380.9,203798.69,850,964287.66,11.73,122,894540.07
+500,716158.03,300964.34,877396.73,886545.28,308,525062.82,93.56,87,990050.1
+501,627446.61,546281.43,592833.23,539938.94,428,880705.73,76.8,290,390824.3
+502,489617.71,876899.45,784819.09,601748.73,409,480631.98,50.1,141,21811.02
+503,718605.17,234581.79,714397.07,690739.38,750,880277.02,92.27,305,841086.97
+504,603427.17,820598.17,533789.25,443343.32,302,7067.35,97.81,163,92451.19
+505,152613.26,102130.62,265893.48,174368.39,750,731455.65,91.13,53,687950.13
+506,840508.83,600347.14,820071.38,667098.67,658,51257.9,67.15,345,703916.67
+507,97506.05,98997.7,421761.96,445358.46,554,642852.04,18.86,46,918338.4
+508,410758.93,563655.2,219278.77,814874.66,742,686188.76,93.6,134,83260.15
+509,389333.55,528237.26,671140.61,501299.81,326,616083.91,27.4,205,64167.26
+510,169807.14,877667.28,553513.47,707487.14,600,92560.03,45.1,201,628034.4
+511,335691.3,165349.76,589280.72,732998.41,384,978973.87,95.62,23,465790.04
+512,631759.93,933158.39,236727.43,301036.04,534,16728.39,38.83,89,377473.64
+513,711378.01,407962.78,390140.59,234424.5,437,375845.39,87.86,9,101984.99
+514,613995.93,624806.01,611180.74,127734.45,452,702775.15,79.58,187,388818.48
+515,464025.63,449303.81,946373.96,668457.98,769,471477.31,80.23,239,133803.31
+516,840233.75,332339.34,130927.96,449675.26,512,153206.26,63.46,261,909899.16
+517,265319.67,971368.1,836076.0,604344.66,741,483552.16,89.25,129,659510.17
+518,657202.81,126482.9,59454.89,500095.98,803,837642.64,42.1,209,457118.54
+519,801810.42,162768.88,889689.22,86917.26,805,919369.51,58.3,259,886575.8
+520,436090.43,257701.37,561086.31,975205.86,768,356028.08,48.37,176,564838.99
+521,561046.78,159988.92,978368.4,609322.48,756,14878.63,7.67,101,829809.25
+522,859762.49,136845.76,641312.35,910515.68,376,107252.79,48.92,317,139436.61
+523,821883.02,667852.93,223037.08,613007.43,764,23712.65,20.81,154,656779.82
+524,747073.3,730132.37,809967.32,248454.92,704,818292.37,62.16,332,444146.0
+525,828642.34,704326.07,517496.13,21020.05,381,381576.44,74.15,68,575132.26
+526,162401.04,236941.45,619195.81,16758.89,587,997900.93,66.8,318,643616.67
+527,548985.49,460435.35,764915.59,26939.13,699,404878.79,56.4,254,566440.49
+528,117524.06,715449.87,988814.12,105845.17,546,434677.81,7.36,15,387561.61
+529,516391.59,608412.99,78454.0,443701.96,524,64974.39,72.82,344,25357.15
+530,959157.46,56762.03,889416.75,666490.45,665,681645.8,93.22,18,713815.93
+531,441451.66,625861.44,712600.33,702938.08,630,146511.5,59.93,132,140526.17
+532,189097.82,473475.84,453345.05,529436.32,802,703936.36,62.17,166,159634.64
+533,548483.21,784683.34,418717.6,80353.2,651,134099.79,55.72,200,507778.01
+534,239757.38,472792.76,29622.62,740834.08,726,545550.28,0.18,85,346410.71
+535,922250.04,581554.65,295263.89,248680.42,464,604379.4,11.74,188,51006.53
+536,63828.24,375369.06,251745.34,395682.5,684,160732.01,93.19,29,447218.66
+537,221388.63,851694.62,610467.56,100275.94,662,327603.71,90.11,67,495391.55
+538,575083.98,384795.61,406888.24,587950.3,805,652315.92,10.69,83,912642.44
+539,753011.36,886485.55,431751.67,999580.93,500,100592.45,70.96,188,889356.81
+540,691525.06,71874.93,421963.26,716108.16,734,588424.26,64.85,313,208813.51
+541,604932.48,131874.66,203211.62,526448.38,763,647400.49,51.34,207,997967.73
+542,247210.45,997929.03,691910.41,987372.42,446,201428.09,4.96,327,407534.43
+543,457418.28,122308.13,642528.3,239771.47,762,150374.03,22.73,230,6360.82
+544,156088.26,107336.4,841969.28,838784.36,813,685033.7,23.08,233,453135.84
+545,773403.77,732659.72,189614.85,76832.43,553,122628.63,86.55,120,449066.13
+546,66847.38,154277.85,117475.72,235761.6,465,374144.32,39.07,6,429154.37
+547,765246.52,513920.49,501586.8,90934.75,352,474859.29,67.7,80,284626.24
+548,276679.69,536643.25,267789.89,300912.17,448,735599.47,42.36,280,902768.33
+549,719286.18,410662.87,591673.35,918727.47,807,729137.0,54.97,11,587914.39
+550,474850.43,989228.85,722525.84,320367.73,318,595844.01,65.33,222,252338.14
+551,8323.67,659427.69,518850.6,48686.8,411,543125.49,95.83,203,945322.66
+552,282662.08,60745.84,70878.26,259473.42,776,316233.53,47.71,276,743563.98
+553,347756.54,214704.96,413852.51,155595.9,753,162557.07,59.03,249,331081.99
+554,897414.24,937898.36,566571.06,14662.66,582,474239.52,26.65,104,43681.87
+555,440580.96,126166.17,568764.09,144723.63,708,401015.74,61.16,115,255574.63
+556,773971.64,499973.4,534013.36,520830.11,786,456844.77,70.75,122,4200.51
+557,569979.34,510761.32,91611.78,210967.02,470,918807.79,23.62,249,379239.74
+558,999295.9,376923.57,873102.24,705602.44,414,978249.5,8.03,291,285150.73
+559,662260.43,926796.76,543986.1,395812.68,834,343606.84,14.0,325,825629.33
+560,296754.82,870101.38,330804.33,579487.46,705,412775.2,52.3,260,980053.57
+561,359990.07,257249.83,941355.0,539158.86,824,158578.11,41.46,136,762181.86
+562,408807.46,742967.94,159770.81,745419.76,590,555059.82,83.63,301,511497.5
+563,993529.56,858208.35,760500.64,701368.0,610,46650.51,82.37,226,671624.86
+564,738435.79,426609.78,196697.29,36403.53,505,912683.05,80.39,204,641111.89
+565,443820.06,118519.75,601847.59,601587.88,434,285163.65,1.87,280,379832.06
+566,331777.84,58146.51,934586.73,337366.75,826,747733.23,9.99,95,171704.75
+567,150049.05,733382.96,487348.83,322352.69,766,59751.36,68.16,146,948905.57
+568,748340.05,553732.13,60398.76,510879.18,372,529873.63,43.49,74,981673.33
+569,811892.01,532763.51,863340.64,802563.14,811,827460.74,86.11,8,82672.1
+570,7101.66,377676.71,887768.07,207439.9,733,161544.15,18.64,24,26639.33
+571,567228.55,20860.6,104034.79,759559.83,836,169412.19,61.66,300,112981.27
+572,490101.77,308993.73,158068.59,736228.05,484,873569.18,77.23,349,795504.01
+573,614447.93,632256.21,235518.12,842645.79,715,495963.69,46.93,235,897262.72
+574,991913.38,529526.23,189643.77,627033.37,336,375763.33,62.94,65,276275.17
+575,666567.33,615300.85,553779.23,504236.25,830,162213.51,76.18,47,664770.94
+576,191704.42,291463.28,714240.77,110825.31,816,250457.56,74.3,168,77460.86
+577,273822.99,317557.45,672095.57,691332.21,394,48678.2,7.33,342,51836.09
+578,349920.56,303352.07,773718.51,950159.4,524,219517.19,89.94,349,796632.65
+579,753083.25,309159.82,542971.51,70483.45,550,7879.11,19.8,344,932749.16
+580,533920.81,134631.48,128390.37,577580.56,514,547207.28,66.57,290,132722.66
+581,330951.68,960450.2,459983.01,35984.08,808,459261.65,1.46,37,516694.96
+582,200148.58,682975.04,372263.05,342314.67,368,833737.54,1.55,238,836247.9
+583,176338.56,768604.98,914885.06,291373.93,676,552015.7,8.95,235,989882.53
+584,671327.64,155968.44,568478.04,636079.44,530,345535.76,36.79,80,441518.52
+585,417207.58,985473.23,412577.54,74889.06,814,410106.28,54.13,338,151197.36
+586,677599.93,944879.39,91914.38,647617.04,486,250628.39,97.46,182,547162.83
+587,587024.15,137125.18,572786.97,898402.57,698,38292.4,75.56,139,550500.53
+588,490278.67,417398.0,926042.88,232831.88,719,744752.4,20.5,64,160930.86
+589,824429.05,180753.07,318247.52,196178.08,832,381507.9,65.57,35,117102.21
+590,865561.33,185915.95,196207.14,453677.67,629,112507.41,80.3,230,2363.34
+591,843317.43,135150.21,336373.9,16047.15,649,367269.48,33.08,205,442861.07
+592,250734.42,521618.6,509677.18,132741.77,825,94672.18,89.6,336,673774.13
+593,145913.09,349900.98,239324.06,860470.32,608,353480.9,61.14,196,970256.64
+594,400677.56,182116.86,255962.68,157356.07,566,526217.91,87.11,352,521141.87
+595,362293.88,892581.55,146922.86,737111.46,307,227195.99,78.38,51,15045.22
+596,403832.46,984217.82,370040.92,274417.99,709,743559.88,12.88,340,263248.07
+597,463113.56,417886.96,967948.56,986588.98,637,151089.88,83.23,276,301703.74
+598,246529.38,511695.99,933410.67,148308.58,442,579291.71,11.47,49,469415.68
+599,4805.05,931560.39,257459.56,23150.72,749,71779.14,48.0,138,511886.82
+600,653400.45,365854.98,602606.02,811035.32,448,370409.58,69.66,158,350035.95
+601,108548.88,939198.36,527686.19,353453.58,433,98509.93,71.02,68,166557.86
+602,70529.55,603913.85,159072.77,336724.82,703,622767.54,32.2,267,218985.24
+603,846108.73,519011.05,953766.41,925680.58,361,488377.63,12.89,224,521006.95
+604,410750.29,641671.33,584806.31,782571.6,755,37347.61,22.08,277,846063.39
+605,903994.66,386591.77,153175.56,752914.35,525,866378.68,59.64,20,979855.54
+606,412371.01,816799.49,504271.88,476282.8,671,949599.1,37.14,113,988990.11
+607,969852.93,301586.05,528962.91,588698.13,650,200222.96,26.09,193,74962.81
+608,568866.49,362258.11,517850.11,912304.89,691,830022.71,47.06,205,737818.07
+609,865565.85,941340.84,783645.54,725067.7,811,211169.06,25.05,50,606441.08
+610,523017.4,830217.77,547925.61,726996.19,686,856649.22,93.69,319,677915.06
+611,249906.51,721281.52,559078.16,885436.0,789,485769.77,98.39,301,259303.93
+612,997072.68,608246.07,892248.59,471712.28,309,188302.31,26.56,155,398242.72
+613,888227.55,978667.19,742840.21,726316.44,439,648509.27,12.51,306,895641.09
+614,581235.73,438800.52,359038.52,110.42,325,892617.52,44.73,332,782462.88
+615,789423.68,225421.6,371039.71,661665.28,825,222683.58,57.54,184,809354.34
+616,5476.7,414004.43,178252.36,916251.92,511,943424.51,16.89,322,353253.29
+617,721593.85,638847.75,772536.48,594502.18,566,64733.04,27.85,290,520981.13
+618,696573.76,281004.14,140343.18,257058.68,372,640881.79,56.45,39,100664.93
+619,851347.78,969737.75,879283.57,418092.48,552,354725.29,26.02,230,100504.38
+620,618751.18,163907.62,58518.94,597325.29,703,567621.45,70.71,53,794269.13
+621,741252.38,886642.62,115199.08,517118.42,625,214493.61,58.04,359,383788.22
+622,980202.67,608435.44,124132.77,136921.12,492,151345.4,78.5,183,748321.52
+623,344525.17,600321.89,444783.84,850532.02,708,278435.33,77.7,53,473734.45
+624,388823.37,265168.76,118281.96,666879.87,834,694962.96,79.59,264,411228.4
+625,238880.0,135683.2,682651.22,966534.47,500,952316.54,10.7,224,116224.28
+626,942189.94,934992.04,560406.03,721116.45,561,388523.01,64.38,257,195517.71
+627,176302.79,867285.97,38025.54,236723.7,380,697668.63,1.99,162,505810.21
+628,779498.01,561029.29,284254.1,346487.66,333,362810.8,96.9,334,134393.59
+629,70476.77,726750.86,470392.43,427313.55,664,186576.13,35.81,28,820807.39
+630,929674.67,441061.24,151018.82,336196.07,766,718626.1,64.16,333,40423.61
+631,870925.61,468842.02,589941.72,222033.2,577,235672.99,15.37,231,286354.98
+632,296438.72,786028.55,557407.32,74281.75,604,165563.27,33.1,22,978493.14
+633,492194.73,901079.51,103923.9,60424.38,740,785720.23,22.77,252,535665.29
+634,17086.73,243245.28,347146.88,160265.85,397,723437.87,85.28,24,724068.38
+635,253328.47,782000.07,569222.19,136503.27,391,534359.11,28.99,312,612777.54
+636,983378.02,311841.82,370753.66,834362.38,415,522403.0,35.44,347,168644.31
+637,950479.13,736807.41,160735.33,968932.47,571,286055.95,41.03,51,844584.13
+638,745851.68,742364.06,104092.62,982148.77,654,235138.22,46.89,13,679260.34
+639,522379.42,592602.49,905396.72,999995.8,458,929224.11,77.25,12,786626.11
+640,640621.47,987964.57,523040.83,601668.48,366,467257.74,9.61,38,740650.47
+641,994584.77,611120.97,647663.9,820861.21,613,122376.32,95.14,234,469978.3
+642,834965.51,89008.83,973224.45,913764.33,520,781612.29,57.46,60,551902.97
+643,597214.35,1076.1,662842.89,555854.0,569,898549.33,62.65,294,267230.04
+644,957102.34,515578.84,235447.91,38834.34,491,541816.06,7.89,94,512548.46
+645,76079.99,618715.84,896281.44,520474.45,716,109901.1,33.68,12,512065.34
+646,591589.45,960755.31,97154.37,376003.57,786,964577.27,62.66,314,736818.89
+647,727946.14,964569.39,897936.28,769306.54,353,356646.03,1.81,182,711043.23
+648,706105.67,13219.32,858747.2,567960.85,462,585953.38,39.95,264,893162.84
+649,662161.3,111283.26,668907.2,844445.3,584,606870.66,42.02,169,112419.4
+650,898362.97,411738.63,682904.82,996413.94,763,42511.85,35.88,156,862724.2
+651,763223.57,811399.09,365710.09,509071.53,520,284071.5,22.84,309,397236.44
+652,139805.2,474276.43,46069.94,603482.56,773,494183.72,90.46,335,808648.05
+653,406381.62,904352.27,151899.06,144452.53,525,347171.81,81.43,359,346128.29
+654,13741.8,939210.5,422533.74,847629.25,559,222902.9,80.3,353,143546.99
+655,838663.47,593260.11,163933.82,832691.19,548,66026.95,38.03,153,102978.42
+656,904569.9,717532.21,948922.97,486785.14,687,601281.76,83.01,261,942732.85
+657,244440.32,706384.85,401472.25,190909.96,444,480864.52,89.2,342,688433.76
+658,620777.39,536069.12,543693.35,514830.38,613,116313.95,51.45,217,698487.88
+659,130512.38,454950.91,592779.17,547625.23,743,117312.38,90.14,120,49958.83
+660,690927.95,994022.79,601140.42,658322.35,713,675129.87,47.65,138,831069.62
+661,735505.95,29728.65,861563.64,121955.38,595,829452.36,44.8,265,261106.76
+662,297164.14,775240.23,92708.27,838891.14,324,420119.99,59.68,65,724928.96
+663,79441.4,637915.12,460796.41,411424.87,354,686845.32,36.88,145,609125.75
+664,511363.77,223823.42,249138.98,35337.24,704,609931.17,5.64,272,438051.56
+665,220009.66,358932.96,917757.6,67451.15,592,820504.51,74.19,241,124554.41
+666,46408.94,81586.86,901292.46,555435.01,781,73210.64,4.89,221,338142.98
+667,57020.59,491467.4,370004.65,851417.68,345,715734.89,53.88,157,437524.0
+668,561690.34,426477.52,15409.18,554820.25,469,754164.45,74.44,37,99275.55
+669,859627.5,26304.96,346142.84,367255.8,360,75491.4,20.87,36,732586.26
+670,436224.96,896180.06,41516.29,890241.72,849,727579.51,8.96,356,49753.28
+671,673667.19,194907.76,315448.05,16619.84,447,808984.28,92.0,170,502478.55
+672,230731.32,499379.08,645081.21,792559.35,488,915154.77,20.46,223,930238.99
+673,452577.03,189151.64,824160.47,304015.0,685,794710.83,28.22,266,177641.98
+674,21999.62,904425.94,215387.47,319618.96,774,789762.05,18.47,298,130357.38
+675,651267.23,784642.23,811072.33,265837.64,526,359575.34,68.54,56,418856.94
+676,533966.22,913223.85,943243.64,833701.28,402,546198.71,81.64,318,507886.73
+677,221852.22,593428.52,999935.29,194813.46,643,500546.88,32.73,126,771397.76
+678,303057.92,833931.69,902303.37,892387.71,635,572184.49,24.68,104,177058.39
+679,407028.68,416847.83,609750.81,191115.88,726,736982.95,82.85,266,703533.99
+680,282798.68,126150.38,737232.12,180065.48,565,888067.56,83.06,9,65163.73
+681,610578.46,587913.13,754219.73,812689.84,511,577705.3,26.25,228,101168.08
+682,928675.15,551614.63,738795.98,856205.02,746,559660.98,2.85,56,156846.03
+683,654558.38,489201.49,34066.59,991467.43,458,782122.5,85.03,298,937728.15
+684,93319.62,582138.51,261806.33,5729.93,646,687017.4,77.82,158,700604.04
+685,487856.1,756360.14,924292.78,444826.89,812,825238.96,71.04,6,457197.17
+686,877616.75,816945.92,563213.2,755931.41,759,18263.7,33.19,282,692163.35
+687,692548.9,826089.52,68261.23,214984.47,809,701324.27,14.03,157,978126.54
+688,891818.44,41004.09,791926.99,751574.93,358,645770.51,16.68,95,737561.52
+689,877449.04,812193.65,688471.31,731014.47,839,748407.96,55.09,69,818734.76
+690,119883.86,241713.89,626770.22,890686.24,631,404968.03,98.57,286,587840.35
+691,750988.32,440041.13,928180.52,197654.37,605,659038.01,7.9,340,6934.21
+692,467913.89,917811.75,757404.49,736050.82,460,13948.91,70.67,307,448506.63
+693,860043.13,141339.86,635042.74,26521.64,455,144279.04,58.61,169,566962.46
+694,423390.43,170341.32,735953.85,472536.68,702,132365.86,40.75,311,310354.81
+695,571895.43,727774.82,702514.18,181261.8,510,470394.35,33.59,111,823606.89
+696,739916.53,787872.3,168651.31,907699.55,680,839231.92,27.46,360,495133.27
+697,938404.1,939932.06,619289.61,972797.67,539,206823.76,78.34,28,611458.77
+698,550781.58,298319.13,666465.97,953294.27,389,111425.49,11.6,215,538593.93
+699,374833.25,671036.78,837097.8,175299.88,568,808352.59,17.76,248,538040.57
+700,461714.84,317696.84,210494.1,846184.43,572,46337.37,89.44,264,18906.43
+701,790812.05,804199.09,23497.5,835877.22,754,823975.12,2.89,19,701920.25
+702,210006.74,400679.71,99342.78,126260.23,391,515191.34,68.91,323,565531.13
+703,79911.58,484280.83,52283.1,689487.45,685,961728.04,25.18,84,812834.36
+704,332223.92,217008.15,102731.84,271822.97,642,108741.04,25.61,272,39933.27
+705,76976.81,261388.11,115319.54,891156.01,449,283988.27,72.84,301,780350.11
+706,599342.74,598274.68,328754.21,519231.45,516,139729.93,4.75,161,841192.1
+707,797262.92,267170.18,239880.89,441157.7,307,705554.49,54.69,38,273691.23
+708,761684.54,535140.82,934726.62,5934.89,754,621200.68,62.34,20,762530.95
+709,541391.16,825140.35,343898.72,646012.74,369,784799.4,42.94,154,780947.18
+710,460706.16,673470.24,601778.83,749624.44,845,362145.54,31.1,161,985965.83
+711,704812.86,962371.84,523202.98,29621.32,436,239487.15,44.9,18,102876.3
+712,824395.72,261318.74,632987.76,680199.03,659,433786.49,79.4,279,782986.77
+713,71609.84,70071.14,10148.04,615017.18,819,702279.8,65.26,125,676991.44
+714,624855.36,255905.89,345664.83,945947.08,814,650655.18,55.81,185,679086.74
+715,667514.04,525125.98,634619.61,733708.09,749,207074.44,19.99,90,693466.32
+716,749692.42,517200.7,375680.21,150107.55,850,625248.53,62.06,195,946368.82
+717,632478.07,519158.95,309705.27,857680.04,477,968653.04,24.57,305,429450.16
+718,595124.75,89861.87,745230.77,565953.83,639,950574.8,3.96,52,7436.53
+719,980563.81,715973.27,854213.96,417013.68,341,463915.08,96.05,326,422251.16
+720,764591.91,488346.81,673982.04,399893.7,725,669281.11,26.7,197,141895.67
+721,344863.69,823490.73,150184.17,50262.61,551,232621.92,7.09,194,151731.47
+722,789924.76,910084.12,457108.65,516107.58,518,753434.34,8.53,135,316855.9
+723,205815.15,299762.22,510488.61,520343.42,782,645709.49,12.6,257,941579.77
+724,756962.89,704792.94,101196.8,429616.63,790,788356.38,9.9,161,488223.37
+725,974308.57,496650.32,44549.4,417367.72,573,984742.53,25.7,274,948529.12
+726,633627.63,568001.56,682098.82,956136.66,550,29534.62,59.41,232,278491.16
+727,805033.19,471218.17,693576.18,855152.86,513,586809.69,78.4,154,691270.79
+728,195405.87,212170.4,244790.18,828805.08,726,721644.9,12.98,303,777401.02
+729,808543.26,524781.39,715939.17,505934.56,820,423480.97,41.33,139,836317.66
+730,340820.94,584947.8,37576.89,754700.78,354,74113.85,92.97,10,947678.8
+731,915520.89,464029.81,229191.27,262171.97,304,130517.84,65.72,331,797856.93
+732,958371.48,903475.05,465552.17,549350.57,456,580745.53,79.25,206,912988.62
+733,1034.08,939524.12,457638.81,815197.72,355,453385.82,12.19,182,395762.99
+734,744058.19,780206.04,462272.16,705509.97,437,803697.69,64.35,140,202755.68
+735,901219.42,278361.74,78640.8,74082.21,476,750508.44,32.9,46,238046.28
+736,13787.99,461490.04,594648.14,470997.25,757,569750.98,69.23,334,746961.6
+737,4788.21,513747.22,372069.32,164853.02,746,498075.16,10.66,129,603651.08
+738,225897.24,158839.26,423303.99,688966.85,648,554437.07,88.67,360,343074.83
+739,240808.09,723780.19,933240.13,444247.55,402,473574.25,35.86,311,589664.65
+740,487231.71,652774.21,685969.27,712107.28,751,97890.49,86.87,237,181684.09
+741,141577.43,652517.08,933270.17,232698.86,642,113182.69,16.2,293,496309.71
+742,534583.47,881820.7,408818.42,275894.66,626,314620.71,37.09,131,471698.58
+743,530892.38,735039.19,669498.02,49737.77,527,960823.65,69.42,119,923574.89
+744,557081.71,125244.47,297445.04,980392.43,396,624983.71,79.26,151,927660.04
+745,339112.45,884054.4,473787.13,265037.82,815,446056.84,83.82,132,632290.51
+746,172891.32,34210.04,401691.03,50796.82,476,19943.23,24.14,244,880837.65
+747,868048.72,405113.84,640445.65,357785.49,520,746019.47,3.99,60,465166.73
+748,60078.83,632674.08,703128.58,879118.82,715,233255.93,0.98,15,809847.33
+749,211382.29,951487.52,731077.67,6251.33,416,797603.31,2.37,158,726764.08
+750,773779.02,587317.11,126829.74,183645.33,709,428795.06,7.3,82,960243.22
+751,991341.63,338.96,972341.66,234508.13,640,566302.69,58.42,252,295857.09
+752,556227.41,521130.07,483638.76,557645.05,315,579798.22,63.93,105,760027.58
+753,240267.96,739855.9,926248.66,862794.46,363,702527.23,7.72,229,797664.75
+754,446291.19,692627.63,962637.59,865391.4,478,99691.91,51.32,113,799137.37
+755,513324.67,948672.69,257894.62,821585.43,574,521046.39,11.91,216,239215.52
+756,653290.14,889344.03,126657.07,372904.25,698,915771.03,44.09,198,239525.34
+757,600448.86,959082.42,325193.19,694245.91,508,660755.88,17.46,325,157251.99
+758,241558.49,497026.85,777759.18,9225.55,619,519764.05,44.65,84,468485.96
+759,772716.75,844507.77,574203.73,202320.43,397,311937.79,35.99,197,31228.39
+760,868140.5,428332.31,726035.08,704415.97,437,483627.36,86.68,346,418376.82
+761,284405.3,890957.81,275303.64,93840.25,553,717652.29,79.39,186,582930.96
+762,917943.15,485718.41,972091.47,897119.2,720,864432.24,7.69,244,516237.22
+763,879972.14,568960.76,779530.18,187834.01,445,625282.69,95.07,341,619368.76
+764,942514.63,46954.03,369816.21,958759.86,442,727021.73,7.33,317,369.88
+765,723756.45,298238.06,89938.16,80153.3,402,610291.36,49.94,206,522188.33
+766,157890.93,107619.47,153506.02,81240.47,509,764992.88,73.97,89,996314.77
+767,166758.15,13218.33,258693.15,297098.87,549,65242.33,71.85,74,826906.92
+768,638648.42,923006.49,173590.89,959560.65,447,157398.09,5.67,308,827551.94
+769,178783.0,499312.16,975038.96,972145.1,655,747357.74,3.13,246,498174.5
+770,981249.47,428149.2,881186.2,639578.36,742,615857.51,87.19,200,25801.55
+771,468912.68,23964.46,624721.11,466869.04,806,534794.55,79.18,156,188499.84
+772,131358.48,845526.28,839599.94,613190.49,849,85325.08,69.26,344,949758.07
+773,58669.82,974777.38,457870.96,768192.94,453,427974.14,44.04,115,942502.64
+774,981365.62,457541.09,413034.46,485333.37,474,317575.06,46.03,161,855745.76
+775,784901.99,916428.93,665064.27,663057.73,482,719984.87,74.0,38,50305.22
+776,993203.55,243511.61,822924.77,690266.4,498,796536.54,64.34,56,96657.11
+777,137826.44,664154.52,232334.58,536989.19,453,357970.31,53.07,231,804637.97
+778,214937.64,540459.02,208716.41,516979.37,452,345033.93,60.84,110,764237.7
+779,357470.45,934279.32,897656.21,688952.54,549,349488.84,60.8,8,983414.51
+780,445171.16,471289.8,204574.5,773718.06,324,529781.9,46.34,20,406514.75
+781,394643.99,1388.52,631137.36,678775.4,568,742038.91,47.59,93,776785.28
+782,657463.87,410505.63,852400.85,77247.17,605,887682.06,58.96,280,120909.82
+783,272885.09,995745.26,456723.25,533605.18,647,892075.12,36.8,52,845230.16
+784,332655.68,53862.08,70113.08,53788.71,848,816886.32,61.29,299,4859.15
+785,706680.54,105270.76,824188.06,654145.88,756,847974.61,26.75,74,785599.03
+786,672726.47,938297.7,292462.48,473426.29,460,541487.37,30.34,192,418100.79
+787,658582.12,480857.81,247472.94,312469.75,531,155021.78,3.46,20,629896.75
+788,418779.36,531523.05,662898.05,317122.11,527,189961.93,45.75,278,556731.69
+789,658841.65,286527.19,401917.77,748705.58,754,538420.36,46.84,33,161354.44
+790,93981.13,556643.81,408680.89,312949.59,632,497118.55,61.89,15,44269.5
+791,483698.72,400330.64,657279.86,373903.54,634,279708.05,5.98,265,455318.35
+792,281277.58,535928.87,341025.07,269983.86,474,858132.51,84.97,10,431035.63
+793,579799.85,137671.28,179816.52,982259.68,724,175287.62,82.41,217,765312.0
+794,840672.58,916726.36,985600.54,798027.53,492,134110.69,29.98,167,958270.32
+795,353834.68,27105.32,587903.0,918633.37,812,830171.47,31.57,324,148016.07
+796,698824.25,609594.04,105524.76,811491.74,496,28747.15,65.4,109,236662.41
+797,85085.76,899219.12,632936.68,874551.54,825,276545.33,63.29,110,358608.24
+798,572083.16,874296.14,880641.41,729822.48,703,815860.85,94.12,256,185705.61
+799,313714.88,349802.17,851019.56,235631.24,666,511504.06,94.46,161,319257.8
+800,93806.81,147427.37,513084.56,933834.37,493,542997.87,33.16,224,928306.35
+801,253253.09,948637.87,326030.08,53835.22,684,438903.61,55.27,227,173091.17
+802,864472.78,577357.88,646548.08,523758.78,548,897343.04,95.63,319,461699.5
+803,500747.56,311653.3,900721.66,979815.23,603,54291.34,13.05,198,194617.52
+804,671286.29,505288.27,3935.73,613951.53,563,339602.56,31.43,4,145288.75
+805,553159.2,114565.0,901084.86,888408.38,560,962684.93,39.18,273,338703.15
+806,9918.19,230921.22,895127.0,166296.54,594,716860.76,23.03,348,996656.53
+807,684179.09,406251.51,810556.45,827046.62,773,874518.36,81.64,256,742665.29
+808,145508.68,564888.27,471905.69,364537.9,347,650223.87,73.03,271,210537.2
+809,467126.19,658086.09,215501.25,712376.47,630,805878.55,15.04,327,780689.19
+810,317870.8,185665.77,311426.68,197001.77,567,358827.68,20.25,257,642231.48
+811,77333.21,162208.77,852704.25,508054.77,760,981771.61,66.64,346,472903.75
+812,149332.61,339903.89,626020.39,875959.53,621,766245.87,3.44,331,717719.66
+813,2982.38,733489.16,422200.12,687652.51,430,763754.45,66.63,332,818008.61
+814,242383.5,129173.49,6062.19,561809.13,669,605463.23,54.34,87,932261.86
+815,29546.82,434904.7,410861.99,337561.16,535,763146.07,87.17,40,929413.07
+816,418406.91,32226.61,131777.99,600444.61,724,576501.08,15.49,1,701862.55
+817,532327.54,425723.77,863658.3,505144.02,637,908061.47,54.22,6,248892.99
+818,436824.59,954891.98,322966.07,876856.28,472,195827.22,40.35,54,493719.93
+819,143169.77,709358.74,907308.23,1285.65,804,731554.75,73.42,16,253606.42
+820,240758.18,936301.14,593029.45,698952.02,522,754431.97,14.18,162,838091.9
+821,651024.14,207277.16,390988.29,136336.03,780,583007.12,22.58,7,998334.8
+822,663104.32,879786.43,878714.8,297819.34,806,490062.39,51.68,144,228304.92
+823,801874.6,242754.6,638681.67,428596.91,311,522354.15,35.87,90,581034.12
+824,828391.84,883926.49,654536.82,432790.62,654,926690.35,50.67,103,544509.13
+825,330677.75,89620.41,637624.64,847747.49,459,691557.44,45.59,298,142597.71
+826,75674.94,99097.96,678527.83,30308.13,717,323817.91,61.58,191,396312.26
+827,255470.07,144573.73,451677.97,178283.56,301,462276.36,88.57,196,779862.08
+828,490164.33,440544.08,38522.03,131919.83,416,825439.61,24.75,275,259265.19
+829,396061.69,280541.23,722027.61,167790.33,791,345625.28,91.43,180,609551.61
+830,744528.44,11496.45,277735.15,22368.89,743,543688.93,22.4,336,247075.84
+831,828207.11,252514.98,870962.27,981783.29,819,854579.53,46.63,331,313510.77
+832,297730.71,478817.98,891699.88,781430.0,711,658672.82,50.78,139,504264.69
+833,183391.46,876727.78,866665.66,247092.53,590,328438.64,7.79,37,870092.63
+834,54238.45,189731.52,958094.93,98304.3,831,376267.55,82.92,222,697976.16
+835,531450.85,585512.82,725775.03,488471.37,522,869107.36,34.4,78,769250.71
+836,716377.17,574135.28,701209.92,171392.66,803,638114.9,2.69,273,983571.01
+837,735016.36,40591.04,975154.91,44050.34,395,268878.12,59.63,111,882373.88
+838,327592.6,466587.71,143938.76,656794.43,483,259408.22,56.85,75,326619.55
+839,819861.5,412596.0,435460.75,806010.6,451,39988.04,75.3,327,420038.91
+840,694082.55,657030.71,209103.24,104428.22,638,677802.03,42.56,121,19527.28
+841,826279.22,455943.53,807978.13,779638.46,779,146874.72,32.19,119,525096.72
+842,777159.62,781553.72,323996.96,336665.94,805,648821.03,14.14,218,411395.18
+843,447713.91,494620.41,388367.93,691455.52,771,229275.22,54.11,85,853611.03
+844,520171.26,871683.02,88578.63,812407.41,320,340534.06,32.62,268,936149.07
+845,992412.01,470474.66,500182.73,165137.03,371,508967.4,94.99,249,538296.52
+846,199788.57,433908.89,637602.89,246738.39,365,91341.61,48.95,184,535221.21
+847,7774.73,536872.72,802642.43,741967.41,697,730731.94,15.17,101,223366.78
+848,611846.26,370123.19,3018.1,121984.07,645,39248.86,51.09,179,139861.5
+849,811731.3,938019.28,653954.53,977154.71,367,349617.87,0.74,137,469915.65
+850,520388.31,271461.46,344308.39,497764.76,473,990571.23,20.99,132,820044.66
+851,190268.35,939652.29,446197.93,960220.99,501,246915.95,82.18,213,547009.68
+852,684503.08,689186.81,900373.89,978927.08,322,183986.49,71.13,169,363589.35
+853,930413.59,987744.37,533651.07,203791.07,416,534403.41,67.62,159,928649.62
+854,587879.15,426483.52,638069.94,768892.02,615,771866.06,53.02,281,612182.47
+855,86319.54,407598.57,756217.49,668677.49,600,82675.69,60.96,337,118581.25
+856,525948.26,396893.38,625420.92,779554.67,632,454440.34,70.4,270,335744.15
+857,860370.08,25228.11,327124.27,74536.23,568,105669.87,5.66,108,610728.5
+858,170174.35,506212.03,693090.82,233948.56,349,759163.78,14.65,57,924467.48
+859,158109.16,1878.02,509158.45,390317.72,733,215355.5,42.15,252,635021.58
+860,70867.2,602979.07,788353.24,244834.07,646,74636.77,37.85,237,261010.84
+861,666098.03,2286.9,829992.59,688571.99,807,412974.93,61.31,132,695038.86
+862,522796.04,657453.87,121633.59,44907.26,800,116145.38,23.04,244,357973.07
+863,964908.23,215765.78,102704.98,120021.97,493,361689.07,31.98,241,994780.79
+864,932246.34,959206.49,545517.93,232609.7,435,604802.55,41.71,323,89346.33
+865,84672.86,577875.94,498823.39,116063.98,709,462947.51,12.34,290,578021.41
+866,938714.71,961757.06,313780.91,330315.39,736,109741.68,13.09,147,233510.34
+867,239889.53,329418.15,862720.94,942019.83,440,201369.35,98.51,143,456539.24
+868,203466.36,615294.15,482058.05,468766.17,664,10371.73,5.9,288,886009.5
+869,98490.28,888560.25,467909.81,96994.51,525,107063.01,99.1,110,556608.49
+870,10998.3,755486.96,192901.39,635070.9,597,239784.55,27.5,65,662888.16
+871,308657.29,414267.6,984273.95,755072.71,413,35355.92,94.02,243,336776.34
+872,297431.28,63132.69,902445.9,932861.97,353,944306.69,89.29,105,949267.4
+873,697195.69,986621.42,648894.35,170169.93,570,637907.66,85.6,26,817448.93
+874,180676.42,309253.25,999793.8,567414.42,834,492928.86,53.91,295,840474.41
+875,934293.04,875173.98,276432.18,568681.83,734,902431.48,8.29,138,837189.21
+876,827461.81,786097.76,421636.11,114460.94,306,337486.27,23.18,292,801868.96
+877,785999.41,674752.51,784065.43,222497.73,421,327078.85,4.71,233,298025.19
+878,833764.86,248773.0,99817.39,703183.96,482,243365.47,75.97,5,106071.52
+879,75330.23,345038.95,194819.33,878607.42,738,146335.14,51.4,205,147668.7
+880,291260.26,960292.48,114923.23,612545.31,312,678543.15,4.8,7,579428.25
+881,753741.09,454255.11,521436.4,639377.57,674,955198.02,7.29,7,955988.32
+882,553133.5,989851.9,311848.36,652712.76,300,613321.28,40.03,153,54472.76
+883,406963.42,947198.77,220774.31,152671.63,588,748475.6,67.21,86,757812.32
+884,215412.91,367791.21,421054.16,89094.98,379,162834.54,90.64,33,265306.78
+885,648749.58,27401.45,84485.96,114781.57,458,593766.06,17.21,158,302179.15
+886,302482.47,804729.96,432636.17,453880.34,534,574517.28,42.02,299,629067.01
+887,580271.72,493435.26,429394.15,504405.97,667,873134.7,10.1,295,168305.47
+888,172917.47,396488.69,747456.28,555290.42,380,435107.03,97.3,131,447938.47
+889,357474.3,896297.54,202491.2,275565.57,646,417197.13,67.6,222,388791.0
+890,520820.1,325023.23,766964.95,314765.65,671,264884.07,9.56,2,629307.49
+891,940609.66,602212.61,101090.46,709143.34,323,191057.94,44.57,34,196923.96
+892,438317.4,656847.34,142371.62,901824.88,777,621528.63,65.38,293,798585.41
+893,361492.27,654250.06,618078.88,756013.02,633,878826.5,63.18,352,172568.38
+894,443120.74,754825.4,371013.34,785782.26,603,284406.48,91.73,293,120932.31
+895,171879.87,30155.44,412128.79,145770.87,658,40881.55,26.8,271,329801.17
+896,924533.65,975337.22,940733.17,50871.77,418,302430.13,81.96,199,745434.22
+897,615214.24,300384.03,653778.47,661322.92,385,563115.91,62.71,352,993954.17
+898,633056.37,150961.51,170146.79,703506.39,432,608904.56,14.98,348,61560.72
+899,392478.36,282274.21,219758.55,724086.56,756,885539.91,5.13,249,347765.75
+900,570578.41,937448.54,647489.69,444310.87,680,642824.32,52.51,144,976956.7
+901,428224.85,660851.26,497012.7,711005.71,666,324482.44,79.93,170,540662.47
+902,376340.7,645929.46,237847.24,847497.78,762,569948.21,84.63,104,890601.17
+903,503143.59,946366.04,59972.2,588388.47,567,611589.94,67.07,342,468628.04
+904,56500.02,374582.59,366150.9,801793.88,595,157786.2,31.83,252,640671.8
+905,824554.69,287118.26,985944.39,517486.48,574,776257.59,47.34,290,938105.68
+906,265696.19,765223.86,830459.04,849864.41,712,328737.56,29.65,333,594740.31
+907,911675.04,173815.51,3757.7,198115.72,308,982468.64,13.37,336,66514.74
+908,658342.95,178625.28,107554.83,724896.41,365,355118.29,75.93,97,491342.9
+909,808745.08,71140.35,62665.33,346988.5,628,102486.61,39.82,199,287011.49
+910,120698.47,587410.77,525122.47,973265.85,715,11418.71,72.47,71,662.68
+911,723863.56,357610.33,258119.55,711068.5,371,13484.71,66.02,40,183252.94
+912,899302.64,600225.68,723327.15,262144.8,617,124883.63,47.42,62,311660.04
+913,726686.2,195917.02,939861.77,572288.84,507,751952.15,96.24,13,822564.18
+914,973083.19,548985.62,303870.16,995010.27,746,232328.21,18.49,266,103237.32
+915,222815.73,318174.15,968862.92,11335.7,507,519725.89,58.39,308,969784.61
+916,577800.46,70101.72,349153.77,852607.68,578,475114.78,67.21,194,703455.56
+917,199132.11,523890.52,28320.51,271200.91,414,116225.64,70.91,247,476194.26
+918,646336.08,485052.84,750277.71,394983.02,772,724410.61,54.77,92,114676.39
+919,168818.51,697176.82,736378.39,530750.65,798,670894.87,16.01,313,396610.37
+920,141993.42,403703.89,160107.52,354701.45,468,985536.14,75.94,297,764253.48
+921,189730.35,22097.19,945594.52,1271.91,808,832435.54,18.22,164,617432.57
+922,718587.39,388944.28,780112.68,962467.99,490,718105.33,35.65,319,826469.0
+923,267744.32,300885.85,614324.28,179840.12,806,544231.02,96.91,189,613300.29
+924,342632.3,830730.1,207421.37,211409.61,622,621966.35,37.22,299,21803.29
+925,923372.83,282122.26,553792.06,856319.55,470,953336.62,26.5,217,701140.95
+926,819150.19,270709.44,42159.84,729364.88,558,368182.45,90.85,187,31435.91
+927,428189.21,437329.57,431538.58,611965.11,522,11651.76,49.54,38,389183.14
+928,138049.38,955818.46,657865.05,907717.45,581,493530.71,30.51,133,996138.23
+929,997727.35,666656.53,70740.47,140736.4,615,955817.61,34.69,344,471860.81
+930,290495.28,602809.38,196778.94,417093.96,379,161728.0,89.47,60,827442.33
+931,252334.33,936822.87,302478.5,545444.19,536,155905.69,7.88,284,68870.76
+932,786966.71,712586.85,750265.39,877586.11,432,866809.77,96.63,192,620872.63
+933,169471.62,626536.96,585227.49,955948.62,749,289305.58,80.16,202,622444.28
+934,596284.17,122762.52,1922.21,702854.75,400,856441.36,9.79,146,867774.44
+935,61766.86,918931.26,824071.48,156467.34,845,89299.73,97.93,237,681208.94
+936,625310.21,67204.3,832214.13,678114.36,615,154786.16,35.7,76,486831.79
+937,210539.43,237005.47,353371.43,345698.47,451,608348.44,25.33,12,192257.24
+938,927347.06,42691.4,355643.84,577542.36,483,778357.07,90.68,302,260467.97
+939,211236.01,542684.64,17421.75,814773.89,725,552143.06,28.0,93,986752.04
+940,996619.56,868711.97,698502.49,305062.84,778,147093.81,27.02,308,309214.49
+941,501155.13,816474.91,918630.55,47448.11,576,429142.54,52.6,93,623961.27
+942,145098.98,225562.99,286896.74,238453.2,337,638722.02,96.02,359,762350.14
+943,651262.19,235978.98,957391.54,727763.73,648,409114.84,71.98,326,903664.51
+944,224936.61,28473.35,650245.1,827884.15,322,411830.05,30.04,306,85984.56
+945,584527.77,522903.3,82517.66,600981.66,370,620803.36,92.53,54,190031.07
+946,334788.26,196473.01,132639.29,870375.83,711,386989.43,84.69,299,137883.68
+947,508819.42,997267.21,297896.29,280389.33,470,764542.49,92.86,329,152768.2
+948,23318.2,958551.85,190550.68,538492.05,806,409567.44,13.41,202,578226.27
+949,431762.28,57653.95,235427.26,608993.05,752,864165.32,36.32,68,906376.55
+950,334604.77,389444.4,432538.17,554946.05,419,450312.16,12.44,280,503223.87
+951,754499.82,271814.41,766578.11,546962.16,840,860915.04,58.74,146,722281.4
+952,485216.9,968072.14,861787.57,102061.5,563,694775.48,58.97,279,795975.56
+953,201095.72,986638.24,992317.72,144271.16,379,669398.36,47.1,169,682409.63
+954,692310.14,804789.07,492817.1,768530.5,672,378060.93,91.51,118,881490.24
+955,700722.13,119114.05,833991.05,581968.62,303,473501.98,76.98,179,228362.0
+956,361876.77,895758.97,18553.33,163052.65,319,630383.45,30.54,290,99957.78
+957,221092.31,490552.1,79841.34,950058.25,658,542152.18,4.66,84,997524.77
+958,914506.33,858737.58,28799.47,51602.39,456,903650.59,88.45,219,223236.64
+959,551153.2,375767.43,427291.95,736593.47,715,783066.44,87.36,125,870620.43
+960,278096.52,556712.76,650404.31,455941.52,651,263209.15,29.25,304,58097.73
+961,144510.53,10400.96,820488.44,207785.2,391,500753.19,1.7,138,390771.97
+962,198790.29,351606.72,968804.78,323807.56,358,895077.55,23.18,301,469906.71
+963,488997.99,937421.96,941073.85,721186.54,676,739594.51,16.06,277,424756.15
+964,789583.28,99540.55,437565.37,219975.11,566,543665.37,61.24,128,179447.41
+965,818683.71,475445.1,135807.26,175907.8,529,241006.85,85.09,358,149645.12
+966,496878.24,409848.58,933195.04,408444.33,575,222617.14,40.28,61,704502.1
+967,354544.45,309458.96,852444.6,843525.48,508,769472.06,96.25,199,962759.97
+968,637356.16,683328.44,842782.89,87214.17,769,163467.17,4.42,107,628317.5
+969,376109.06,253870.83,270820.13,812872.11,333,631205.04,83.54,246,972773.82
+970,57564.11,477823.45,982042.44,546594.77,518,519861.19,80.31,126,655948.55
+971,416547.34,311188.46,706894.37,776580.26,742,888763.98,24.46,33,105574.49
+972,759455.86,161472.3,676994.1,186126.06,625,474751.49,20.16,310,706796.61
+973,4898.56,605651.62,824248.62,501196.52,326,544779.34,82.94,60,145205.14
+974,854795.04,714405.05,199727.9,725705.04,635,594321.96,68.89,45,317321.95
+975,172897.18,9261.51,860421.73,617147.3,727,355527.01,35.97,52,864800.31
+976,417631.92,695310.06,814320.85,243216.03,821,22504.65,88.05,306,379029.26
+977,840322.6,317198.19,447271.92,126454.44,718,568349.03,52.72,44,217637.5
+978,505898.58,358604.95,906305.81,27482.97,773,560517.5,60.73,334,825945.97
+979,339074.74,841270.75,783596.81,15855.57,748,968211.03,79.26,69,941378.15
+980,394360.16,59236.82,1482.51,508987.32,809,14466.88,89.7,65,523825.79
+981,199278.9,887804.3,513235.75,345023.41,724,476899.39,89.9,67,968829.77
+982,157698.06,392857.79,739498.18,750253.4,303,976446.32,65.7,95,965076.65
+983,522524.24,436981.56,848239.68,172973.1,756,161101.95,79.69,21,950000.69
+984,698400.89,783529.81,700745.27,280520.97,500,38508.95,10.8,261,44542.68
+985,604953.62,409122.92,95266.96,261435.43,435,149402.37,58.33,290,114475.59
+986,27805.74,973808.47,916342.31,704105.32,698,41571.78,12.13,296,428324.88
+987,841058.91,427388.66,394823.8,25534.71,440,625071.97,85.71,18,728913.1
+988,480705.82,836390.8,502282.53,731261.73,310,34640.28,28.35,315,799550.73
+989,937815.2,363468.16,101808.25,386252.22,414,749978.54,13.44,131,19700.88
+990,991427.77,332004.07,117146.78,370518.65,829,197672.09,4.79,51,994128.01
+991,441906.22,267072.73,611095.19,824194.28,828,225005.61,85.69,340,656708.83
+992,721909.76,924512.49,194999.61,670463.36,331,151298.14,0.67,62,423670.43
+993,877930.61,766577.91,688921.85,307929.85,591,391802.96,44.48,168,547976.21
+994,423017.53,501905.56,166885.33,589877.52,807,842494.9,39.24,166,412394.34
+995,990929.52,580801.19,244851.39,66812.77,619,162792.53,62.18,332,139142.56
+996,688193.15,61660.44,419121.49,885870.51,772,650985.53,74.6,44,489459.01
+997,550133.51,453359.27,933646.7,439690.01,518,862038.28,64.6,118,610225.38
+998,811484.49,174628.03,105331.94,32725.15,747,184220.26,52.21,344,830322.87
+999,376612.79,352604.54,823900.72,989890.8,752,726397.82,97.41,236,748120.09
+1000,909879.82,151271.35,696640.32,366130.25,668,95220.18,8.88,349,262676.66

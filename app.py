@@ -1,7 +1,8 @@
 import streamlit as st
 import os
-import logging
+import pandas as pd
 from datetime import datetime
+import time
 from src.data_loader import get_data, clean_data, validate_data_for_dashboard
 from src.feature_eng import feature_engineering
 from src.prompt_builder import prompt_generator
@@ -11,189 +12,163 @@ from dotenv import load_dotenv
 load_dotenv()
 os.environ["ANTHROPIC_API_KEY"] = os.getenv('ANTHROPIC_API_KEY')
 
-log_directory = "logs"
-if not os.path.exists(log_directory):
-    os.makedirs(log_directory)
-
-log_filename = f"auto_dash_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
-log_filepath = os.path.join(log_directory, log_filename)
-
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler(log_filepath, encoding='utf-8'),
-        logging.StreamHandler()
-    ]
-)
-
 st.set_page_config(page_title="AUTO-DASH Generator", layout="wide")
 
-st.title("AUTO-DASH: Automatic Dashboard Generator")
+st.title("🚀 AUTO-DASH: Your Personal Dashboard Wizard")
+st.write("Upload a CSV file, and watch as we conjure up an interactive dashboard just for you!")
 
-uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+uploaded_file = st.file_uploader("📂 Choose your data potion (CSV file)", type="csv")
 
 if uploaded_file is not None:
-    st.success("File successfully uploaded!")
-    
-    temp_file_path = "Staging_Data/temp_data.csv"
-    with open(temp_file_path, "wb") as f:
-        f.write(uploaded_file.getbuffer())
-    
-    data = get_data(temp_file_path)
-    
-    if data is not None:
-        st.write("Data loaded successfully!")
-        st.write(f"Shape of the data: {data.shape}")
-        st.write("First few rows of the data:")
-        st.dataframe(data.head())
+    with st.spinner("🧪 Brewing your data..."):
+        temp_file_path = "Staging_Data/temp_data.csv"
+        with open(temp_file_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
         
-        if validate_data_for_dashboard(data):
-            st.success("Basic data validation passed. Proceeding with data cleaning.")
+        data = get_data(temp_file_path)
+        
+        if data is not None:
+            st.success("✨ Data successfully summoned!")
+            st.write(f"📊 Shape of your data realm: {data.shape}")
             
-            cleaned_data = clean_data(data)
-            if cleaned_data is not None:
-                st.write("Data Cleaning Done.")
-                st.write("Cleaned data preview:")
-                st.dataframe(cleaned_data.head())
-                
-                perform_fe = st.radio("Would you like to perform automated feature engineering?", ("Yes", "No"), index=1)
-                
-                if perform_fe == "Yes":
-                    st.write("Performing feature engineering...")
-                    engineered_data, generated_code = feature_engineering(cleaned_data)
+            with st.expander("👀 Peek at your data"):
+                st.dataframe(data.head())
+            
+            if validate_data_for_dashboard(data):
+                cleaned_data = clean_data(data)
+                if cleaned_data is not None:
+                    st.success("🧼 Data cleaning spell complete!")
                     
-                    if generated_code:
-                        st.write("Engineered data preview:")
-                        st.dataframe(engineered_data.head())
+                    with st.expander("🔍 Inspect your squeaky clean data"):
+                        st.dataframe(cleaned_data.head())
+                    
+                    perform_fe = st.radio("🧙‍♂️ Shall we enhance your data with some feature engineering magic?", ("Yes, please!", "No, thanks"), index=1)
+                    
+                    if perform_fe == "Yes, please!":
+                        with st.spinner("🎩 Pulling new features out of the hat..."):
+                            engineered_data, generated_code = feature_engineering(cleaned_data)
                         
-                        output_path = "Staging_Data/engineered_data.csv"
-                        engineered_data.to_csv(output_path, index=False)
-                        st.success(f"Engineered data saved to {output_path}")
+                        if generated_code:
+                            st.success("🌟 Feature engineering enchantment successful!")
+                            with st.expander("🔮 Gaze upon your enhanced data"):
+                                st.dataframe(engineered_data.head())
+                        else:
+                            st.info("🤔 Hmm, it seems your data was already quite magical. No new features added.")
+                            engineered_data = cleaned_data
                     else:
-                        st.warning("No new features were added during feature engineering.")
-                else:
+                        st.info("👍 Keeping it simple, I see. No feature engineering performed.")
+                        engineered_data = cleaned_data
+                    
                     output_path = "Staging_Data/engineered_data.csv"
-                    st.write("Skipping feature engineering.")
-                    engineered_data = cleaned_data
                     engineered_data.to_csv(output_path, index=False)
-                    st.success(f"Engineered data saved to {output_path}")
-                
-                st.write("Generating dashboard prompt...")
-                dashboard_prompt = prompt_generator(engineered_data)
-                
-                llm = ChatAnthropic(
-                    model="claude-3-5-sonnet-20240620",
-                    temperature=0,
-                    max_tokens=4096,
-                    timeout=None,
-                    max_retries=2,
-                )
-                
-                st.write("Generating dashboard code...")
-                response = llm.invoke(dashboard_prompt)
-                
-                if hasattr(response, 'content'):
-                    dashboard_code = response.content
+                    
+                    start_time = time.time()
+                    
+                    with st.spinner("🧙‍♂️ Summoning the dashboard spirits..."):
+                        dashboard_prompt = prompt_generator(engineered_data)
+                        
+                        llm = ChatAnthropic(
+                            model="claude-3-5-sonnet-20240620",
+                            temperature=0,
+                            max_tokens=4096,
+                            timeout=None,
+                            max_retries=2,
+                        )
+                    
+                    with st.spinner("🎨 Crafting your custom dashboard masterpiece..."):
+                        response = llm.invoke(dashboard_prompt)
+                        dashboard_code = response.content if hasattr(response, 'content') else str(response)
+                    
+                    with st.spinner("🔍 Giving your dashboard code a final polish..."):
+                        correction_prompt = f"""
+                        Review and correct the following Python code for a Dash dashboard. 
+                        Make sure:
+                        1. The charts are interacting with each other.
+                        2. Filter has a select all feature (by default).
+                        3. Reset Filters button should be working properly
+
+                        The code should work with a pandas DataFrame named 'df' that contains the following columns:
+                        {', '.join(engineered_data.columns)}
+
+                        Here's the code to review:
+
+                        {dashboard_code}
+
+                        If you find any errors or potential improvements, provide ONLY the corrected version of the entire code. 
+                        Do not include any explanations, comments, or anything other than the Python code itself.
+                        If the code looks correct and doesn't need changes, return the original code as is.
+                        """
+
+                        correction_response = llm.invoke(correction_prompt)
+                        corrected_code = correction_response.content if hasattr(correction_response, 'content') else str(correction_response)
+
+                    end_time = time.time()
+                    execution_time = round(end_time - start_time, 2)
+
+                    output_directory = "Generated_Dashboards"
+                    if not os.path.exists(output_directory):
+                        os.makedirs(output_directory)
+                    
+                    output_filename = "gendb.py"
+                    output_path = output_filename
+                    
+                    try:
+                        with open(output_path, "w", encoding='utf-8') as f:
+                            f.write(corrected_code)
+                        st.success(f"🎉 Voila! Your dashboard is ready in just {execution_time} seconds! Let's take it for a spin!")
+                    except Exception as e:
+                        st.error(f"Oops! We hit a snag while saving your dashboard: {str(e)}")
+                    
+                    st.subheader("🚀 Your Custom Dashboard Code")
+                    with st.expander("Click to reveal the magic"):
+                        st.code(corrected_code, language="python")
+                    
+                    data_path = os.path.join(output_directory, "data.csv")
+                    engineered_data.to_csv(data_path, index=False)
+                    
+                    st.subheader("🏃‍♂️ Run Your Dashboard")
+                    st.info("""
+                    Ready to see your dashboard in action? Here's how:
+                    1. Open a new terminal or command prompt (your secret dashboard control center).
+                    2. Navigate to the directory containing gendb.py (the dashboard's lair).
+                    3. Cast this spell (run this command):
+                       ```
+                       python gendb.py
+                       ```
+                    4. Open your favorite web browser and journey to http://127.0.0.1:8050.
+                    5. Behold your magnificent dashboard!
+                    """)
+                    
+                    st.download_button(
+                        label="📥 Download Your Dashboard Spell (Python Script)",
+                        data=corrected_code,
+                        file_name=output_filename,
+                        mime="text/plain"
+                    )
+                    
                 else:
-                    dashboard_code = str(response)
-                
-                st.write("Checking and correcting the generated code...")
-                correction_prompt = f"""
-                Review and correct the following Python code for a Dash dashboard. 
-                The code should work with a pandas DataFrame named 'df' that contains the following columns:
-                {', '.join(engineered_data.columns)}
-
-                Here's the code to review:
-
-                {dashboard_code}
-
-                If you find any errors or potential improvements, provide ONLY the corrected version of the entire code. 
-                Do not include any explanations, comments, or anything other than the Python code itself.
-                If the code looks correct and doesn't need changes, return the original code as is.
-
-                Output should be like-
-                import os
-                from dash import Dash, html, dcc, callback, Output, Input, ctx
-                import plotly.express as px
-                import pandas as pd
-                from datetime import datetime, timedelta
-                from dotenv import load_dotenv
-                import dash_bootstrap_components as dbc
-                and rest of code...
-
-                """
-
-                correction_response = llm.invoke(correction_prompt)
-
-                if hasattr(correction_response, 'content'):
-                    corrected_code = correction_response.content
-                else:
-                    corrected_code = str(correction_response)
-
-                output_directory = "Generated_Dashboards"
-                if not os.path.exists(output_directory):
-                    os.makedirs(output_directory)
-                
-                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                output_filename = f"generated_dashboard_{timestamp}.py"
-                output_path = os.path.join(output_directory, output_filename)
-                
-                try:
-                    with open(output_path, "w", encoding='utf-8') as f:
-                        f.write(corrected_code)
-                    st.success(f"Corrected dashboard code has been generated and saved to: {output_path}")
-                except Exception as e:
-                    st.error(f"An error occurred while saving the corrected dashboard code: {str(e)}")
-                    logging.error(f"Error saving corrected dashboard code: {str(e)}")
-                
-                st.subheader("Preview of Corrected Dashboard Code")
-                with st.expander("Click to view code"):
-                    st.code(corrected_code, language="python")
-                
-                data_path = os.path.join(output_directory, "data.csv")
-                engineered_data.to_csv(data_path, index=False)
-                st.success(f"Data for the dashboard has been saved to: {data_path}")
-                
-                st.subheader("Instructions to Run the Dashboard")
-                st.write(f"""
-                1. The corrected dashboard code has been saved to: {output_path}
-                2. The data for the dashboard has been saved to: {data_path}
-                3. To run the dashboard, follow these steps:
-                   a. Open a terminal or command prompt.
-                   b. Navigate to the directory containing the generated file.
-                   c. Install the required libraries if not already installed:
-                      ```
-                      pip install dash pandas plotly dash-bootstrap-components
-                      ```
-                   d. Run the Python file:
-                      ```
-                      python {output_filename}
-                      ```
-                   e. Open a web browser and go to the URL displayed in the console (usually http://127.0.0.1:8050/).
-                """)
-                
+                    st.error("🧹 Oops! Our cleaning spell fizzled. Please check your data and try again.")
             else:
-                st.error("Data cleaning failed. Please check the logs for more information.")
+                st.error("🚫 Data validation charm failed. Make sure your CSV file has proper column names and contains actual data.")
         else:
-            st.error("Data failed basic validation. Please ensure your CSV file has proper column names and contains data.")
-    else:
-        st.error("Failed to load the data. Please check the logs for more information.")
+            st.error("📉 Uh-oh! We couldn't summon your data. Double-check your CSV file and give it another go.")
 
     if os.path.exists(temp_file_path):
         os.remove(temp_file_path)
 
-if st.button("View Logs"):
-    log_directory = "logs"
-    log_files = [f for f in os.listdir(log_directory) if f.endswith('.log')]
-    
-    if log_files:
-        latest_log = max(log_files, key=lambda f: os.path.getmtime(os.path.join(log_directory, f)))
-        log_path = os.path.join(log_directory, latest_log)
-        
-        with open(log_path, 'r', encoding='utf-8') as log_file:
-            log_contents = log_file.read()
-        
-        st.text_area("Log Contents", log_contents, height=300)
-    else:
-        st.write("No log files found.")
+st.sidebar.header("🧙‍♂️ About AUTO-DASH")
+st.sidebar.info(
+    "AUTO-DASH is your personal dashboard conjurer. It takes your CSV data and transforms it into an interactive Dash dashboard with a flick of its digital wand. "
+    "Just upload your CSV file, and watch as AUTO-DASH weaves its magic to create a custom dashboard tailored to your data!"
+)
+st.sidebar.header("📚 Spell Instructions")
+st.sidebar.markdown(
+    """
+    1. 📂 Upload your CSV scroll using the mystical file uploader.
+    2. 👀 Review your data preview and decide if you want to sprinkle some feature engineering magic.
+    3. ⏳ Wait patiently as we summon your dashboard from the digital realm.
+    4. 📥 Download your generated dashboard spell (Python script).
+    5. 🖥️ Cast the spell locally by following the arcane instructions provided.
+    6. 🌐 Open the magic portal (URL) in your preferred browser to witness your dashboard in all its glory!
+    """
+)

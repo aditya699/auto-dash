@@ -13,7 +13,7 @@ def prompt_generator(DataFrame):
     
     Task: Develop a Dash dashboard that provides business users with comprehensive insights from the data. The dashboard should include the following features:
 
-    1.KPI Cards: Display key performance indicators (KPIs) to highlight essential metrics.
+    1.KPI Cards: Display key performance indicators (KPIs) to highlight essential metrics.(make sure to have  prior value 6 months from the start date and end date)
     2.Interactive Filters: Implement filters with a "Select All" option, allowing users to customize the data view.(In filter selection select all should be deafult)
     3.Reset Filters Button: Provide a button to reset all filters to their default states.
     4.Interactive Charts: Ensure that charts are interactive and can respond to each other, enabling dynamic data exploration.
