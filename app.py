@@ -158,8 +158,7 @@ if uploaded_file is not None:
 
 st.sidebar.header("🧙‍♂️ About AUTO-DASH")
 st.sidebar.info(
-    "AUTO-DASH is your personal dashboard conjurer. It takes your CSV data and transforms it into an interactive Dash dashboard with a flick of its digital wand. "
-    "Just upload your CSV file, and watch as AUTO-DASH weaves its magic to create a custom dashboard tailored to your data!"
+    "AUTO-DASH is your personal dashboard maker. It makes dashboard in seconds as opposed to days"
 )
 st.sidebar.header("📚 Spell Instructions")
 st.sidebar.markdown(
@@ -167,7 +166,7 @@ st.sidebar.markdown(
     1. 📂 Upload your CSV scroll using the mystical file uploader.
     2. 👀 Review your data preview and decide if you want to sprinkle some feature engineering magic.
     3. ⏳ Wait patiently as we summon your dashboard from the digital realm.
-    4. 📥 Download your generated dashboard spell (Python script).
+    4. 📥 Download your generated dashboard spell (Python script).(It will get downloaded in your folder directory)
     5. 🖥️ Cast the spell locally by following the arcane instructions provided.
     6. 🌐 Open the magic portal (URL) in your preferred browser to witness your dashboard in all its glory!
     """

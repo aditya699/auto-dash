@@ -9,16 +9,16 @@ import dash_bootstrap_components as dbc
 load_dotenv()
 
 def create_app(df):
-    df['retirement_savings_balance'] = pd.to_numeric(df['retirement_savings_balance'], errors='coerce')
+    df['purchase_date'] = pd.to_datetime(df['purchase_date'])
     app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
     colors = {
-        'background': '#F7F7F7',
-        'text': '#333333',
-        'primary': '#3498DB',
-        'secondary': '#2ECC71',
-        'accent': '#F39C12',
-        'negative': '#E74C3C'
+            'background': '#023020',
+            'text': '#AA336A',
+            'primary': '#3498DB',
+            'secondary': '#2ECC71',
+            'accent': '#F39C12',
+            'negative': '#E74C3C'
     }
 
     kpi_style = {
@@ -46,7 +46,7 @@ def create_app(df):
 
     app.layout = dbc.Container([
         html.Div([
-            html.H1('Financial Dashboard', style={
+            html.H1('Sales Dashboard', style={
                 'textAlign': 'center', 
                 'color': colors['text'], 
                 'marginBottom': '30px', 
@@ -57,27 +57,24 @@ def create_app(df):
             
             html.Div([
                 html.Div([
-                    html.Label('Income Range', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
-                    dcc.RangeSlider(
-                        id='income-range-slider',
-                        min=df['income'].min(),
-                        max=df['income'].max(),
-                        step=1000,
-                        marks={int(df['income'].min()): f'${int(df["income"].min())}', int(df['income'].max()): f'${int(df["income"].max())}'},
-                        value=[df['income'].min(), df['income'].max()]
+                    html.Label('Store Location', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
+                    dcc.Dropdown(
+                        id='dropdown-store',
+                        options=[{'label': 'Select All', 'value': 'all'}] + [{'label': i, 'value': i} for i in df.store_location.unique()],
+                        value=['all'],
+                        multi=True,
+                        style={'width': '300px'}
                     )
-                ], style={'width': '300px'}),
+                ], style={'display': 'flex', 'flexDirection': 'column'}),
                 html.Div([
-                    html.Label('Credit Score Range', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
-                    dcc.RangeSlider(
-                        id='credit-score-range-slider',
-                        min=df['credit_score'].min(),
-                        max=df['credit_score'].max(),
-                        step=10,
-                        marks={int(df['credit_score'].min()): str(int(df['credit_score'].min())), int(df['credit_score'].max()): str(int(df['credit_score'].max()))},
-                        value=[df['credit_score'].min(), df['credit_score'].max()]
+                    html.Label('Date Range', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
+                    dcc.DatePickerRange(
+                        id='date-picker-range',
+                        start_date=df['purchase_date'].min(),
+                        end_date=df['purchase_date'].max(),
+                        style={'width': '300px'}
                     )
-                ], style={'width': '300px'}),
+                ], style={'display': 'flex', 'flexDirection': 'column'}),
                 html.Div([
                     html.Button('Reset Filters', id='reset-button', n_clicks=0, 
                                 style={'padding': '10px 20px', 'backgroundColor': colors['accent'], 'color': 'white', 'border': 'none', 'borderRadius': '5px', 'cursor': 'pointer', 'transition': 'all 0.3s ease'})
@@ -87,13 +84,13 @@ def create_app(df):
             html.Div(id='kpi-indicators', style={'margin': '30px 0'}),
             
             dbc.Row([
-                dbc.Col([dcc.Graph(id='income-expenses-scatter')], width=6),
-                dbc.Col([dcc.Graph(id='savings-investment-scatter')], width=6),
+                dbc.Col([dcc.Graph(id='product-sales')], width=6),
+                dbc.Col([dcc.Graph(id='store-performance')], width=6),
             ], className='mb-4'),
             
             dbc.Row([
-                dbc.Col([dcc.Graph(id='loan-interest-histogram')], width=6),
-                dbc.Col([dcc.Graph(id='retirement-savings-histogram')], width=6),
+                dbc.Col([dcc.Graph(id='payment-method-distribution')], width=6),
+                dbc.Col([dcc.Graph(id='sales-trend')], width=6),
             ], className='mb-4'),
             
         ], style={
@@ -105,88 +102,94 @@ def create_app(df):
 
     @callback(
         [Output('kpi-indicators', 'children'),
-         Output('income-expenses-scatter', 'figure'),
-         Output('savings-investment-scatter', 'figure'),
-         Output('loan-interest-histogram', 'figure'),
-         Output('retirement-savings-histogram', 'figure'),
-         Output('income-range-slider', 'value'),
-         Output('credit-score-range-slider', 'value')],
-        [Input('income-range-slider', 'value'),
-         Input('credit-score-range-slider', 'value'),
-         Input('income-expenses-scatter', 'selectedData'),
-         Input('savings-investment-scatter', 'selectedData'),
-         Input('loan-interest-histogram', 'selectedData'),
-         Input('retirement-savings-histogram', 'selectedData'),
+         Output('product-sales', 'figure'),
+         Output('store-performance', 'figure'),
+         Output('payment-method-distribution', 'figure'),
+         Output('sales-trend', 'figure'),
+         Output('dropdown-store', 'value'),
+         Output('date-picker-range', 'start_date'),
+         Output('date-picker-range', 'end_date')],
+        [Input('dropdown-store', 'value'),
+         Input('date-picker-range', 'start_date'),
+         Input('date-picker-range', 'end_date'),
+         Input('product-sales', 'clickData'),
+         Input('store-performance', 'clickData'),
+         Input('payment-method-distribution', 'clickData'),
+         Input('sales-trend', 'selectedData'),
          Input('reset-button', 'n_clicks')],
-        [State('income-range-slider', 'min'),
-         State('income-range-slider', 'max'),
-         State('credit-score-range-slider', 'min'),
-         State('credit-score-range-slider', 'max')]
+        [State('dropdown-store', 'options')]
     )
-    def update_dashboard(income_range, credit_score_range, income_expenses_selection, savings_investment_selection, 
-                         loan_interest_selection, retirement_savings_selection, reset_clicks, 
-                         income_min, income_max, credit_score_min, credit_score_max):
-        dff = df[(df['income'] >= income_range[0]) & (df['income'] <= income_range[1]) &
-                 (df['credit_score'] >= credit_score_range[0]) & (df['credit_score'] <= credit_score_range[1])]
+    def update_dashboard(stores, start_date, end_date, product_click, store_click, payment_click, sales_selection, reset_clicks, store_options):
+        start_date = pd.to_datetime(start_date)
+        end_date = pd.to_datetime(end_date)
         
-        if ctx.triggered_id == 'reset-button':
-            dff = df
-            income_range = [income_min, income_max]
-            credit_score_range = [credit_score_min, credit_score_max]
-        elif ctx.triggered_id == 'income-expenses-scatter' and income_expenses_selection:
-            points = income_expenses_selection['points']
-            dff = dff[dff['user_id'].isin([p['customdata'][0] for p in points])]
-        elif ctx.triggered_id == 'savings-investment-scatter' and savings_investment_selection:
-            points = savings_investment_selection['points']
-            dff = dff[dff['user_id'].isin([p['customdata'][0] for p in points])]
-        elif ctx.triggered_id == 'loan-interest-histogram' and loan_interest_selection:
-            selected_bins = loan_interest_selection['points']
-            min_rate = min(point['x'] for point in selected_bins)
-            max_rate = max(point['x'] for point in selected_bins)
-            dff = dff[(dff['loan_interest_rate'] >= min_rate) & (dff['loan_interest_rate'] <= max_rate)]
-        elif ctx.triggered_id == 'retirement-savings-histogram' and retirement_savings_selection:
-            selected_bins = retirement_savings_selection['points']
-            min_savings = min(point['x'] for point in selected_bins)
-            max_savings = max(point['x'] for point in selected_bins)
-            dff = dff[(dff['retirement_savings_balance'] >= min_savings) & (dff['retirement_savings_balance'] <= max_savings)]
+        if 'all' in stores:
+            stores = [option['value'] for option in store_options if option['value'] != 'all']
+        
+        dff = df[df.store_location.isin(stores) & 
+                 (df.purchase_date >= start_date) & 
+                 (df.purchase_date <= end_date)]
+        
+        if ctx.triggered:
+            input_id = ctx.triggered[0]['prop_id'].split('.')[0]
+            if input_id == 'reset-button':
+                stores = ['all']
+                start_date = df['purchase_date'].min()
+                end_date = df['purchase_date'].max()
+                dff = df
+            elif input_id == 'product-sales' and product_click:
+                product = product_click['points'][0]['x']
+                dff = dff[dff['product_id'] == product]
+            elif input_id == 'store-performance' and store_click:
+                store = store_click['points'][0]['x']
+                dff = dff[dff['store_location'] == store]
+            elif input_id == 'payment-method-distribution' and payment_click:
+                payment_method = payment_click['points'][0]['label']
+                dff = dff[dff['payment_method'] == payment_method]
+            elif input_id == 'sales-trend' and sales_selection:
+                date_range = [sales_selection['range']['x'][0], sales_selection['range']['x'][1]]
+                dff = dff[(dff['purchase_date'] >= date_range[0]) & (dff['purchase_date'] <= date_range[1])]
 
-        avg_income = dff['income'].mean()
-        avg_expenses = dff['expenses'].mean()
-        avg_savings = dff['savings'].mean()
-        avg_investment = dff['investment_portfolio_value'].mean()
+        total_revenue = dff['total_price'].sum()
+        total_transactions = dff['transaction_id'].nunique()
+        average_order_value = dff['total_price'].mean()
+        total_quantity = dff['quantity'].sum()
         
-        past_dff = df[(df['income'] >= income_range[0]) & (df['income'] <= income_range[1]) &
-                      (df['credit_score'] >= credit_score_range[0]) & (df['credit_score'] <= credit_score_range[1])]
+        past_start_date = start_date - timedelta(days=180)
+        past_end_date = end_date - timedelta(days=180)
+        past_dff = df[df.store_location.isin(stores) & 
+                      (df.purchase_date >= past_start_date) & 
+                      (df.purchase_date <= past_end_date)]
         
-        past_avg_income = past_dff['income'].mean()
-        past_avg_expenses = past_dff['expenses'].mean()
-        past_avg_savings = past_dff['savings'].mean()
-        past_avg_investment = past_dff['investment_portfolio_value'].mean()
+        past_total_revenue = past_dff['total_price'].sum()
+        past_total_transactions = past_dff['transaction_id'].nunique()
+        past_average_order_value = past_dff['total_price'].mean()
+        past_total_quantity = past_dff['quantity'].sum()
         
-        income_change = avg_income - past_avg_income
-        expenses_change = avg_expenses - past_avg_expenses
-        savings_change = avg_savings - past_avg_savings
-        investment_change = avg_investment - past_avg_investment
+        revenue_change = total_revenue - past_total_revenue
+        transactions_change = total_transactions - past_total_transactions
+        aov_change = average_order_value - past_average_order_value
+        quantity_change = total_quantity - past_total_quantity
         
         def create_kpi_card(title, value, change):
             return html.Div([
                 html.H3(title, style={'color': colors['text'], 'marginBottom': '10px', 'fontSize': '16px', 'fontWeight': '400'}),
                 html.Div([
-                    html.Span(f'${value:,.0f}', style={'fontSize': '28px', 'fontWeight': 'bold', 'color': colors['primary']}),
+                    html.Span(f'{value:,.0f}', style={'fontSize': '28px', 'fontWeight': 'bold', 'color': colors['primary']}),
                     html.Div([
                         html.Span('▲' if change > 0 else '▼', 
                                   style={'color': colors['secondary'] if change > 0 else colors['negative'], 'fontSize': '18px'}),
-                        html.Span(f'${abs(change):,.0f}', 
+                        html.Span(f'{abs(change):,.0f}', 
                                   style={'color': colors['secondary'] if change > 0 else colors['negative'], 'fontSize': '18px', 'marginLeft': '5px'})
                     ], style={'marginTop': '5px'})
                 ])
             ], style=kpi_style)
         
         kpi_indicators = html.Div([
-            create_kpi_card('Avg Income', avg_income, income_change),
-            create_kpi_card('Avg Expenses', avg_expenses, expenses_change),
-            create_kpi_card('Avg Savings', avg_savings, savings_change),
-            create_kpi_card('Avg Investment', avg_investment, investment_change)
+            create_kpi_card('Total Revenue', total_revenue, revenue_change),
+            create_kpi_card('Total Transactions', total_transactions, transactions_change),
+            create_kpi_card('Avg Order Value', average_order_value, aov_change),
+            create_kpi_card('Total Quantity', total_quantity, quantity_change)
         ], style={'display': 'flex', 'justifyContent': 'space-between'})
         
         def update_chart_layout(fig):
@@ -206,31 +209,30 @@ def create_app(df):
             fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
             return fig
         
-        income_expenses_scatter = px.scatter(dff, x='income', y='expenses', title="Income vs Expenses",
-                                             color='credit_score', size='savings', hover_data=['user_id'],
-                                             labels={'income': 'Income', 'expenses': 'Expenses', 'credit_score': 'Credit Score'})
-        income_expenses_scatter = update_chart_layout(income_expenses_scatter)
+        product_sales = px.bar(dff, x='product_id', y='total_price', title="Product Sales Analysis",
+                               color_discrete_sequence=[colors['primary']], labels={'product_id': 'Product ID', 'total_price': 'Total Sales'})
+        product_sales = update_chart_layout(product_sales)
         
-        savings_investment_scatter = px.scatter(dff, x='savings', y='investment_portfolio_value', title="Savings vs Investment",
-                                                color='credit_score', size='income', hover_data=['user_id'],
-                                                labels={'savings': 'Savings', 'investment_portfolio_value': 'Investment Portfolio Value', 'credit_score': 'Credit Score'})
-        savings_investment_scatter = update_chart_layout(savings_investment_scatter)
+        store_performance = px.bar(dff, x='store_location', y='total_price', title="Store Performance",
+                                   color_discrete_sequence=[colors['primary']], labels={'store_location':'Store Location','total_price':'Total Sales'})
+        store_performance = update_chart_layout(store_performance)
         
-        loan_interest_histogram = px.histogram(dff, x='loan_interest_rate', title="Loan Interest Rate Distribution",
-                                               color_discrete_sequence=[colors['primary']], labels={'loan_interest_rate': 'Loan Interest Rate'})
-        loan_interest_histogram = update_chart_layout(loan_interest_histogram)
+        payment_method_distribution = px.pie(dff, names='payment_method', values='total_price', title="Payment Method Distribution",
+                                             color_discrete_sequence=px.colors.qualitative.Set3, labels={'payment_method':'Payment Method','total_price':'Total Sales'})
+        payment_method_distribution = update_chart_layout(payment_method_distribution)
         
-        retirement_savings_histogram = px.histogram(dff, x='retirement_savings_balance', title="Retirement Savings Distribution",
-                                                    color_discrete_sequence=[colors['primary']], labels={'retirement_savings_balance': 'Retirement Savings Balance'})
-        retirement_savings_histogram = update_chart_layout(retirement_savings_histogram)
+        sales_trend = px.line(dff.groupby('purchase_date')['total_price'].sum().reset_index(), 
+                              x='purchase_date', y='total_price', title="Daily Sales Trend",
+                              color_discrete_sequence=[colors['primary']], labels={'purchase_date':'Date','total_price':'Total Sales'})
+        sales_trend = update_chart_layout(sales_trend)
         
-        return kpi_indicators, income_expenses_scatter, savings_investment_scatter, loan_interest_histogram, retirement_savings_histogram, income_range, credit_score_range
+        return kpi_indicators, product_sales, store_performance, payment_method_distribution, sales_trend, stores, start_date, end_date
 
     return app
 
 def main():
     df_path = "C:/Users/aditya/Desktop/2024/auto-dash/Staging_Data/engineered_data.csv"
-    df = pd.read_csv(df_path)
+    df=pd.read_csv(df_path)
     app = create_app(df)
     app.run(debug=True)
 

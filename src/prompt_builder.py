@@ -61,12 +61,12 @@ def prompt_generator(DataFrame):
 
         # Define color scheme for consistent styling
         colors = {{
-            'background': '#F7F7F7',  # Light gray background
-            'text': '#333333',        # Dark gray text
-            'primary': '#3498DB',     # Bright blue for primary elements
-            'secondary': '#2ECC71',   # Green for secondary elements (positive changes)
-            'accent': '#F39C12',      # Orange for accents
-            'negative': '#E74C3C'     # Red for negative changes (used sparingly)
+                'background': '#023020',
+                'text': '#AA336A',
+                'primary': '#3498DB',
+                'secondary': '#2ECC71',
+                'accent': '#F39C12',
+                'negative': '#E74C3C'
         }}
 
         # Define styles
