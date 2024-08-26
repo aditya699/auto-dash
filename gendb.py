@@ -9,34 +9,43 @@ import dash_bootstrap_components as dbc
 load_dotenv()
 
 def create_app(df):
-    df['purchase_date'] = pd.to_datetime(df['purchase_date'])
+    df['due_date'] = pd.to_datetime(df['due_date'])
+    df['completed_date'] = pd.to_datetime(df['completed_date'])
     app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
     colors = {
-            'background': '#023020',
-            'text': '#AA336A',
-            'primary': '#3498DB',
-            'secondary': '#2ECC71',
-            'accent': '#F39C12',
-            'negative': '#E74C3C'
+        'background': '#F7F7F7',
+        'text': '#333333',
+        'primary': '#3498DB',
+        'secondary': '#2ECC71',
+        'accent': '#F39C12',
+        'negative': '#E74C3C'
     }
 
     kpi_style = {
         'textAlign': 'center',
-        'padding': '20px',
+        'padding': '15px',
         'backgroundColor': 'white',
         'borderRadius': '10px',
         'boxShadow': '0 4px 15px rgba(0, 0, 0, 0.1)',
         'margin': '10px',
-        'width': '200px',
+        'width': '220px',
+        'height': '150px',
+        'display': 'flex',
+        'flexDirection': 'column',
+        'justifyContent': 'space-between',
         'transition': 'all 0.3s ease'
     }
 
+    category_options = [{'label': 'Select All', 'value': 'ALL'}] + [{'label': i, 'value': i} for i in df.category.unique()]
+    priority_options = [{'label': 'Select All', 'value': 'ALL'}] + [{'label': i, 'value': i} for i in df.priority.unique()]
+    status_options = [{'label': 'Select All', 'value': 'ALL'}] + [{'label': i, 'value': i} for i in df.status.unique()]
+
     filter_style = {
-        'display': 'flex', 
-        'justifyContent': 'space-between', 
-        'alignItems': 'flex-end', 
-        'margin': '20px auto', 
+        'display': 'flex',
+        'justifyContent': 'space-between',
+        'alignItems': 'flex-end',
+        'margin': '20px auto',
         'width': '90%',
         'backgroundColor': 'white',
         'padding': '20px',
@@ -46,10 +55,10 @@ def create_app(df):
 
     app.layout = dbc.Container([
         html.Div([
-            html.H1('Sales Dashboard', style={
-                'textAlign': 'center', 
-                'color': colors['text'], 
-                'marginBottom': '30px', 
+            html.H1('Task Management Dashboard', style={
+                'textAlign': 'center',
+                'color': colors['text'],
+                'marginBottom': '30px',
                 'fontSize': '36px',
                 'fontWeight': '300',
                 'letterSpacing': '2px'
@@ -57,11 +66,31 @@ def create_app(df):
             
             html.Div([
                 html.Div([
-                    html.Label('Store Location', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
+                    html.Label('Category', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
                     dcc.Dropdown(
-                        id='dropdown-store',
-                        options=[{'label': 'Select All', 'value': 'all'}] + [{'label': i, 'value': i} for i in df.store_location.unique()],
-                        value=['all'],
+                        id='dropdown-category',
+                        options=category_options,
+                        value=['ALL'],
+                        multi=True,
+                        style={'width': '300px'}
+                    )
+                ], style={'display': 'flex', 'flexDirection': 'column'}),
+                html.Div([
+                    html.Label('Priority', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
+                    dcc.Dropdown(
+                        id='dropdown-priority',
+                        options=priority_options,
+                        value=['ALL'],
+                        multi=True,
+                        style={'width': '300px'}
+                    )
+                ], style={'display': 'flex', 'flexDirection': 'column'}),
+                html.Div([
+                    html.Label('Status', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
+                    dcc.Dropdown(
+                        id='dropdown-status',
+                        options=status_options,
+                        value=['ALL'],
                         multi=True,
                         style={'width': '300px'}
                     )
@@ -70,8 +99,8 @@ def create_app(df):
                     html.Label('Date Range', style={'fontWeight': 'bold', 'marginBottom': '5px', 'color': colors['text']}),
                     dcc.DatePickerRange(
                         id='date-picker-range',
-                        start_date=df['purchase_date'].min(),
-                        end_date=df['purchase_date'].max(),
+                        start_date=df['due_date'].min(),
+                        end_date=df['due_date'].max(),
                         style={'width': '300px'}
                     )
                 ], style={'display': 'flex', 'flexDirection': 'column'}),
@@ -84,113 +113,126 @@ def create_app(df):
             html.Div(id='kpi-indicators', style={'margin': '30px 0'}),
             
             dbc.Row([
-                dbc.Col([dcc.Graph(id='product-sales')], width=6),
-                dbc.Col([dcc.Graph(id='store-performance')], width=6),
+                dbc.Col([dcc.Graph(id='task-status')], width=6),
+                dbc.Col([dcc.Graph(id='priority-distribution')], width=6),
             ], className='mb-4'),
             
             dbc.Row([
-                dbc.Col([dcc.Graph(id='payment-method-distribution')], width=6),
-                dbc.Col([dcc.Graph(id='sales-trend')], width=6),
+                dbc.Col([dcc.Graph(id='category-breakdown')], width=6),
+                dbc.Col([dcc.Graph(id='time-estimation-accuracy')], width=6),
             ], className='mb-4'),
             
         ], style={
             'fontFamily': '"Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif',
-            'padding': '20px', 
+            'padding': '20px',
             'backgroundColor': colors['background']
         })
     ], fluid=True)
 
     @callback(
         [Output('kpi-indicators', 'children'),
-         Output('product-sales', 'figure'),
-         Output('store-performance', 'figure'),
-         Output('payment-method-distribution', 'figure'),
-         Output('sales-trend', 'figure'),
-         Output('dropdown-store', 'value'),
+         Output('task-status', 'figure'),
+         Output('priority-distribution', 'figure'),
+         Output('category-breakdown', 'figure'),
+         Output('time-estimation-accuracy', 'figure'),
+         Output('dropdown-category', 'value'),
+         Output('dropdown-priority', 'value'),
+         Output('dropdown-status', 'value'),
          Output('date-picker-range', 'start_date'),
          Output('date-picker-range', 'end_date')],
-        [Input('dropdown-store', 'value'),
+        [Input('dropdown-category', 'value'),
+         Input('dropdown-priority', 'value'),
+         Input('dropdown-status', 'value'),
          Input('date-picker-range', 'start_date'),
          Input('date-picker-range', 'end_date'),
-         Input('product-sales', 'clickData'),
-         Input('store-performance', 'clickData'),
-         Input('payment-method-distribution', 'clickData'),
-         Input('sales-trend', 'selectedData'),
+         Input('task-status', 'clickData'),
+         Input('priority-distribution', 'clickData'),
+         Input('category-breakdown', 'clickData'),
+         Input('time-estimation-accuracy', 'selectedData'),
          Input('reset-button', 'n_clicks')],
-        [State('dropdown-store', 'options')]
+        [State('dropdown-category', 'options'),
+         State('dropdown-priority', 'options'),
+         State('dropdown-status', 'options')]
     )
-    def update_dashboard(stores, start_date, end_date, product_click, store_click, payment_click, sales_selection, reset_clicks, store_options):
+    def update_dashboard(categories, priorities, statuses, start_date, end_date, task_status_click, priority_click, category_click, time_accuracy_selection, reset_clicks, category_options, priority_options, status_options):
         start_date = pd.to_datetime(start_date)
         end_date = pd.to_datetime(end_date)
         
-        if 'all' in stores:
-            stores = [option['value'] for option in store_options if option['value'] != 'all']
-        
-        dff = df[df.store_location.isin(stores) & 
-                 (df.purchase_date >= start_date) & 
-                 (df.purchase_date <= end_date)]
+        dff = df.copy()
+        if 'ALL' not in categories:
+            dff = dff[dff.category.isin(categories)]
+        if 'ALL' not in priorities:
+            dff = dff[dff.priority.isin(priorities)]
+        if 'ALL' not in statuses:
+            dff = dff[dff.status.isin(statuses)]
+        dff = dff[(dff.due_date >= start_date) & (dff.due_date <= end_date)]
         
         if ctx.triggered:
             input_id = ctx.triggered[0]['prop_id'].split('.')[0]
             if input_id == 'reset-button':
-                stores = ['all']
-                start_date = df['purchase_date'].min()
-                end_date = df['purchase_date'].max()
-                dff = df
-            elif input_id == 'product-sales' and product_click:
-                product = product_click['points'][0]['x']
-                dff = dff[dff['product_id'] == product]
-            elif input_id == 'store-performance' and store_click:
-                store = store_click['points'][0]['x']
-                dff = dff[dff['store_location'] == store]
-            elif input_id == 'payment-method-distribution' and payment_click:
-                payment_method = payment_click['points'][0]['label']
-                dff = dff[dff['payment_method'] == payment_method]
-            elif input_id == 'sales-trend' and sales_selection:
-                date_range = [sales_selection['range']['x'][0], sales_selection['range']['x'][1]]
-                dff = dff[(dff['purchase_date'] >= date_range[0]) & (dff['purchase_date'] <= date_range[1])]
+                categories = ['ALL']
+                priorities = ['ALL']
+                statuses = ['ALL']
+                start_date = df['due_date'].min()
+                end_date = df['due_date'].max()
+                dff = df[(df.due_date >= start_date) & (df.due_date <= end_date)]
+            elif input_id == 'task-status' and task_status_click:
+                status = task_status_click['points'][0]['label']
+                statuses = [status]
+                dff = dff[dff['status'] == status]
+            elif input_id == 'priority-distribution' and priority_click:
+                priority = priority_click['points'][0]['x']
+                priorities = [priority]
+                dff = dff[dff['priority'] == priority]
+            elif input_id == 'category-breakdown' and category_click:
+                category = category_click['points'][0]['x']
+                categories = [category]
+                dff = dff[dff['category'] == category]
+            elif input_id == 'time-estimation-accuracy' and time_accuracy_selection:
+                time_range = [time_accuracy_selection['range']['x'][0], time_accuracy_selection['range']['x'][1]]
+                dff = dff[(dff['estimated_time'] >= time_range[0]) & (dff['estimated_time'] <= time_range[1])]
 
-        total_revenue = dff['total_price'].sum()
-        total_transactions = dff['transaction_id'].nunique()
-        average_order_value = dff['total_price'].mean()
-        total_quantity = dff['quantity'].sum()
+        total_tasks = len(dff)
+        completed_tasks = len(dff[dff['status'] == 'Completed'])
+        overdue_tasks = len(dff[(dff['status'] != 'Completed') & (dff['due_date'] < pd.Timestamp.now())])
+        avg_completion_time = (dff['completed_date'] - dff['due_date']).mean().days if 'completed_date' in dff.columns else 0
         
         past_start_date = start_date - timedelta(days=180)
         past_end_date = end_date - timedelta(days=180)
-        past_dff = df[df.store_location.isin(stores) & 
-                      (df.purchase_date >= past_start_date) & 
-                      (df.purchase_date <= past_end_date)]
+        past_dff = df[(df.due_date >= past_start_date) & (df.due_date <= past_end_date)]
         
-        past_total_revenue = past_dff['total_price'].sum()
-        past_total_transactions = past_dff['transaction_id'].nunique()
-        past_average_order_value = past_dff['total_price'].mean()
-        past_total_quantity = past_dff['quantity'].sum()
+        past_total_tasks = len(past_dff)
+        past_completed_tasks = len(past_dff[past_dff['status'] == 'Completed'])
+        past_overdue_tasks = len(past_dff[(past_dff['status'] != 'Completed') & (past_dff['due_date'] < pd.Timestamp.now())])
+        past_avg_completion_time = (past_dff['completed_date'] - past_dff['due_date']).mean().days if 'completed_date' in past_dff.columns else 0
         
-        revenue_change = total_revenue - past_total_revenue
-        transactions_change = total_transactions - past_total_transactions
-        aov_change = average_order_value - past_average_order_value
-        quantity_change = total_quantity - past_total_quantity
-        
-        def create_kpi_card(title, value, change):
+        def create_kpi_card(title, current_value, previous_value):
+            change = current_value - previous_value
+            change_percentage = (change / previous_value) * 100 if previous_value != 0 else 0
             return html.Div([
-                html.H3(title, style={'color': colors['text'], 'marginBottom': '10px', 'fontSize': '16px', 'fontWeight': '400'}),
+                html.H3(title, style={'color': colors['text'], 'marginBottom': '10px', 'fontSize': '16px', 'fontWeight': '400', 'height': '20px'}),
                 html.Div([
-                    html.Span(f'{value:,.0f}', style={'fontSize': '28px', 'fontWeight': 'bold', 'color': colors['primary']}),
+                    html.Span(f'{current_value:,.0f}', style={'fontSize': '24px', 'fontWeight': 'bold', 'color': colors['primary']}),
+                ], style={'height': '30px'}),
+                html.Div([
+                    html.Span(f'Previous: {previous_value:,.0f}', style={'fontSize': '14px', 'color': colors['text']}),
+                ], style={'height': '20px'}),
+                html.Div([
                     html.Div([
-                        html.Span('▲' if change > 0 else '▼', 
-                                  style={'color': colors['secondary'] if change > 0 else colors['negative'], 'fontSize': '18px'}),
-                        html.Span(f'{abs(change):,.0f}', 
-                                  style={'color': colors['secondary'] if change > 0 else colors['negative'], 'fontSize': '18px', 'marginLeft': '5px'})
-                    ], style={'marginTop': '5px'})
-                ])
+                        html.Span(f'{"▲" if change > 0 else "▼"}', 
+                                style={'color': colors['secondary'] if change > 0 else colors['negative'], 'fontSize': '16px', 'marginRight': '5px'}),
+                        html.Span(f'{abs(change):,.0f} ({abs(change_percentage):.1f}%)', 
+                                style={'color': colors['secondary'] if change > 0 else colors['negative'], 'fontSize': '14px'})
+                    ], style={'display': 'inline-block'})
+                ], style={'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center', 'height': '20px'})
             ], style=kpi_style)
         
         kpi_indicators = html.Div([
-            create_kpi_card('Total Revenue', total_revenue, revenue_change),
-            create_kpi_card('Total Transactions', total_transactions, transactions_change),
-            create_kpi_card('Avg Order Value', average_order_value, aov_change),
-            create_kpi_card('Total Quantity', total_quantity, quantity_change)
-        ], style={'display': 'flex', 'justifyContent': 'space-between'})
+            create_kpi_card('Total Tasks', total_tasks, past_total_tasks),
+            create_kpi_card('Completed Tasks', completed_tasks, past_completed_tasks),
+            create_kpi_card('Overdue Tasks', overdue_tasks, past_overdue_tasks),
+            create_kpi_card('Avg Completion Time (days)', avg_completion_time, past_avg_completion_time)
+        ], style={'display': 'flex', 'justifyContent': 'space-between', 'alignItems': 'stretch', 'flexWrap': 'wrap'})
         
         def update_chart_layout(fig):
             fig.update_layout(
@@ -203,36 +245,42 @@ def create_app(df):
                 legend_title_font_color=colors['primary'],
                 legend_title_font_size=14,
                 legend_font_size=12,
-                clickmode='event+select'
+                clickmode='event+select',
+                hoverlabel=dict(
+                bgcolor="white",
+                font_size=12,
+                font_family="Rockwell"
+            )
             )
             fig.update_xaxes(showgrid=False, showline=True, linewidth=2, linecolor='lightgray')
             fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
             return fig
         
-        product_sales = px.bar(dff, x='product_id', y='total_price', title="Product Sales Analysis",
-                               color_discrete_sequence=[colors['primary']], labels={'product_id': 'Product ID', 'total_price': 'Total Sales'})
-        product_sales = update_chart_layout(product_sales)
+        task_status = px.pie(dff, names='status', title="Task Status Distribution",
+                             color_discrete_sequence=[colors['primary'], colors['secondary'], colors['accent'], colors['negative']])
+        task_status = update_chart_layout(task_status)
         
-        store_performance = px.bar(dff, x='store_location', y='total_price', title="Store Performance",
-                                   color_discrete_sequence=[colors['primary']], labels={'store_location':'Store Location','total_price':'Total Sales'})
-        store_performance = update_chart_layout(store_performance)
+        priority_distribution = px.bar(dff, x='priority', y='task_name', title="Task Priority Distribution",
+                                       color='priority', color_discrete_sequence=[colors['primary'], colors['secondary'], colors['accent'], colors['negative']])
+        priority_distribution = update_chart_layout(priority_distribution)
         
-        payment_method_distribution = px.pie(dff, names='payment_method', values='total_price', title="Payment Method Distribution",
-                                             color_discrete_sequence=px.colors.qualitative.Set3, labels={'payment_method':'Payment Method','total_price':'Total Sales'})
-        payment_method_distribution = update_chart_layout(payment_method_distribution)
+        category_breakdown = px.bar(dff, x='category', y='task_name', title="Task Category Breakdown",
+                                    color='category', color_discrete_sequence=[colors['primary'], colors['secondary'], colors['accent'], colors['negative']])
+        category_breakdown = update_chart_layout(category_breakdown)
         
-        sales_trend = px.line(dff.groupby('purchase_date')['total_price'].sum().reset_index(), 
-                              x='purchase_date', y='total_price', title="Daily Sales Trend",
-                              color_discrete_sequence=[colors['primary']], labels={'purchase_date':'Date','total_price':'Total Sales'})
-        sales_trend = update_chart_layout(sales_trend)
+        time_estimation_accuracy = px.scatter(dff, x='estimated_time', y='actual_time', title="Time Estimation Accuracy",
+                                              color='category', hover_data=['task_name'], color_discrete_sequence=[colors['primary'], colors['secondary'], colors['accent'], colors['negative']])
+        time_estimation_accuracy.add_shape(type="line", x0=0, y0=0, x1=dff['estimated_time'].max(), y1=dff['estimated_time'].max(),
+                                           line=dict(color="red", width=2, dash="dash"))
+        time_estimation_accuracy = update_chart_layout(time_estimation_accuracy)
         
-        return kpi_indicators, product_sales, store_performance, payment_method_distribution, sales_trend, stores, start_date, end_date
+        return kpi_indicators, task_status, priority_distribution, category_breakdown, time_estimation_accuracy, categories, priorities, statuses, start_date, end_date
 
     return app
 
 def main():
     df_path = "C:/Users/aditya/Desktop/2024/auto-dash/Staging_Data/engineered_data.csv"
-    df=pd.read_csv(df_path)
+    df = pd.read_csv(df_path)
     app = create_app(df)
     app.run(debug=True)
 

@@ -1,15 +1,15 @@
 import pandas as pd
 import numpy as np
 import logging
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_anthropic import ChatAnthropic
+
 from langchain_experimental.tools import PythonAstREPLTool
 from dotenv import load_dotenv
 import os
 
 # Load environment variables
 load_dotenv()
-os.environ["GOOGLE_API_KEY"] = os.getenv('GEMINI_API_KEY')
-
+os.environ["ANTHROPIC_API_KEY"] = os.getenv('ANTHROPIC_API_KEY')
 def generate_llm_prompt(data):
     """Generate a prompt for the LLM based on the dataframe structure, including examples."""
     columns = ", ".join(data.columns)
@@ -46,7 +46,13 @@ def generate_llm_prompt(data):
 
 def transform_data_with_llm(data):
     """Use LLM to generate and execute data transformation code."""
-    llm = ChatGoogleGenerativeAI(model="gemini-pro")
+    llm = ChatAnthropic(
+                            model="claude-3-5-sonnet-20240620",
+                            temperature=0,
+                            max_tokens=4096,
+                            timeout=None,
+                            max_retries=2,
+                        )
     prompt = generate_llm_prompt(data)
     
     try:

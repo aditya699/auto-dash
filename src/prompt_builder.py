@@ -60,26 +60,32 @@ def prompt_generator(DataFrame):
         app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
         # Define color scheme for consistent styling
-        colors = {{
-                'background': '#023020',
-                'text': '#AA336A',
-                'primary': '#3498DB',
-                'secondary': '#2ECC71',
-                'accent': '#F39C12',
-                'negative': '#E74C3C'
+        colors ={{
+        'background': '#F7F7F7',  # Light gray background
+        'text': '#333333',        # Dark gray text
+        'primary': '#3498DB',     # Bright blue for primary elements
+        'secondary': '#2ECC71',   # Green for secondary elements (positive changes)
+        'accent': '#F39C12',      # Orange for accents
+        'negative': '#E74C3C'     # Red for negative changes (used sparingly)
+         }}
+
+        kpi_style ={{
+                'textAlign': 'center',
+                'padding': '15px',
+                'backgroundColor': 'white',
+                'borderRadius': '10px',
+                'boxShadow': '0 4px 15px rgba(0, 0, 0, 0.1)',
+                'margin': '10px',
+                'width': '220px', 
+                'height': '150px', 
+                'display': 'flex',
+                'flexDirection': 'column',
+                'justifyContent': 'space-between',
+                'transition': 'all 0.3s ease'
         }}
 
-        # Define styles
-        kpi_style = {{
-            'textAlign': 'center',
-            'padding': '20px',
-            'backgroundColor': 'white',
-            'borderRadius': '10px',
-            'boxShadow': '0 4px 15px rgba(0, 0, 0, 0.1)',
-            'margin': '10px',
-            'width': '200px',
-            'transition': 'all 0.3s ease'
-        }}
+        # Update the dropdown options to include 'Select All'
+        country_options = [{{'label': 'Select All', 'value': 'ALL'}}] + [{{'label': i, 'value': i}} for i in df.country.unique()]
 
         filter_style = {{
             'display': 'flex', 
@@ -153,9 +159,10 @@ def prompt_generator(DataFrame):
             }})
         ], fluid=True)
 
-        # Callback function for updating the dashboard
+        #Callback function for updating the dashboard
         @callback(
             [Output('kpi-indicators', 'children'),
+             Output('time-series-chart', 'figure'),
              Output('customer-purchase', 'figure'),
              Output('product-sales', 'figure'),
              Output('sales-rep-performance', 'figure'),
@@ -226,28 +233,36 @@ def prompt_generator(DataFrame):
             aov_change = average_order_value - past_average_order_value
             orders_change = total_orders - past_total_orders
             
-            # Function to create a KPI card
+            #Function to create a KPI card
             def create_kpi_card(title, value, change):
+                change = current_value - previous_value
+                change_percentage = (change / previous_value) * 100 if previous_value != 0 else 0
                 return html.Div([
-                    html.H3(title, style={{'color': colors['text'], 'marginBottom': '10px', 'fontSize': '16px', 'fontWeight': '400'}}),
+                    html.H3(title, style={{'color': colors['text'], 'marginBottom': '10px', 'fontSize': '16px', 'fontWeight': '400', 'height': '20px'}}),
                     html.Div([
-                        html.Span(f'{{value:,.0f}}', style={{'fontSize': '28px', 'fontWeight': 'bold', 'color': colors['primary']}}),
+                        html.Span(f'{{current_value:,.0f}}', style={{'fontSize': '24px', 'fontWeight': 'bold', 'color': colors['primary']}}),
+                    ], style={{'height': '30px'}}),
+                    html.Div([
+                        html.Span(f'Previous: {{previous_value:,.0f}}', style={{'fontSize': '14px', 'color': colors['text']}}),
+                    ], style={{'height': '20px'}}),
+                    html.Div([
                         html.Div([
-                            html.Span('▲' if change > 0 else '▼', 
-                                      style={{'color': colors['secondary'] if change > 0 else colors['negative'], 'fontSize': '18px'}}),
-                            html.Span(f'{{abs(change):,.0f}}', 
-                                      style={{'color': colors['secondary'] if change > 0 else colors['negative'], 'fontSize': '18px', 'marginLeft': '5px'}})
-                        ], style={{'marginTop': '5px'}})
-                    ])
+                            html.Span(f'{{"▲" if change > 0 else "▼"}}', 
+                                    style={{'color': colors['secondary'] if change > 0 else colors['negative'], 'fontSize': '16px', 'marginRight': '5px'}}),
+                            html.Span(f'{{abs(change):,.0f}} ({{abs(change_percentage):.1f}}%)', 
+                                    style={{'color': colors['secondary'] if change > 0 else colors['negative'], 'fontSize': '14px'}})
+                        ], style={{'display': 'inline-block'}})
+                    ], style={{'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center', 'height': '20px'}})
                 ], style=kpi_style)
             
-            # Create KPI indicators
+            # In the update_dashboard function:
             kpi_indicators = html.Div([
-                create_kpi_card('Total Revenue', total_revenue, revenue_change),
-                create_kpi_card('Total Customers', total_customers, customers_change),
-                create_kpi_card('Avg Order Value', average_order_value, aov_change),
-                create_kpi_card('Total Orders', total_orders, orders_change)
-            ], style={{'display': 'flex', 'justifyContent': 'space-between'}})
+                    create_kpi_card('Total Revenue', total_revenue, past_total_revenue),
+                    create_kpi_card('Total Customers', total_customers, past_total_customers),
+                    create_kpi_card('Avg Order Value', average_order_value, past_average_order_value),
+                    create_kpi_card('Total Orders', total_orders, past_total_orders)
+            ], style={{'display': 'flex', 'justifyContent': 'space-between', 'alignItems': 'stretch', 'flexWrap': 'wrap'}})
+        
             
             # Function to update chart layout
             def update_chart_layout(fig):
@@ -261,7 +276,12 @@ def prompt_generator(DataFrame):
                     legend_title_font_color=colors['primary'],
                     legend_title_font_size=14,
                     legend_font_size=12,
-                    clickmode='event+select'
+                    clickmode='event+select',
+                    hoverlabel=dict(
+                    bgcolor="white",
+                    font_size=12,
+                    font_family="Rockwell"
+                )
                 )
                 fig.update_xaxes(showgrid=False, showline=True, linewidth=2, linecolor='lightgray')
                 fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
@@ -269,6 +289,13 @@ def prompt_generator(DataFrame):
             
             # Create graphs with interactivity
             # Here x,y are column_names
+            # Create graphs with interactivity
+            time_series = px.line(dff.groupby('purchase_date')['purchase_amount'].sum().reset_index(), 
+                              x='purchase_date', y='purchase_amount', 
+                              title="Daily Sales Over Time",
+                              labels={{'purchase_date': 'Date', 'purchase_amount': 'Total Sales'}})
+            time_series.update_traces(mode='lines+markers', hovertemplate='Date: %{{x}}<br>Sales: $%{{y:,.2f}}')
+            time_series = update_chart_layout(time_series)
             customer_purchase = px.bar(dff, x='customer_name', y='purchase_amount', title="Customer Purchase Analysis",
                                        color_discrete_sequence=[colors['primary']], labels={{'customer_name': 'Customer Name', 'purchase_amount': 'Purchase Amount'}})
             customer_purchase = update_chart_layout(customer_purchase)
